@@ -10,4 +10,4 @@
 # Grupo: DreamSoft  
 **Integrantes:**
 - Alvarez Cayo Elvis [![GitHub](https://img.shields.io/badge/GitHub-Elv500-blue?logo=github)](https://github.com/Elv500)
-- Cantarran Noelia - []
+- Cantarran Villarroel Noelia - []
