@@ -6,8 +6,8 @@ class Endpoint(Enum):
 
     LOGIN = "/api/v2/admin/administrators/token"
 
-    BASE_INVENTORY = "/api/v2/admin/inventory-sources"
-    BASE_INVENTORY_CODE = "/api/v2/admin/inventory-sources/{code}"
+    BASE_TAXONS = "/api/v2/admin/taxons"
+    BASE_TAXONS_CODE = "/api/v2/admin/taxons/{code}"
 
     @classmethod
     def login(cls):
