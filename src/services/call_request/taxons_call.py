@@ -1,5 +1,5 @@
 from src.routes.taxons_endpoint import TaxonsEndpoint
-from src.core.request import SyliusRequest
+from src.services.request import SyliusRequest
 
 class TaxonsCall:
 
@@ -10,7 +10,7 @@ class TaxonsCall:
     
     @classmethod
     def create(cls, headers, payload):
-        response = SyliusRequest.post(TaxonsEndpoint.taxons(), headers, payload)
+        response = SyliusRequest.post(TaxonsEndpoint.taxon(), headers, payload)
         return response.json()
     
     @classmethod

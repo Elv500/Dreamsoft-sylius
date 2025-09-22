@@ -1,10 +1,10 @@
 from src.routes.endpoint import Endpoint
-from config import BASE_URL
+from src.config.config import BASE_URL
 
 class TaxonsEndpoint:
 
     @classmethod
-    def taxons(cls):
+    def taxon(cls):
         return f"{BASE_URL}{Endpoint.BASE_TAXONS.value}"
     
     @staticmethod
