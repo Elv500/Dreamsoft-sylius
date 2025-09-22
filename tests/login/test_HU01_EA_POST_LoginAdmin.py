@@ -1,7 +1,7 @@
 import pytest
 
 from src.routes.endpoint import Endpoint
-from src.routes.request import SyliusRequest
+from src.core.request import SyliusRequest
 from src.assertions.status_code_assertion import AssertionStatusCode
 from src.assertions.login.schema_assertion import AssertionLogin
 from src.assertions.login.error_assertion import AssertionLoginError
