@@ -7,6 +7,14 @@ class TaxonsEndpoint:
     def taxon(cls):
         return f"{BASE_URL}{Endpoint.BASE_TAXONS.value}"
     
+    @classmethod
+    def taxons_with_params(cls, **params):
+        base_url = f"{BASE_URL}{Endpoint.BASE_TAXONS.value}"
+        if params:
+            query_string = "&".join([f"{key}={value}" for key, value in params.items()])
+            return f"{base_url}?{query_string}"
+        return base_url
+    
     @staticmethod
     def build_taxon_code(base, code):
         return f"{BASE_URL}{base.format(code=code)}"
