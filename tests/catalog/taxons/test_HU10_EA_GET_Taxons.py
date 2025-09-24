@@ -12,4 +12,4 @@ def test_TC106_Obtener_lista_de_taxones(view_taxon):
     AssertionStatusCode.assert_status_code_200(response)
     response_json = response.json()
     AssertionTaxons.assert_list_schema(response_json)
-    AssertionTaxonsContent.assert_taxons_collection(response_json) #Revisar esquema y ya agregar individual
+    AssertionTaxonsContent.assert_taxons_collection(response_json)

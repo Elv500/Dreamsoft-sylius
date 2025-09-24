@@ -25,16 +25,13 @@ class AssertionTaxonsContent:
     @staticmethod
     def assert_taxon_item(item, expected_code=None):
         try:
-            # URIs esperadas (el schema ya valida formato; aquí validamos prefijos del dominio)
             assert item["@id"].startswith(TAXON_PREFIX), f"@id inesperado: {item['@id']}"
             assert item["@type"] == "Taxon", f"@type inesperado: {item['@type']}"
 
-            # Invariantes de dominio
             assert item["id"] > 0, "id debe ser > 0"
             assert item["position"] >= 0, "position no debe ser negativa"
             assert isinstance(item["enabled"], bool), "enabled no es boolean"
 
-            # Code esperado (si el test lo pide). El patrón lo valida el schema.
             if expected_code is not None:
                 assert item["code"] == expected_code, (
                     f"Código esperado '{expected_code}', encontrado '{item['code']}'"
@@ -53,6 +50,7 @@ class AssertionTaxonsContent:
             for _, tr in translations.items():
                 assert tr["@id"].startswith(TRANS_PREFIX), f"translations.@id inesperado: {tr['@id']}"
                 assert tr["@type"] == "TaxonTranslation", f"translations.@type inesperado: {tr['@type']}"
+                assert tr["id"] > 0, "id debe ser > 0"
 
         except AssertionError as e:
             pytest.fail(f"[TaxonItem] {e}")
@@ -60,17 +58,17 @@ class AssertionTaxonsContent:
     @staticmethod
     def _assert_pagination(response_json, params):
         try:
-            ipp  = params.get("itemsPerPage")
+            items  = params.get("itemsPerPage")
             page = params.get("page", 1)
-            if ipp is None:
+            if items is None:
                 return
 
-            if "hydra:member" in response_json and ipp == 0:
+            if "hydra:member" in response_json and items == 0:
                 assert len(response_json["hydra:member"]) == 0, \
                     "itemsPerPage=0 debería devolver 0 items"
 
-            expected_base = "/api/v2/admin/taxons?itemsPerPage=" + str(ipp)
-            if ipp != 0:
+            expected_base = "/api/v2/admin/taxons?itemsPerPage=" + str(items)
+            if items != 0:
                 expected_base += f"&page={page}"
 
             view = response_json.get("hydra:view", {})
