@@ -1,6 +1,5 @@
 import requests
 
-
 class SyliusRequest:
     @staticmethod
     def get(url, headers):
