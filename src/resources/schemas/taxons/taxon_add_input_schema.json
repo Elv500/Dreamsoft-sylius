@@ -2,9 +2,7 @@
     "type": "object",
     "required": [
         "code",
-        "translations",
-        "parent",
-        "enabled"
+        "translations"
     ],
     "properties": {
         "code": {
