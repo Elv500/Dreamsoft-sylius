@@ -8,6 +8,8 @@ class Endpoint(Enum):
 
     BASE_TAXONS = "/api/v2/admin/taxons"
     BASE_TAXONS_CODE = "/api/v2/admin/taxons/{code}"
+    BASE_TAXONS_IMAGES = "/api/v2/admin/taxons/{code}/images"
+    BASE_TAXONS_IMAGES_CODE = "/api/v2/admin/taxons/{code}/images/{imageCode}"
 
     @classmethod
     def login(cls):
