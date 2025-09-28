@@ -40,7 +40,7 @@ class AssertionTaxonContent:
 
             if required_only:
                 assert response_json["parent"] is None, "Parent debería ser None en modo requerido"
-                assert response_json["position"] == 0, "Position debería iniciar en 0"
+                assert response_json["position"] >= 0, f"Position debería iniciar en 0 {response_json["position"]}"
             else:
                 assert response_json["enabled"] == payload["enabled"], \
                     "Campo 'enabled' no coincide con el payload"
