@@ -39,3 +39,17 @@ def test_TC114_Validar_error_al_obtener_taxon_con_token_invalido(view_taxon):
     response = SyliusRequest.get(url, headers)
     AssertionStatusCode.assert_status_code_401(response)
     AssertionTaxonsError.assert_taxons_error(response.json(), 401, "Invalid JWT Token")
+
+def test_TC115_Obtener_taxon_con_imagen_asociado(view_taxon):
+    headers, taxon1, _ = view_taxon
+    code = taxon1["code"]
+    url = TaxonsEndpoint.taxon_code(code)
+    response = SyliusRequest.get(url, headers)
+    AssertionStatusCode.assert_status_code_200(response)
+
+def test_TC116_Obtener_taxon_sin_imagen_asociado(view_taxon):
+    headers, taxon, _ = view_taxon
+    code = taxon["code"]
+    url = TaxonsEndpoint.taxon_code(code)
+    response = SyliusRequest.get(url, headers)
+    AssertionStatusCode.assert_status_code_200(response)
