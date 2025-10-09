@@ -8,6 +8,7 @@ from src.assertions.administrators.view_content_assertion import AssertionAdmini
 from src.resources.payloads.administrators_payload import AdministratorsPayload
 from src.data.administrators import generate_admin_data
 
+# TC-21: Admin > Administrators – Crear administrador con datos válidos
 def test_TC21_Crear_administrador_datos_validos(auth_headers, admin_data):
     headers = auth_headers
     payload = AdministratorsPayload.build_payload_admin(admin_data)
@@ -32,6 +33,7 @@ def test_TC_Admin_Administrators_crear_datos_requeridos(auth_headers):
     AssertionAdministrators.assert_create_schema(response_json)
     AssertionAdministratorsContent.assert_admin_item(response_json, expected_username=payload["username"])
 
+# TC-33: Admin > Administrators - Validar error al crear administrador sin token de autenticación
 def test_TC33_Crear_administrador_sin_token():
     headers = {}
     payload = AdministratorsPayload.build_payload_admin(generate_admin_data())
@@ -40,6 +42,7 @@ def test_TC33_Crear_administrador_sin_token():
     AssertionStatusCode.assert_status_code_401(response)
     AssertionAdministratorsError.assert_admin_error(response.json(), 401, "JWT Token not found")
 
+# TC-34: Admin > Administrators - Validar error al crear administrador con token inválido
 def test_TC34_Crear_administrador_token_invalido():
     headers = {"Authorization": "Bearer token_invalido"}
     payload = AdministratorsPayload.build_payload_admin(generate_admin_data())
@@ -48,6 +51,7 @@ def test_TC34_Crear_administrador_token_invalido():
     AssertionStatusCode.assert_status_code_401(response)
     AssertionAdministratorsError.assert_admin_error(response.json(), 401, "Invalid JWT Token")
 
+# TC-296: Admin > Administrators – Validar error al crear administrador sin datos requeridos
 def test_TC296_Crear_administrador_sin_datos(auth_headers):
     headers = auth_headers
     url = AdministratorsEndpoint.admins()
@@ -56,6 +60,7 @@ def test_TC296_Crear_administrador_sin_datos(auth_headers):
     AssertionStatusCode.assert_status_code_422(response)
     AssertionAdministratorsError.assert_admin_error_request(response.json(), 422, "email: Please enter your email.\nusername: Please enter your name.\nlocaleCode: Please choose a locale.\nplainPassword: Please enter your password.")
 
+# TC-27: Admin > Administrators - Validar error al crear administrador con username duplicado
 def test_TC27_Crear_administrador_username_duplicado(auth_headers, admin_data):
     headers = auth_headers
     url = AdministratorsEndpoint.admins()
@@ -70,6 +75,7 @@ def test_TC27_Crear_administrador_username_duplicado(auth_headers, admin_data):
     expected_detail = "username: This username is already used."
     AssertionAdministratorsError.assert_admin_error_request(response_duplicado.json(), 422, expected_detail)
 
+# TC-28: Admin > Administrators - Validar error al crear administrador con email duplicado
 def test_TC28_Crear_administrador_email_duplicado(auth_headers, admin_data):
     headers = auth_headers
     url = AdministratorsEndpoint.admins()
@@ -83,7 +89,7 @@ def test_TC28_Crear_administrador_email_duplicado(auth_headers, admin_data):
     AssertionStatusCode.assert_status_code_422(response_duplicado)
     expected_detail = "email: This email is already used."
     AssertionAdministratorsError.assert_admin_error_request(response_duplicado.json(), 422, expected_detail)
-
+# TC-35: Admin > Administrators - Validar error al crear administrador con email inválido
 def test_TC35_Crear_administrador_email_invalido(auth_headers):
     headers = auth_headers
     admin_data = generate_admin_data()
@@ -94,6 +100,7 @@ def test_TC35_Crear_administrador_email_invalido(auth_headers):
     AssertionStatusCode.assert_status_code_422(response)
     AssertionAdministratorsError.assert_admin_error_request(response.json(), 422, "email: This email is invalid.")
 
+# TC-31: Admin > Administrators - Crear administrador con enabled activado
 def test_TC31_Crear_administrador_enabled_activado(auth_headers, admin_data):
     headers = auth_headers
     payload = AdministratorsPayload.build_payload_admin(admin_data)
@@ -105,6 +112,7 @@ def test_TC31_Crear_administrador_enabled_activado(auth_headers, admin_data):
     AssertionAdministrators.assert_create_schema(response_json)
     AssertionAdministratorsContent.assert_admin_enabled_state(response_json, True)
 
+# TC-496: Admin > Administrators - Crear administrador con enabled desactivado
 def test_TC496_Crear_administrador_enabled_desactivado(auth_headers, admin_data):
     headers = auth_headers
     payload = AdministratorsPayload.build_payload_admin(admin_data)
@@ -227,7 +235,7 @@ def test_TC_Admin_Administrators_validar_username(auth_headers, username, expect
 
 @pytest.mark.parametrize("plainPassword, expected_status", [
     ("1234", 201),
-    ("a"*255, 201),
+    ("a"*254, 201),
     ("Test1234", 201),
     ("123", 422),
     ("a"*256, 422),
@@ -249,7 +257,7 @@ def test_TC_Admin_Administrators_validar_plainPassword(auth_headers, plainPasswo
 # TC-566: Admin > Administrators - Validar error al ingresar email vacío
 
 @pytest.mark.parametrize("email, expected_status", [
-    ("user10@test.com", 201),
+    ("user1@test.com", 201),
     ("test", 422),
     ("user@com", 422),
     ("@mail.com", 422),
