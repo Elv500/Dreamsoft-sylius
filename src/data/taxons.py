@@ -3,7 +3,7 @@ import json
 import re
 fake = Faker()
 
-def generate_taxons_data(required_only=False, parent=None):
+def generate_taxons_data(required_only=False, parent=None, enabled=True):
     
     name = fake.words(nb=2, unique=True)
     name = " ".join(name).capitalize()
@@ -21,7 +21,7 @@ def generate_taxons_data(required_only=False, parent=None):
     }
 
     if not required_only:
-        taxons_data["enabled"] = True
+        taxons_data["enabled"] = enabled
         if parent:
             taxons_data["parent"] = parent["@id"]
 

@@ -12,8 +12,10 @@ class TaxonsPayload:
                     "description": data["translations"]["en_US"]["description"]
                 }
             },
-            "parent": data["parent"],
             "enabled": data["enabled"]
         }
+
+        if "parent" in data:
+            payload_taxon["parent"] = data["parent"]
 
         return payload_taxon
