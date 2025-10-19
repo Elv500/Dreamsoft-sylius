@@ -1,4 +1,3 @@
-# src/assertions/taxons_content_assertion.py
 import pytest
 
 class AssertionTaxonContent:

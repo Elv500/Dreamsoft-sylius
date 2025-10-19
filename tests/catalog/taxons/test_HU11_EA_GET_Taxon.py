@@ -53,3 +53,6 @@ def test_TC116_Obtener_taxon_sin_imagen_asociado(view_taxon):
     url = TaxonsEndpoint.taxon_code(code)
     response = SyliusRequest.get(url, headers)
     AssertionStatusCode.assert_status_code_200(response)
+
+
+    #Continuar agregando luego de POST
