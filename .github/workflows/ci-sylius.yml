@@ -38,7 +38,13 @@ jobs:
 
       - name: Ejecutar tests con pytest y generar reporte Allure
         run: |
-          pytest --disable-warnings -v ${{ github.event.inputs.marker }} --alluredir=reports/allure-results
+          if [ -n "${{ github.event.inputs.marker }}" ]; then
+            echo "Ejecutando pytest con marker: ${{ github.event.inputs.marker }}"
+            pytest --disable-warnings -v ${{ github.event.inputs.marker }} --alluredir=reports/allure-results
+          else
+            echo "Ejecutando todos los tests"
+            pytest --disable-warnings -v --alluredir=reports/allure-results
+          fi
 
       - name: Load test report history
         uses: actions/checkout@v4
