@@ -163,7 +163,7 @@ def test_TC134_Crear_taxon_con_estado_desactivado(add_taxon):
 
 @pytest.mark.parametrize("name, slug", [
     ("a","a"),
-    ("a","a"*255),
+    ("a","b"*255),
     ("a","test-slug"),
     ("a","test_slug"),
     ("a"*255,"a"),
@@ -188,7 +188,7 @@ def test_TC_Crear_traduccion_de_taxon_con_name_y_slug_valido(add_taxon, name, sl
 
 @pytest.mark.parametrize("name, slug", [
     ("",""),
-    ("","a"*256),
+    ("","b"*256),
     ("","test slug"),
     ("","Test_#12/"),
     ("a"*256,""),
