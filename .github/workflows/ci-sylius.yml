@@ -28,7 +28,7 @@ jobs:
       - name: Establecer variables de entorno desde secrets
         run: |
           echo "BASE_URL=${{ secrets.BASE_URL }}" >> $GITHUB_ENV
-          echo "ADMIN_USERNAME=${{ secrets.ADMIN_USERNAME }}" >> $GITHUB_ENV
+          echo "ADMIN_USERNAME=${{ secrets.ADMIN_EMAIL }}" >> $GITHUB_ENV
           echo "ADMIN_PASSWORD=${{ secrets.ADMIN_PASSWORD }}" >> $GITHUB_ENV
 
       - name: Instalar dependencias
