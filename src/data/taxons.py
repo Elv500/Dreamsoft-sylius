@@ -3,7 +3,7 @@ import json
 import re
 fake = Faker()
 
-def generate_taxons_data(required_only=False):
+def generate_taxons_data(required_only=False, parent=None, enabled=True, extra_translations=None):
     
     name = fake.words(nb=2, unique=True)
     name = " ".join(name).capitalize()
@@ -21,7 +21,12 @@ def generate_taxons_data(required_only=False):
     }
 
     if not required_only:
-        taxons_data["parent"] = "/api/v2/admin/taxons/MENU_CATEGORY"
-        taxons_data["enabled"] = True
+        taxons_data["enabled"] = enabled
+        if parent:
+            taxons_data["parent"] = parent["@id"]
+
+    if extra_translations:
+        for lang, data in extra_translations.items():
+            taxons_data["translations"][lang] = data
 
     return taxons_data

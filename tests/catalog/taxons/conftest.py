@@ -14,3 +14,14 @@ def view_taxon(auth_headers):
 
     TaxonsCall.delete(auth_headers, taxon1["code"])
     TaxonsCall.delete(auth_headers, taxon2["code"])
+
+@pytest.fixture(scope="function")
+def add_taxon(auth_headers):
+    created_taxons = []
+    yield auth_headers, created_taxons
+
+    for taxon in created_taxons:
+        if 'code' in taxon:
+            TaxonsCall.delete(auth_headers, taxon['code'])
+        else:
+            print(f"Taxon no tiene 'code': {taxon}")
