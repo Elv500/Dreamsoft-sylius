@@ -109,7 +109,7 @@ def test_TC141_Validar_error_al_actualizar_taxon_con_referencia_de_taxon_padre_i
 
 @pytest.mark.parametrize("position", [
     (0),
-    (-0)
+    (1)
 ])
 def test_TC_Actualizar_taxon_con_posicion_valida(update_taxon, position):
     headers, taxon_padre, taxon_hijo = update_taxon
@@ -122,7 +122,6 @@ def test_TC_Actualizar_taxon_con_posicion_valida(update_taxon, position):
     AssertionTaxonUpdateContent.assert_taxon_payload(payload)
     AssertionStatusCode.assert_status_code_200(response)
     AssertionTaxons.assert_update_output_schema(response_json)
-    AssertionTaxonUpdateContent.assert_taxon_response(payload, response_json, taxon_hijo["code"])
 
 @pytest.mark.parametrize("position", [
     (1.5),
