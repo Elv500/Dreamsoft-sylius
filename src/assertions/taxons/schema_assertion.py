@@ -18,3 +18,11 @@ class AssertionTaxons:
      @staticmethod
      def assert_add_output_schema(response):
           return AssertionSchemas().validate_json_schema(response, "taxon_add_output_schema.json", AssertionTaxons.MODULE)
+     
+     @staticmethod
+     def assert_update_input_schema(response):
+          return AssertionSchemas().validate_json_schema(response, "taxon_update_input_schema.json", AssertionTaxons.MODULE)
+     
+     @staticmethod
+     def assert_update_output_schema(response):
+          return AssertionSchemas().validate_json_schema(response, "taxon_update_output_schema.json", AssertionTaxons.MODULE)

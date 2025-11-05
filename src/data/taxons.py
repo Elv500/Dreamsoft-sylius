@@ -3,7 +3,12 @@ import json
 import re
 fake = Faker()
 
-def generate_taxons_data(required_only=False, parent=None, enabled=True, extra_translations=None):
+def generate_taxons_data(required_only=False,
+                         parent=None,
+                         enabled=True,
+                         extra_translations=None,
+                         locale="en_US",
+                         position=0):
     
     name = fake.words(nb=2, unique=True)
     name = " ".join(name).capitalize()
@@ -12,12 +17,13 @@ def generate_taxons_data(required_only=False, parent=None, enabled=True, extra_t
     taxons_data = {
         "code": slug,
         "translations": {
-            "en_US": {
+            locale: {
                 "name": name,
                 "slug": slug,
                 "description": fake.paragraph()
             }
-        }
+        },
+        "position": position,
     }
 
     if not required_only:

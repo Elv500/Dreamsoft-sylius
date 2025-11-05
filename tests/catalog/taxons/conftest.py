@@ -25,3 +25,15 @@ def add_taxon(auth_headers):
             TaxonsCall.delete(auth_headers, taxon['code'])
         else:
             print(f"Taxon no tiene 'code': {taxon}")
+
+@pytest.fixture(scope="function")
+def update_taxon(auth_headers):
+    payload_padre = TaxonsPayload.build_payload_taxon(generate_taxons_data())
+    taxon_padre = TaxonsCall.create(auth_headers, payload_padre)
+    payload_hijo = TaxonsPayload.build_payload_taxon(generate_taxons_data(parent=taxon_padre))
+    taxon_hijo = TaxonsCall.create(auth_headers, payload_hijo)
+    
+    yield auth_headers, taxon_padre, taxon_hijo
+
+    TaxonsCall.delete(auth_headers, taxon_padre["code"])
+    TaxonsCall.delete(auth_headers, taxon_hijo["code"])

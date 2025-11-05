@@ -18,4 +18,7 @@ class TaxonsPayload:
         if "parent" in data:
             payload_taxon["parent"] = data["parent"]
 
+        if "position" in data:
+            payload_taxon["position"] = data["position"]
+
         return payload_taxon
