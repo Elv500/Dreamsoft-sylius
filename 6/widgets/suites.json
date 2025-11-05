@@ -1,1 +1,0 @@
-{"total":2,"items":[{"uid":"b9cc9f26cb8e9c1866e2798d38fe2e6e","name":"tests.catalog.taxons","statistic":{"failed":0,"broken":0,"skipped":4,"passed":50,"unknown":0,"total":54}},{"uid":"4f9f7db23c51916782646778801a49ab","name":"tests.login","statistic":{"failed":0,"broken":0,"skipped":0,"passed":15,"unknown":0,"total":15}}]}
