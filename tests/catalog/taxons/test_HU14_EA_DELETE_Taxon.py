@@ -62,3 +62,5 @@ def test_TC155_Verificar_que_un_taxon_eliminado_no_exista_mas(delete_taxon):
     responseGet = SyliusRequest.get(url, headers)
     AssertionStatusCode.assert_status_code_404(responseGet)
     AssertionTaxonsError.assert_taxons_error_request(responseGet.json(), 404, "Not Found")
+
+#Falta agregar de eliminar con imagen
