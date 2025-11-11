@@ -9,6 +9,9 @@ from src.assertions.taxons.taxon_images.schema_assertion import AssertionTaxonIm
 from src.assertions.taxons.taxon_images.error_assertion import AssertionTaxonImagesError
 from utils.logger_helpers import log_request_response
 
+
+@pytest.mark.functional_positive
+@pytest.mark.smoke
 def test_TC173_Agregar_imagen_a_un_taxon_existente(add_taxon_image):
     headers, created_taxon_images, taxon = add_taxon_image
     payload = generate_taxon_images_data(type="logo")
@@ -21,6 +24,8 @@ def test_TC173_Agregar_imagen_a_un_taxon_existente(add_taxon_image):
     log_request_response(response.url, response, headers, payload)
     created_taxon_images.append(response_json)
 
+
+@pytest.mark.functional_positive
 def test_TC180_Agregar_mas_de_una_imagen_a_un_taxon_existente(add_taxon_image):
     headers, created_taxon_images, taxon = add_taxon_image
     payloadOne = generate_taxon_images_data(type="logo")
@@ -38,6 +43,8 @@ def test_TC180_Agregar_mas_de_una_imagen_a_un_taxon_existente(add_taxon_image):
     created_taxon_images.append(responseOne_json)
     created_taxon_images.append(responseTwo_json)
 
+
+@pytest.mark.functional_negative
 def test_TC174_Validar_error_al_agregar_imagen_a_un_taxon_inexistente(add_taxon_image):
     headers, created_taxon_images, _ = add_taxon_image
     payload = generate_taxon_images_data(type="logo")
@@ -47,6 +54,8 @@ def test_TC174_Validar_error_al_agregar_imagen_a_un_taxon_inexistente(add_taxon_
     AssertionTaxonImagesError.assert_taxon_images_error(response.json(), 404, "Not Found")
     log_request_response(response.url, response, headers, payload)
 
+
+@pytest.mark.functional_negative
 def test_TC175_Validar_error_al_agregar_imagen_sin_autenticacion(add_taxon_image):
     headers, created_taxon_images, taxon = add_taxon_image
     headers = {}
@@ -56,6 +65,8 @@ def test_TC175_Validar_error_al_agregar_imagen_sin_autenticacion(add_taxon_image
     AssertionTaxonImagesError.assert_taxon_images_error(response.json(), 401, "JWT Token not found")
     log_request_response(response.url, response, headers, payload)
 
+
+@pytest.mark.functional_negative
 def test_TC176_Validar_error_al_agregar_imagen_con_token_invalido(add_taxon_image):
     headers, created_taxon_images, taxon = add_taxon_image
     headers = {"Authorization": "Bearer invalid_token"}
@@ -65,6 +76,8 @@ def test_TC176_Validar_error_al_agregar_imagen_con_token_invalido(add_taxon_imag
     AssertionTaxonImagesError.assert_taxon_images_error(response.json(), 401, "Invalid JWT Token")
     log_request_response(response.url, response, headers, payload)
 
+
+@pytest.mark.functional_positive
 def test_TC177_Agregar_imagen_a_un_taxon_con_solo_campo_requerido(add_taxon_image):
     headers, created_taxon_images, taxon = add_taxon_image
     payload = generate_taxon_images_data()
@@ -77,6 +90,8 @@ def test_TC177_Agregar_imagen_a_un_taxon_con_solo_campo_requerido(add_taxon_imag
     log_request_response(response.url, response, headers, payload)
     created_taxon_images.append(response_json)
 
+@pytest.mark.functional_positive
+@pytest.mark.domain
 @pytest.mark.parametrize("file", [
     "test_image_jpeg_valid.jpeg",
     "test_image_valid.png",
@@ -96,6 +111,9 @@ def test_TC_Agregar_imagen_con_extension_valida_a_un_taxon(add_taxon_image, file
     log_request_response(response.url, response, headers, payload)
     created_taxon_images.append(response_json)
 
+
+@pytest.mark.functional_negative
+@pytest.mark.domain
 @pytest.mark.parametrize("file", [
     pytest.param("test_image_csv_invalid.csv", marks=pytest.mark.xfail(reason="BUG: Permite subir imagen con extension csv invalida", run=True)),
     pytest.param("test_image_xlsx_invalid.xlsx", marks=pytest.mark.xfail(reason="BUG: Permite subir imagen con extension xlsx invalida", run=True)),
@@ -109,6 +127,8 @@ def test_TC_Agregar_imagen_con_extension_invalida_a_un_taxon(add_taxon_image, fi
     AssertionStatusCode.assert_status_code_400(response)
     log_request_response(response.url, response, headers, payload)
 
+
+@pytest.mark.functional_positive
 def test_TC504_Agregar_imagen_a_un_taxon_con_un_peso_minimo_de_1KB(add_taxon_image):
     headers, created_taxon_images, taxon = add_taxon_image
     payload = generate_taxon_images_data(file="test_image_1KB.png")
@@ -121,6 +141,8 @@ def test_TC504_Agregar_imagen_a_un_taxon_con_un_peso_minimo_de_1KB(add_taxon_ima
     log_request_response(response.url, response, headers, payload)
     created_taxon_images.append(response_json)
 
+
+@pytest.mark.functional_positive
 def test_TC505_Agregar_imagen_a_un_taxon_con_un_peso_maximo_de_2MB(add_taxon_image):
     headers, created_taxon_images, taxon = add_taxon_image
     payload = generate_taxon_images_data(file="test_image_2MB.jpg")
@@ -133,6 +155,8 @@ def test_TC505_Agregar_imagen_a_un_taxon_con_un_peso_maximo_de_2MB(add_taxon_ima
     log_request_response(response.url, response, headers, payload)
     created_taxon_images.append(response_json)
 
+
+@pytest.mark.functional_negative
 def test_TC506_Validar_error_al_agregar_imagen_a_un_taxon_con_un_peso_mayor_de_2MB(add_taxon_image):
     headers, created_taxon_images, taxon = add_taxon_image
     payload = generate_taxon_images_data(file="test_image_mayor2MB.jpg")
@@ -143,6 +167,8 @@ def test_TC506_Validar_error_al_agregar_imagen_a_un_taxon_con_un_peso_mayor_de_2
     AssertionTaxonImagesError.assert_taxon_images_error_request(response.json(), 500, "Internal Server Error")
     log_request_response(response.url, response, headers, payload)
 
+
+@pytest.mark.functional_positive
 def test_TC185_Agregar_imagen_a_un_taxon_con_campo_tipo_con_cero_caracteres(add_taxon_image):
     headers, created_taxon_images, taxon = add_taxon_image
     payload = generate_taxon_images_data(type="")
@@ -155,6 +181,8 @@ def test_TC185_Agregar_imagen_a_un_taxon_con_campo_tipo_con_cero_caracteres(add_
     log_request_response(response.url, response, headers, payload)
     created_taxon_images.append(response_json)
 
+
+@pytest.mark.functional_positive
 def test_TC507_Agregar_imagen_a_un_taxon_con_campo_tipo_con_255_caracteres(add_taxon_image):
     headers, created_taxon_images, taxon = add_taxon_image
     payload = generate_taxon_images_data(type="a" * 255)
@@ -167,6 +195,8 @@ def test_TC507_Agregar_imagen_a_un_taxon_con_campo_tipo_con_255_caracteres(add_t
     log_request_response(response.url, response, headers, payload)
     created_taxon_images.append(response_json)
 
+
+@pytest.mark.functional_negative
 def test_TC186_Validar_error_al_agregar_imagen_a_un_taxon_con_campo_tipo_con_256_caracteres(add_taxon_image):
     headers, created_taxon_images, taxon = add_taxon_image
     payload = generate_taxon_images_data(type="a" * 256)
