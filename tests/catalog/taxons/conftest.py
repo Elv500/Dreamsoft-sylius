@@ -88,3 +88,47 @@ def delete_taxon_with_image(auth_headers):
     if "id" in response_json:
         TaxonImagesCall.delete(auth_headers, taxon["code"], response_json["id"])
     TaxonsCall.delete(auth_headers, taxon["code"])
+
+@pytest.fixture(scope="function")
+def view_taxon_with_image(auth_headers):
+    payload_taxon = TaxonsPayload.build_payload_taxon(generate_taxons_data())
+    taxon = TaxonsCall.create(auth_headers, payload_taxon)
+
+    payload_image = generate_taxon_images_data(type="logo")
+    response = TaxonImagesCall.create(auth_headers, taxon["code"], payload_image)
+    image_json = response.json()
+
+    yield auth_headers, taxon, image_json
+
+    try:
+        if "id" in image_json:
+            TaxonImagesCall.delete(auth_headers, taxon["code"], image_json["id"])
+    except Exception:
+        pass
+    try:
+        TaxonsCall.delete(auth_headers, taxon["code"])
+    except Exception:
+        pass
+
+
+@pytest.fixture(scope="function")
+def view_taxon_with_children(auth_headers):
+    parent_payload = TaxonsPayload.build_payload_taxon(generate_taxons_data())
+    parent = TaxonsCall.create(auth_headers, parent_payload)
+
+    if "@id" not in parent:
+        parent["@id"] = f"/api/v2/admin/taxons/{parent['code']}"
+
+    child_payload = TaxonsPayload.build_payload_taxon(generate_taxons_data(parent=parent))
+    child = TaxonsCall.create(auth_headers, child_payload)
+
+    yield auth_headers, parent, child
+
+    try:
+        TaxonsCall.delete(auth_headers, child["code"])
+    except Exception:
+        pass
+    try:
+        TaxonsCall.delete(auth_headers, parent["code"])
+    except Exception:
+        pass

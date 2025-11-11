@@ -22,7 +22,18 @@ def log_request_response(url, response, headers=None, payload=None):
 
 
     if payload:
-        logging.debug("PAYLOAD REQUEST:\n%s", json.dumps(payload, indent=4, ensure_ascii=False))
+        try:
+            # Intenta serializar normalmente
+            logging.debug("PAYLOAD REQUEST:\n%s", json.dumps(payload, indent=4, ensure_ascii=False))
+        except TypeError:
+            # Si hay objetos no serializables (como archivos abiertos), convierte a texto
+            safe_payload = {}
+            for key, value in (payload.items() if isinstance(payload, dict) else enumerate(payload)):
+                if hasattr(value, "name"):
+                    safe_payload[key] = f"<file: {value.name}>"
+                else:
+                    safe_payload[key] = str(value)
+            logging.debug("PAYLOAD REQUEST (SAFE):\n%s", json.dumps(safe_payload, indent=4, ensure_ascii=False))
   
     # Manejar respuestas sin contenido (como 204 No Content)
     try:

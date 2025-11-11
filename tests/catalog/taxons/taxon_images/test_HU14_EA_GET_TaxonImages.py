@@ -5,6 +5,7 @@ from src.assertions.status_code_assertion import AssertionStatusCode
 from src.assertions.taxons.taxon_images.schema_assertion import AssertionTaxonImages
 from src.assertions.taxons.taxon_images.view_content_assertions import AssertionTaxonImagesContent
 from src.assertions.taxons.taxon_images.error_assertion import AssertionTaxonImagesError
+from utils.logger_helpers import log_request_response
 
 def test_TC163_Obtener_lista_imagenes_sin_imagenes_asociadas(view_taxon_images_empty):
     headers, taxon = view_taxon_images_empty
@@ -15,6 +16,7 @@ def test_TC163_Obtener_lista_imagenes_sin_imagenes_asociadas(view_taxon_images_e
     response_json = response.json()
     AssertionTaxonImages.assert_list_schema(response_json)
     AssertionTaxonImagesContent.assert_taxon_images_collection_empty(response_json)
+    log_request_response(url, response, headers)
 
 def test_TC162_Obtener_lista_imagenes_con_imagenes_existentes(view_taxon_images):
     headers, taxon, created_images = view_taxon_images
@@ -25,6 +27,7 @@ def test_TC162_Obtener_lista_imagenes_con_imagenes_existentes(view_taxon_images)
     response_json = response.json()
     AssertionTaxonImages.assert_list_schema(response_json)
     AssertionTaxonImagesContent.assert_taxon_images_collection(response_json)
+    log_request_response(url, response, headers)
 
 def test_TC164_Listar_imagenes_sin_autenticacion(view_taxon_images):
     _, taxon, _ = view_taxon_images
@@ -34,7 +37,7 @@ def test_TC164_Listar_imagenes_sin_autenticacion(view_taxon_images):
 
     AssertionStatusCode.assert_status_code_401(response)
     AssertionTaxonImagesError.assert_taxon_images_error(response.json(), 401, "JWT Token not found")
-
+    log_request_response(url, response, headers)
 
 def test_TC165_Listar_imagenes_con_token_invalido(view_taxon_images):
     _, taxon, _ = view_taxon_images
@@ -44,6 +47,7 @@ def test_TC165_Listar_imagenes_con_token_invalido(view_taxon_images):
 
     AssertionStatusCode.assert_status_code_401(response)
     AssertionTaxonImagesError.assert_taxon_images_error(response.json(), 401, "Invalid JWT Token")
+    log_request_response(url, response, headers)
 
 @pytest.mark.xfail(reason="BUG: El endpoint retorna 200 en lugar de 404 al listar imágenes de un taxon inexistente", run=True)
 def test_TC166_Listar_imagenes_de_taxon_inexistente(view_taxon_images):
@@ -53,6 +57,7 @@ def test_TC166_Listar_imagenes_de_taxon_inexistente(view_taxon_images):
 
     AssertionStatusCode.assert_status_code_404(response)
     AssertionTaxonImagesError.assert_taxon_images_error(response.json(), 404, "Not Found")
+    log_request_response(url, response, headers)
 
 @pytest.mark.parametrize("page, itemsPerPage", [
     (1, None),
@@ -68,6 +73,7 @@ def test_TC_Listar_imagenes_con_paginacion_valida(view_taxon_images, page, items
 
     AssertionStatusCode.assert_status_code_200(response)
     AssertionTaxonImagesContent.assert_taxon_images_collection(response.json(), params=params)
+    log_request_response(url, response, headers)
 
 @pytest.mark.parametrize("page, itemsPerPage", [
     (0, 1),
@@ -88,3 +94,4 @@ def test_TC_Listar_imagenes_con_paginacion_invalida(view_taxon_images, page, ite
     response = SyliusRequest.get(url, headers)
 
     AssertionStatusCode.assert_status_code_400(response)
+    log_request_response(url, response, headers)
