@@ -3,11 +3,11 @@ import pytest
 from src.services.request import SyliusRequest
 from src.routes.taxons_endpoint import TaxonsEndpoint
 from src.assertions.status_code_assertion import AssertionStatusCode
-from src.assertions.taxons.schema_assertion import AssertionTaxons
-from src.assertions.taxons.update_content_assertions import AssertionTaxonUpdateContent
 from src.assertions.taxons.error_assertion import AssertionTaxonsError
-from src.data.taxons import generate_taxons_data
 from utils.logger_helpers import log_request_response
+from src.routes.taxon_images_endpoint import TaxonImagesEndpoint
+from src.assertions.taxons.taxon_images.error_assertion import AssertionTaxonImagesError
+from src.services.call_request.taxon_images_call import TaxonImagesCall
 
 def test_TC149_Eliminar_taxon_existente_con_code_valido(delete_taxon):
     headers, taxon = delete_taxon
@@ -22,7 +22,7 @@ def test_TC150_Validar_error_al_eliminar_taxon_inexistente(delete_taxon):
     AssertionStatusCode.assert_status_code_404(response)
     AssertionTaxonsError.assert_taxons_error_request(response.json(), 404, "Not Found")
 
-def test_TC152_Validar_error_al_eliminar_taxon_sin_code(delete_taxon):
+def test_TC151_Validar_error_al_eliminar_taxon_sin_code(delete_taxon):
     headers, _ = delete_taxon
     url = TaxonsEndpoint.taxon()
     response = SyliusRequest.delete(url, headers)
@@ -63,4 +63,60 @@ def test_TC155_Verificar_que_un_taxon_eliminado_no_exista_mas(delete_taxon):
     AssertionStatusCode.assert_status_code_404(responseGet)
     AssertionTaxonsError.assert_taxons_error_request(responseGet.json(), 404, "Not Found")
 
-#Falta agregar de eliminar con imagen
+def test_TC156_Eliminar_taxon_con_imagen_asociada(delete_taxon_with_image):
+    headers, taxon, image = delete_taxon_with_image
+    url = TaxonsEndpoint.taxon_code(taxon["code"])
+    response = SyliusRequest.delete(url, headers)
+    AssertionStatusCode.assert_status_code_204(response)
+
+    image_url = TaxonImagesEndpoint.taxon_image_code(taxon["code"], image["id"])
+    response_get = SyliusRequest.get(image_url, headers)
+    AssertionStatusCode.assert_status_code_404(response_get)
+    AssertionTaxonImagesError.assert_taxon_images_error_request(response_get.json(), 404, "Not Found")
+
+def test_TC158_Verificar_imagen_de_taxon_eliminado_no_exista(delete_taxon_with_image):
+    headers, taxon, image = delete_taxon_with_image
+    url_delete = TaxonsEndpoint.taxon_code(taxon["code"])
+    response_delete = SyliusRequest.delete(url_delete, headers)
+    AssertionStatusCode.assert_status_code_204(response_delete)
+
+    url_image = TaxonImagesEndpoint.taxon_image_code(taxon["code"], image["id"])
+    response_image = SyliusRequest.get(url_image, headers)
+    AssertionStatusCode.assert_status_code_404(response_image)
+    AssertionTaxonImagesError.assert_taxon_images_error_request(response_image.json(), 404, "Not Found")
+
+def test_TC157_Eliminar_taxon_sin_imagen_asociada(delete_taxon):
+    headers, taxon = delete_taxon
+    url = TaxonsEndpoint.taxon_code(taxon["code"])
+    response = SyliusRequest.delete(url, headers)
+    AssertionStatusCode.assert_status_code_204(response)
+
+def test_TC159_Eliminar_taxon_con_taxones_hijos(delete_taxon_with_children):
+    headers, padre, hijos = delete_taxon_with_children
+    url_padre = TaxonsEndpoint.taxon_code(padre["code"])
+    response = SyliusRequest.delete(url_padre, headers)
+    AssertionStatusCode.assert_status_code_204(response)
+
+    for hijo in hijos:
+        url_hijo = TaxonsEndpoint.taxon_code(hijo["code"])
+        response_get = SyliusRequest.get(url_hijo, headers)
+        AssertionStatusCode.assert_status_code_404(response_get)
+        AssertionTaxonsError.assert_taxons_error_request(response_get.json(), 404, "Not Found")
+
+def test_TC160_Verificar_taxones_hijos_de_padre_eliminado(delete_taxon_with_children):
+    headers, padre, hijos = delete_taxon_with_children
+    url_padre = TaxonsEndpoint.taxon_code(padre["code"])
+    response_delete = SyliusRequest.delete(url_padre, headers)
+    AssertionStatusCode.assert_status_code_204(response_delete)
+
+    for hijo in hijos:
+        url_hijo = TaxonsEndpoint.taxon_code(hijo["code"])
+        response_get = SyliusRequest.get(url_hijo, headers)
+        AssertionStatusCode.assert_status_code_404(response_get)
+        AssertionTaxonsError.assert_taxons_error_request(response_get.json(), 404, "Not Found")
+
+def test_TC161_Eliminar_taxon_sin_taxones_hijos_asociados(delete_taxon):
+    headers, taxon = delete_taxon
+    url = TaxonsEndpoint.taxon_code(taxon["code"])
+    response = SyliusRequest.delete(url, headers)
+    AssertionStatusCode.assert_status_code_204(response)
