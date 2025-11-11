@@ -21,7 +21,7 @@ class TaxonImagesCall:
     @classmethod
     def update(cls, headers, taxon_code, image_code, payload):
         response = SyliusRequest.put(TaxonImagesEndpoint.taxon_image_code(taxon_code, image_code), headers, payload)
-        return response.json()
+        return response
     
     @classmethod
     def delete(cls, headers, taxon_code, image_code):
