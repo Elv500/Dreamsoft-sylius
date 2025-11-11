@@ -13,7 +13,7 @@ def test_TC135_Actualizar_taxon_existente_con_datos_validos(update_taxon):
     headers, taxon_padre, taxon_hijo = update_taxon
     url = TaxonsEndpoint.taxon_code(taxon_hijo["code"])
     responseBefore = SyliusRequest.get(url, headers)
-    #loger before
+    log_request_response(url, responseBefore, headers)
     payload = generate_taxons_data(locale="es_ES")
     payload.pop("code")
     response = SyliusRequest.put(url, headers, payload)
@@ -23,6 +23,7 @@ def test_TC135_Actualizar_taxon_existente_con_datos_validos(update_taxon):
     AssertionStatusCode.assert_status_code_200(response)
     AssertionTaxons.assert_update_output_schema(response_json)
     AssertionTaxonUpdateContent.assert_taxon_response(payload, response_json, taxon_hijo["code"])
+    log_request_response(url, response, headers, payload)
 
 def test_TC136_Validar_error_al_actualizar_taxon_inexistente(update_taxon):
     headers, _, _ = update_taxon
@@ -34,6 +35,7 @@ def test_TC136_Validar_error_al_actualizar_taxon_inexistente(update_taxon):
     AssertionTaxons.assert_update_input_schema(payload)
     AssertionStatusCode.assert_status_code_404(response)
     AssertionTaxonsError.assert_taxons_error_request(response.json(), 404, "Not Found")
+    log_request_response(url, response, headers, payload)
 
 def test_TC137_Validar_error_al_actualizar_taxon_sin_code(update_taxon):
     headers, _, _ = update_taxon
@@ -44,6 +46,7 @@ def test_TC137_Validar_error_al_actualizar_taxon_sin_code(update_taxon):
     AssertionTaxons.assert_update_input_schema(payload)
     AssertionStatusCode.assert_status_code_405(response)
     AssertionTaxonsError.assert_taxons_error(response.json(), 405, "Method Not Allowed")
+    log_request_response(url, response, headers, payload)
 
 def test_TC138_Validar_error_al_actualizar_taxon_sin_autenticacion(update_taxon):
     headers_auth, taxon_padre, taxon_hijo = update_taxon
@@ -56,6 +59,7 @@ def test_TC138_Validar_error_al_actualizar_taxon_sin_autenticacion(update_taxon)
     AssertionTaxonUpdateContent.assert_taxon_payload(payload)
     AssertionStatusCode.assert_status_code_401(response)
     AssertionTaxonsError.assert_taxons_error(response.json(), 401, "JWT Token not found")
+    log_request_response(url, response, headers, payload)
 
 def test_TC139_Validar_error_al_actualizar_taxon_con_token_invalido(update_taxon):
     headers_auth, taxon_padre, taxon_hijo = update_taxon
@@ -68,6 +72,7 @@ def test_TC139_Validar_error_al_actualizar_taxon_con_token_invalido(update_taxon
     AssertionTaxonUpdateContent.assert_taxon_payload(payload)
     AssertionStatusCode.assert_status_code_401(response)
     AssertionTaxonsError.assert_taxons_error(response.json(), 401, "Invalid JWT Token")
+    log_request_response(url, response, headers, payload)
 
 def test_TC140_Actualizar_taxon_con_referencia_de_taxon_padre_valido(update_taxon):
     headers, taxon_padre, taxon_hijo = update_taxon
@@ -81,6 +86,7 @@ def test_TC140_Actualizar_taxon_con_referencia_de_taxon_padre_valido(update_taxo
     AssertionStatusCode.assert_status_code_200(response)
     AssertionTaxons.assert_update_output_schema(response_json)
     AssertionTaxonUpdateContent.assert_taxon_response(payload, response_json, taxon_hijo["code"])
+    log_request_response(url, response, headers, payload)
 
 def test_TC145_Actualizar_taxon_sin_referencia_de_taxon_padre(update_taxon):
     headers, taxon_padre, taxon_hijo = update_taxon
@@ -94,6 +100,7 @@ def test_TC145_Actualizar_taxon_sin_referencia_de_taxon_padre(update_taxon):
     AssertionStatusCode.assert_status_code_200(response)
     AssertionTaxons.assert_update_output_schema(response_json)
     AssertionTaxonUpdateContent.assert_taxon_response(payload, response_json, taxon_padre["code"])
+    log_request_response(url, response, headers, payload)
 
 def test_TC141_Validar_error_al_actualizar_taxon_con_referencia_de_taxon_padre_invalido(update_taxon):
     headers, taxon_padre, taxon_hijo = update_taxon
@@ -105,7 +112,7 @@ def test_TC141_Validar_error_al_actualizar_taxon_con_referencia_de_taxon_padre_i
     AssertionTaxons.assert_update_input_schema(payload)
     AssertionStatusCode.assert_status_code_400(response)
     AssertionTaxonsError.assert_taxons_error_request(response_json, 400, "Invalid IRI")
-
+    log_request_response(url, response, headers, payload)
 
 @pytest.mark.parametrize("position", [
     (0),
@@ -122,6 +129,7 @@ def test_TC_Actualizar_taxon_con_posicion_valida(update_taxon, position):
     AssertionTaxonUpdateContent.assert_taxon_payload(payload)
     AssertionStatusCode.assert_status_code_200(response)
     AssertionTaxons.assert_update_output_schema(response_json)
+    log_request_response(url, response, headers, payload)
 
 @pytest.mark.parametrize("position", [
     (1.5),
@@ -136,6 +144,7 @@ def test_TC_Validar_error_al_actualizar_taxon_con_posicion_invalida(update_taxon
     response_json = response.json()
     AssertionStatusCode.assert_status_code_400(response)
     AssertionTaxonsError.assert_taxons_error_request(response_json, status=400, detail="The type of the \"position\" attribute must be \"int\", \"double\" given.")
+    log_request_response(url, response, headers, payload)
 
 def test_TC148_Actualizar_taxon_con_estado_activado(update_taxon):
     headers, taxon_padre, taxon_hijo = update_taxon
@@ -149,6 +158,7 @@ def test_TC148_Actualizar_taxon_con_estado_activado(update_taxon):
     AssertionStatusCode.assert_status_code_200(response)
     AssertionTaxons.assert_update_output_schema(response_json)
     AssertionTaxonUpdateContent.assert_taxon_response(payload, response_json, taxon_hijo["code"])
+    log_request_response(url, response, headers, payload)
 
 @pytest.mark.xfail(reason="BUG: No permite actualizar una traduccion existente")
 def test_TC146_Actualizar_traduccion_existente_de_un_taxon(update_taxon):
@@ -163,6 +173,7 @@ def test_TC146_Actualizar_traduccion_existente_de_un_taxon(update_taxon):
     AssertionStatusCode.assert_status_code_200(response)
     AssertionTaxons.assert_update_output_schema(response_json)
     AssertionTaxonUpdateContent.assert_taxon_response(payload, response_json, taxon_hijo["code"])
+    log_request_response(url, response, headers, payload)
 
 def test_TC147_Actualizar_agregando_traduccion_nueva_a_taxon(update_taxon):
     headers, taxon_padre, taxon_hijo = update_taxon
@@ -176,6 +187,7 @@ def test_TC147_Actualizar_agregando_traduccion_nueva_a_taxon(update_taxon):
     AssertionStatusCode.assert_status_code_200(response)
     AssertionTaxons.assert_update_output_schema(response_json)
     AssertionTaxonUpdateContent.assert_taxon_response(payload, response_json, taxon_hijo["code"])
+    log_request_response(url, response, headers, payload)
 
 @pytest.mark.parametrize("name, slug", [
     ("a","a"),
@@ -201,6 +213,7 @@ def test_TC_Actualizar_traduccion_de_taxon_con_name_y_slug_valido(update_taxon, 
     AssertionStatusCode.assert_status_code_200(response)
     AssertionTaxons.assert_update_output_schema(response_json)
     AssertionTaxonUpdateContent.assert_taxon_response(payload, response_json, taxon_hijo["code"])
+    log_request_response(url, response, headers, payload)
 
 @pytest.mark.parametrize("name, slug", [
     ("",""),
@@ -222,3 +235,4 @@ def test_TC_Validar_error_al_actualizar_traduccion_de_taxon_con_name_y_slug_inva
     response = SyliusRequest.put(url, headers, payload)
     AssertionTaxons.assert_update_input_schema(payload)
     AssertionStatusCode.assert_status_code_422(response)
+    log_request_response(url, response, headers, payload)

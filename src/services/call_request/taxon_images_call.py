@@ -16,11 +16,14 @@ class TaxonImagesCall:
         headers = headers.copy()
         response = requests.post(url, headers=headers, files=files, data=data)
         files["file"].close()
+        response.url = url
         return response
 
     @classmethod
     def update(cls, headers, taxon_code, image_code, payload):
+        url = TaxonImagesEndpoint.taxon_image_code(taxon_code, image_code)
         response = SyliusRequest.put(TaxonImagesEndpoint.taxon_image_code(taxon_code, image_code), headers, payload)
+        response.url = url
         return response
     
     @classmethod
