@@ -1,0 +1,108 @@
+2025-11-11 22:00:35 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-11 22:00:35 - DEBUG - https://v2.demo.sylius.com:443 "GET /api/v2/admin/taxons?page=1&itemsPerPage=1 HTTP/1.1" 200 None
+2025-11-11 22:00:35 - INFO - IP ADDRESS OR DOMAIN: v2.demo.sylius.com
+2025-11-11 22:00:35 - DEBUG - REQUEST URL: https://v2.demo.sylius.com/api/v2/admin/taxons?page=1&itemsPerPage=1
+2025-11-11 22:00:35 - INFO - STATUS CODE: 200
+2025-11-11 22:00:35 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NjI4OTgzNjUsImV4cCI6MTc2MjkwMTk2NSwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.BAwJPfwDGVao-KodfkwBT-_GEXWPKWIqhemo-E7cgQsmqtYZsR186F6QDJE9bspCfeeihdwteg8Z2M2efDeXFMlakmF_2zXfNDdW1PcOL4OmdgEnvtZxVzwvVcELc4unR6OiitrKUHItvMMvDC48BPbuDjq42C0qQfZXJgvPSAhEsYW2FAkYSSTpjMTYNAXF_bEUevHWSakD39jpmcotQe7_Zg5x2X7cUi3yj3v2nFjM76OwPJHF_X2xXv0D6lECKMlcYr1ftkEsOdUa6qeyjklKKx5iK1F-F_o4w4H_6H783GRdKiUs6YAz1_jHyd0MV_byVzBk_bEdiHsajiMBsZREUgJa4cel5WFzD8vx50IJk4ClOkSolVb3_dAVeDNXNTm9FrV8-HahM3ggNKWiEZBopjOCU0oCDXPgTkdkEswf7VOhDZYxSw-l7LvB53lt3jjYz4Xsd0ruEBxZXDDFzeTw3qgwP0V6h3NtEhvzmL-WtiTKlYkhAq1Ahl2FNkQ-xLcEyqVN9RMOagTmw-ULnLQaZLG7RbwjMu10tk1Ww_xFx9VHDNrcuiRH90c2Gc_VRYH_qhMsMBb5i37IO6YvsS4oo6i9SXliPOJerT1J3sIOEClwcLkw47BJVOruFOCOZoV0qyFfIuIp1UU5j28sEEk2lTD_3K_kNNHSeZK5dTg"
+}
+2025-11-11 22:00:35 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/Taxon",
+    "@id": "/api/v2/admin/taxons",
+    "@type": "hydra:Collection",
+    "hydra:totalItems": 14,
+    "hydra:member": [
+        {
+            "@id": "/api/v2/admin/taxons/MENU_CATEGORY",
+            "@type": "Taxon",
+            "images": [],
+            "id": 91989,
+            "code": "MENU_CATEGORY",
+            "parent": null,
+            "children": [
+                "/api/v2/admin/taxons/t_shirts",
+                "/api/v2/admin/taxons/caps",
+                "/api/v2/admin/taxons/dresses",
+                "/api/v2/admin/taxons/jeans",
+                "/api/v2/admin/taxons/glasses"
+            ],
+            "position": 0,
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/taxon/MENU_CATEGORY/translations/en_US",
+                    "@type": "TaxonTranslation",
+                    "id": 714554,
+                    "name": "Category",
+                    "slug": "category",
+                    "description": "Voluptas sunt et nobis earum molestiae. Consequatur nihil aliquid nulla rem. Iusto beatae illum sint."
+                },
+                "de_DE": {
+                    "@id": "/api/v2/admin/taxon/MENU_CATEGORY/translations/de_DE",
+                    "@type": "TaxonTranslation",
+                    "id": 714555,
+                    "name": "Category",
+                    "slug": "category",
+                    "description": "Eos et maxime aut earum. Explicabo in ipsum dolores consequuntur. Recusandae ipsum praesentium qui itaque suscipit et voluptatem. Cumque aut iusto qui alias deserunt hic."
+                },
+                "fr_FR": {
+                    "@id": "/api/v2/admin/taxon/MENU_CATEGORY/translations/fr_FR",
+                    "@type": "TaxonTranslation",
+                    "id": 714556,
+                    "name": "Catégorie",
+                    "slug": "categorie",
+                    "description": "Distinctio ratione dolorem saepe labore cumque. Similique deleniti ut corporis. Et voluptas nobis est ullam ipsam assumenda officiis. Iusto fugit incidunt reprehenderit facere et."
+                },
+                "pl_PL": {
+                    "@id": "/api/v2/admin/taxon/MENU_CATEGORY/translations/pl_PL",
+                    "@type": "TaxonTranslation",
+                    "id": 714557,
+                    "name": "Category",
+                    "slug": "category",
+                    "description": "Eos et maxime aut earum. Explicabo in ipsum dolores consequuntur. Recusandae ipsum praesentium qui itaque suscipit et voluptatem. Cumque aut iusto qui alias deserunt hic."
+                },
+                "es_ES": {
+                    "@id": "/api/v2/admin/taxon/MENU_CATEGORY/translations/es_ES",
+                    "@type": "TaxonTranslation",
+                    "id": 714558,
+                    "name": "Category",
+                    "slug": "category",
+                    "description": "Eos et maxime aut earum. Explicabo in ipsum dolores consequuntur. Recusandae ipsum praesentium qui itaque suscipit et voluptatem. Cumque aut iusto qui alias deserunt hic."
+                },
+                "es_MX": {
+                    "@id": "/api/v2/admin/taxon/MENU_CATEGORY/translations/es_MX",
+                    "@type": "TaxonTranslation",
+                    "id": 714559,
+                    "name": "Category",
+                    "slug": "category",
+                    "description": "Eos et maxime aut earum. Explicabo in ipsum dolores consequuntur. Recusandae ipsum praesentium qui itaque suscipit et voluptatem. Cumque aut iusto qui alias deserunt hic."
+                },
+                "pt_PT": {
+                    "@id": "/api/v2/admin/taxon/MENU_CATEGORY/translations/pt_PT",
+                    "@type": "TaxonTranslation",
+                    "id": 714560,
+                    "name": "Category",
+                    "slug": "category",
+                    "description": "Eos et maxime aut earum. Explicabo in ipsum dolores consequuntur. Recusandae ipsum praesentium qui itaque suscipit et voluptatem. Cumque aut iusto qui alias deserunt hic."
+                },
+                "zh_CN": {
+                    "@id": "/api/v2/admin/taxon/MENU_CATEGORY/translations/zh_CN",
+                    "@type": "TaxonTranslation",
+                    "id": 714561,
+                    "name": "Category",
+                    "slug": "category",
+                    "description": "Eos et maxime aut earum. Explicabo in ipsum dolores consequuntur. Recusandae ipsum praesentium qui itaque suscipit et voluptatem. Cumque aut iusto qui alias deserunt hic."
+                }
+            },
+            "enabled": true
+        }
+    ],
+    "hydra:view": {
+        "@id": "/api/v2/admin/taxons?itemsPerPage=1&page=1",
+        "@type": "hydra:PartialCollectionView",
+        "hydra:first": "/api/v2/admin/taxons?itemsPerPage=1&page=1",
+        "hydra:last": "/api/v2/admin/taxons?itemsPerPage=1&page=14",
+        "hydra:next": "/api/v2/admin/taxons?itemsPerPage=1&page=2"
+    }
+}

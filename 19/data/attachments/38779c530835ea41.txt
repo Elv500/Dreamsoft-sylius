@@ -1,0 +1,52 @@
+2025-11-11 22:01:28 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-11 22:01:29 - DEBUG - https://v2.demo.sylius.com:443 "POST /api/v2/admin/taxons HTTP/1.1" 201 None
+2025-11-11 22:01:29 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-11 22:01:29 - DEBUG - https://v2.demo.sylius.com:443 "POST /api/v2/admin/taxons HTTP/1.1" 201 None
+2025-11-11 22:01:29 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-11 22:01:29 - DEBUG - https://v2.demo.sylius.com:443 "PUT /api/v2/admin/taxons/himself-loss HTTP/1.1" 200 None
+2025-11-11 22:01:29 - INFO - IP ADDRESS OR DOMAIN: v2.demo.sylius.com
+2025-11-11 22:01:29 - DEBUG - REQUEST URL: https://v2.demo.sylius.com/api/v2/admin/taxons/himself-loss
+2025-11-11 22:01:29 - INFO - STATUS CODE: 200
+2025-11-11 22:01:29 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NjI4OTgzNjUsImV4cCI6MTc2MjkwMTk2NSwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.BAwJPfwDGVao-KodfkwBT-_GEXWPKWIqhemo-E7cgQsmqtYZsR186F6QDJE9bspCfeeihdwteg8Z2M2efDeXFMlakmF_2zXfNDdW1PcOL4OmdgEnvtZxVzwvVcELc4unR6OiitrKUHItvMMvDC48BPbuDjq42C0qQfZXJgvPSAhEsYW2FAkYSSTpjMTYNAXF_bEUevHWSakD39jpmcotQe7_Zg5x2X7cUi3yj3v2nFjM76OwPJHF_X2xXv0D6lECKMlcYr1ftkEsOdUa6qeyjklKKx5iK1F-F_o4w4H_6H783GRdKiUs6YAz1_jHyd0MV_byVzBk_bEdiHsajiMBsZREUgJa4cel5WFzD8vx50IJk4ClOkSolVb3_dAVeDNXNTm9FrV8-HahM3ggNKWiEZBopjOCU0oCDXPgTkdkEswf7VOhDZYxSw-l7LvB53lt3jjYz4Xsd0ruEBxZXDDFzeTw3qgwP0V6h3NtEhvzmL-WtiTKlYkhAq1Ahl2FNkQ-xLcEyqVN9RMOagTmw-ULnLQaZLG7RbwjMu10tk1Ww_xFx9VHDNrcuiRH90c2Gc_VRYH_qhMsMBb5i37IO6YvsS4oo6i9SXliPOJerT1J3sIOEClwcLkw47BJVOruFOCOZoV0qyFfIuIp1UU5j28sEEk2lTD_3K_kNNHSeZK5dTg"
+}
+2025-11-11 22:01:29 - DEBUG - PAYLOAD REQUEST:
+{
+    "translations": {
+        "es_ES": {
+            "name": "ggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg",
+            "slug": "test-slug",
+            "description": "Meet produce pressure beat safe effect. Mention result PM."
+        }
+    },
+    "position": 0,
+    "enabled": true
+}
+2025-11-11 22:01:29 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/Taxon",
+    "@id": "/api/v2/admin/taxons/himself-loss",
+    "@type": "Taxon",
+    "images": [],
+    "id": 92269,
+    "code": "himself-loss",
+    "parent": "/api/v2/admin/taxons/by-draw",
+    "children": [],
+    "position": 0,
+    "translations": {
+        "es_ES": {
+            "@id": "/api/v2/admin/taxon/himself-loss/translations/es_ES",
+            "@type": "TaxonTranslation",
+            "id": 714951,
+            "name": "ggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg",
+            "slug": "test-slug",
+            "description": "Meet produce pressure beat safe effect. Mention result PM."
+        }
+    },
+    "enabled": true
+}
+2025-11-11 22:01:29 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-11 22:01:30 - DEBUG - https://v2.demo.sylius.com:443 "DELETE /api/v2/admin/taxons/by-draw HTTP/1.1" 204 0
+2025-11-11 22:01:30 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-11 22:01:30 - DEBUG - https://v2.demo.sylius.com:443 "DELETE /api/v2/admin/taxons/himself-loss HTTP/1.1" 404 None

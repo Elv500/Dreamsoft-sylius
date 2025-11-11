@@ -1,0 +1,47 @@
+2025-11-11 22:00:52 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-11 22:00:52 - DEBUG - https://v2.demo.sylius.com:443 "POST /api/v2/admin/taxons HTTP/1.1" 201 None
+2025-11-11 22:00:52 - INFO - IP ADDRESS OR DOMAIN: v2.demo.sylius.com
+2025-11-11 22:00:52 - DEBUG - REQUEST URL: https://v2.demo.sylius.com/api/v2/admin/taxons
+2025-11-11 22:00:52 - INFO - STATUS CODE: 201
+2025-11-11 22:00:52 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NjI4OTgzNjUsImV4cCI6MTc2MjkwMTk2NSwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.BAwJPfwDGVao-KodfkwBT-_GEXWPKWIqhemo-E7cgQsmqtYZsR186F6QDJE9bspCfeeihdwteg8Z2M2efDeXFMlakmF_2zXfNDdW1PcOL4OmdgEnvtZxVzwvVcELc4unR6OiitrKUHItvMMvDC48BPbuDjq42C0qQfZXJgvPSAhEsYW2FAkYSSTpjMTYNAXF_bEUevHWSakD39jpmcotQe7_Zg5x2X7cUi3yj3v2nFjM76OwPJHF_X2xXv0D6lECKMlcYr1ftkEsOdUa6qeyjklKKx5iK1F-F_o4w4H_6H783GRdKiUs6YAz1_jHyd0MV_byVzBk_bEdiHsajiMBsZREUgJa4cel5WFzD8vx50IJk4ClOkSolVb3_dAVeDNXNTm9FrV8-HahM3ggNKWiEZBopjOCU0oCDXPgTkdkEswf7VOhDZYxSw-l7LvB53lt3jjYz4Xsd0ruEBxZXDDFzeTw3qgwP0V6h3NtEhvzmL-WtiTKlYkhAq1Ahl2FNkQ-xLcEyqVN9RMOagTmw-ULnLQaZLG7RbwjMu10tk1Ww_xFx9VHDNrcuiRH90c2Gc_VRYH_qhMsMBb5i37IO6YvsS4oo6i9SXliPOJerT1J3sIOEClwcLkw47BJVOruFOCOZoV0qyFfIuIp1UU5j28sEEk2lTD_3K_kNNHSeZK5dTg"
+}
+2025-11-11 22:00:52 - DEBUG - PAYLOAD REQUEST:
+{
+    "code": "only-interesting",
+    "translations": {
+        "en_US": {
+            "name": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "slug": "a",
+            "description": "Many his Democrat drug. Hold end fight generation require."
+        }
+    },
+    "position": 0,
+    "enabled": true
+}
+2025-11-11 22:00:52 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/Taxon",
+    "@id": "/api/v2/admin/taxons/only-interesting",
+    "@type": "Taxon",
+    "images": [],
+    "id": 92219,
+    "code": "only-interesting",
+    "parent": null,
+    "children": [],
+    "position": 1,
+    "translations": {
+        "en_US": {
+            "@id": "/api/v2/admin/taxon/only-interesting/translations/en_US",
+            "@type": "TaxonTranslation",
+            "id": 714885,
+            "name": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "slug": "a",
+            "description": "Many his Democrat drug. Hold end fight generation require."
+        }
+    },
+    "enabled": true
+}
+2025-11-11 22:00:52 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-11 22:00:52 - DEBUG - https://v2.demo.sylius.com:443 "DELETE /api/v2/admin/taxons/only-interesting HTTP/1.1" 204 0

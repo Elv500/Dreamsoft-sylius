@@ -1,0 +1,19 @@
+2025-11-11 21:59:41 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-11 21:59:41 - DEBUG - https://v2.demo.sylius.com:443 "POST /api/v2/admin/taxons HTTP/1.1" 201 None
+2025-11-11 21:59:41 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-11 21:59:41 - DEBUG - https://v2.demo.sylius.com:443 "POST /api/v2/admin/taxons/analysis-protect/images HTTP/1.1" 401 None
+2025-11-11 21:59:41 - INFO - IP ADDRESS OR DOMAIN: v2.demo.sylius.com
+2025-11-11 21:59:41 - DEBUG - REQUEST URL: https://v2.demo.sylius.com/api/v2/admin/taxons/analysis-protect/images
+2025-11-11 21:59:41 - INFO - STATUS CODE: 401
+2025-11-11 21:59:41 - DEBUG - PAYLOAD REQUEST (SAFE):
+{
+    "0": "{'file': <_io.BufferedReader name='/home/runner/work/Dreamsoft-sylius/Dreamsoft-sylius/src/resources/images/test_image_valid.png'>}",
+    "1": "{'type': 'logo'}"
+}
+2025-11-11 21:59:41 - DEBUG - RESPONSE:
+{
+    "code": 401,
+    "message": "JWT Token not found"
+}
+2025-11-11 21:59:41 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-11 21:59:42 - DEBUG - https://v2.demo.sylius.com:443 "DELETE /api/v2/admin/taxons/analysis-protect HTTP/1.1" 204 0

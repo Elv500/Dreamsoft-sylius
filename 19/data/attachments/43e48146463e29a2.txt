@@ -1,0 +1,30 @@
+2025-11-11 22:01:03 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-11 22:01:03 - DEBUG - https://v2.demo.sylius.com:443 "POST /api/v2/admin/taxons HTTP/1.1" 201 None
+2025-11-11 22:01:03 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-11 22:01:03 - DEBUG - https://v2.demo.sylius.com:443 "POST /api/v2/admin/taxons HTTP/1.1" 201 None
+2025-11-11 22:01:03 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-11 22:01:03 - DEBUG - https://v2.demo.sylius.com:443 "PUT /api/v2/admin/taxons/few-director HTTP/1.1" 401 None
+2025-11-11 22:01:03 - INFO - IP ADDRESS OR DOMAIN: v2.demo.sylius.com
+2025-11-11 22:01:03 - DEBUG - REQUEST URL: https://v2.demo.sylius.com/api/v2/admin/taxons/few-director
+2025-11-11 22:01:03 - INFO - STATUS CODE: 401
+2025-11-11 22:01:03 - DEBUG - PAYLOAD REQUEST:
+{
+    "translations": {
+        "es_ES": {
+            "name": "Every for",
+            "slug": "every-for",
+            "description": "Produce continue simple model art. Find beautiful add serve."
+        }
+    },
+    "position": 0,
+    "enabled": true
+}
+2025-11-11 22:01:03 - DEBUG - RESPONSE:
+{
+    "code": 401,
+    "message": "JWT Token not found"
+}
+2025-11-11 22:01:03 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-11 22:01:04 - DEBUG - https://v2.demo.sylius.com:443 "DELETE /api/v2/admin/taxons/shake-personal HTTP/1.1" 204 0
+2025-11-11 22:01:04 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-11 22:01:04 - DEBUG - https://v2.demo.sylius.com:443 "DELETE /api/v2/admin/taxons/few-director HTTP/1.1" 404 None
