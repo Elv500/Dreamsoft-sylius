@@ -1,0 +1,1 @@
+Taxon no tiene 'code': {'@context': '/api/v2/contexts/Error', '@id': '/api/v2/errors/400', '@type': 'hydra:Error', 'detail': 'Invalid IRI "PARENT_INVALIDO".', 'status': 400, 'type': '/errors/400', 'hydra:description': 'Invalid IRI "PARENT_INVALIDO".', 'hydra:title': 'An error occurred'}
