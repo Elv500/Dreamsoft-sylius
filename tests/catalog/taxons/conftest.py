@@ -3,6 +3,9 @@ from src.data.taxons import generate_taxons_data
 from src.resources.payloads.taxons_payload import TaxonsPayload
 from src.services.call_request.taxons_call import TaxonsCall
 
+from src.data.taxon_images import generate_taxon_images_data
+from src.services.call_request.taxon_images_call import TaxonImagesCall
+
 @pytest.fixture(scope="module")
 def view_taxon(auth_headers):
     payload_taxon1 = TaxonsPayload.build_payload_taxon(generate_taxons_data())
@@ -45,4 +48,43 @@ def delete_taxon(auth_headers):
     
     yield auth_headers, taxon
 
+    TaxonsCall.delete(auth_headers, taxon["code"])
+
+@pytest.fixture(scope="function")
+def delete_taxon_with_children(auth_headers):
+    payload_padre = TaxonsPayload.build_payload_taxon(generate_taxons_data())
+    taxon_padre = TaxonsCall.create(auth_headers, payload_padre)
+
+    payload_hijo1 = TaxonsPayload.build_payload_taxon(generate_taxons_data(parent=taxon_padre))
+    payload_hijo2 = TaxonsPayload.build_payload_taxon(generate_taxons_data(parent=taxon_padre))
+    taxon_hijo1 = TaxonsCall.create(auth_headers, payload_hijo1)
+    taxon_hijo2 = TaxonsCall.create(auth_headers, payload_hijo2)
+
+    yield auth_headers, taxon_padre, [taxon_hijo1, taxon_hijo2]
+
+    for hijo in [taxon_hijo1, taxon_hijo2]:
+        try:
+            TaxonsCall.delete(auth_headers, hijo["code"])
+        except Exception as e:
+            print(f"No se pudo eliminar hijo {hijo.get('code')}: {e}")
+
+    try:
+        TaxonsCall.delete(auth_headers, taxon_padre["code"])
+    except Exception as e:
+        print(f"No se pudo eliminar padre {taxon_padre.get('code')}: {e}")
+
+
+@pytest.fixture(scope="function")
+def delete_taxon_with_image(auth_headers):
+    payload_taxon = TaxonsPayload.build_payload_taxon(generate_taxons_data())
+    taxon = TaxonsCall.create(auth_headers, payload_taxon)
+
+    payload_image = generate_taxon_images_data(type="logo")
+    response = TaxonImagesCall.create(auth_headers, taxon["code"], payload_image)
+    response_json = response.json()
+
+    yield auth_headers, taxon, response_json
+
+    if "id" in response_json:
+        TaxonImagesCall.delete(auth_headers, taxon["code"], response_json["id"])
     TaxonsCall.delete(auth_headers, taxon["code"])
