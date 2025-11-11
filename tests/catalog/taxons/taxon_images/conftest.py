@@ -66,3 +66,18 @@ def update_taxon_image(auth_headers):
         TaxonImagesCall.delete(auth_headers, taxon["code"], response_json["id"])
     
     TaxonsCall.delete(auth_headers, taxon["code"])
+
+@pytest.fixture(scope="function")
+def delete_taxon_image(auth_headers):
+    payload_taxon = TaxonsPayload.build_payload_taxon(generate_taxons_data())
+    taxon = TaxonsCall.create(auth_headers, payload_taxon)
+
+    payload_image = generate_taxon_images_data(type="logo")
+    response = TaxonImagesCall.create(auth_headers, taxon["code"], payload_image)
+    response_json = response.json()
+
+    yield auth_headers, taxon, response_json
+
+    if "id" in response_json:
+        TaxonImagesCall.delete(auth_headers, taxon["code"], response_json["id"])
+    TaxonsCall.delete(auth_headers, taxon["code"])
