@@ -1,0 +1,35 @@
+{
+    "type": "object",
+    "required": [
+        "@context",
+        "@id",
+        "@type",
+        "id",
+        "owner",
+        "path",
+        "type"
+    ],
+    "properties": {
+        "@context": {
+            "type": "string"
+        },
+        "@id": {
+            "type": "string"
+        },
+        "@type": {
+            "type": "string"
+        },
+        "id": {
+            "type": "integer"
+        },
+        "type": {
+            "type": ["string", "null"]
+        },
+        "path": {
+            "type": "string"
+        },
+        "owner": {
+            "type": "string"
+        }
+    }
+}
