@@ -30,14 +30,19 @@ class AssertionTaxonImagesContent:
             pytest.fail(f"[TaxonImagesEmpty] {e}")
 
     @staticmethod
-    def assert_taxon_image_item(item):
+    def assert_taxon_image_item(item, expected_id=None, expected_owner=None):
         try:
-            assert item["@id"].startswith(IMAGE_ITEM_PREFIX), f"@id inesperado: {item['@id']}"
+            assert item["@id"].startswith(IMAGE_PREFIX), f"@id inesperado: {item['@id']}"
             assert item["@type"] == "TaxonImage", f"@type inesperado: {item['@type']}"
             assert item["id"] > 0, "id debe ser > 0"
             assert isinstance(item["type"], str), "type debe ser cadena"
             assert item["path"].startswith("http"), "path debe ser una URL válida"
             assert item["owner"].startswith(IMAGE_PREFIX), f"owner URI inesperada: {item['owner']}"
+
+            if expected_id is not None:
+                assert item["id"] == expected_id, f"id esperado {expected_id}, encontrado {item['id']}"
+            if expected_owner is not None:
+                assert expected_owner in item["owner"], f"owner esperado '{expected_owner}', encontrado '{item['owner']}'"
         except AssertionError as e:
             pytest.fail(f"[TaxonImageItem] {e}")
 
