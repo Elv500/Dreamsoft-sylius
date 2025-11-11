@@ -8,8 +8,9 @@ from src.assertions.login.error_assertion import AssertionLoginError
 from utils.logger_helpers import log_request_response
 
 
-# TC-91: Admin > Login - Autenticación exitosa con email y contraseña válidos
-# TC-102: Admin > Login - Autenticación exitosa con email en mayúsculas
+@pytest.mark.functional_positive
+@pytest.mark.smoke
+@pytest.mark.domain
 @pytest.mark.parametrize("email, password", [
     ("api@example.com","sylius-api"),
     ("API@EXAMPLE.COM","sylius-api")
@@ -24,12 +25,8 @@ def test_TC_91_Autenticacion_exitosa_con_email_y_contrasena_validos(email, passw
     AssertionLogin.assert_output_schema(response.json())
 
 
-# TC-92: Admin > Login - Autenticación fallida con email y contraseña inválidos
-# TC-93: Admin > Login - Autenticación fallida con email inválido y contraseña válida
-# TC-94: Admin > Login - Autenticación fallida con email válido y contraseña inválida
-# TC-103: Admin > Login - Autenticación fallida con contraseña en mayúsculas
-# TC-104: Admin > Login - Autenticación fallida con email con espacios al inicio y fin
-# TC-105: Admin > Login - Autenticación fallida con contraseña con espacios al inicio y fin
+@pytest.mark.functional_negative
+@pytest.mark.domain
 @pytest.mark.parametrize("email, password", [
     ("asdfSDFs23d","SFhgsf23"),
     ("asdfSDFs23d","sylius-api"),
@@ -47,13 +44,8 @@ def test_TC_Autenticacion_fallida_401(email, password):
     AssertionLoginError.assert_login_error(response.json(), 401, "Invalid credentials.")
 
 
-# TC-95: Admin > Login - Autenticación fallida con email vacío
-# TC-96: Admin > Login - Autenticación fallida con contraseña vacío
-# TC-97: Admin > Login - Autenticación fallida con email y contraseña vacíos
-# TC-98: Admin > Login - Autenticación fallida sin el campo email
-# TC-99: Admin > Login - Autenticación fallida sin el campo contraseña
-# TC-100: Admin > Login - Autenticación fallida con body vacío
-# TC-101: Admin > Login - Autenticación fallida sin enviar body
+@pytest.mark.functional_negative
+@pytest.mark.domain
 @pytest.mark.parametrize("payload", [
     {"email": "", "password": "sylius-api"},
     {"email": "api@example.com", "password": ""},

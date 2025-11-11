@@ -8,6 +8,9 @@ from src.assertions.taxons.view_content_assertions import AssertionTaxonsContent
 from src.assertions.taxons.error_assertion import AssertionTaxonsError
 from utils.logger_helpers import log_request_response
 
+
+@pytest.mark.functional_positive
+@pytest.mark.smoke
 def test_TC106_Obtener_lista_de_taxones(view_taxon):
     headers, _, _ = view_taxon
     url = TaxonsEndpoint.taxon()
@@ -18,6 +21,8 @@ def test_TC106_Obtener_lista_de_taxones(view_taxon):
     AssertionTaxonsContent.assert_taxons_collection(response_json)
     log_request_response(url, response, headers)
 
+
+@pytest.mark.functional_negative
 def test_TC107_Listar_taxones_sin_autenticacion():
     headers = {}
     url = TaxonsEndpoint.taxon()
@@ -26,6 +31,8 @@ def test_TC107_Listar_taxones_sin_autenticacion():
     AssertionTaxonsError.assert_taxons_error(response.json(), 401, "JWT Token not found")
     log_request_response(url, response, headers)
 
+
+@pytest.mark.functional_negative
 def test_TC108_Listar_taxones_con_token_invalido():
     headers = {"Authorization": "Bearer invalid_token"}
     url = TaxonsEndpoint.taxon()
@@ -34,6 +41,9 @@ def test_TC108_Listar_taxones_con_token_invalido():
     AssertionTaxonsError.assert_taxons_error(response.json(), 401, "Invalid JWT Token")
     log_request_response(url, response, headers)
 
+
+@pytest.mark.domain
+@pytest.mark.functional_positive
 @pytest.mark.parametrize("page, itemsPerPage", [
     (1, None),
     (1, 1),
@@ -49,6 +59,9 @@ def test_TC_Obtener_lista_de_taxones_con_paginacion_valida(view_taxon, page, ite
     AssertionTaxonsContent.assert_taxons_collection(response.json(), params=params)
     log_request_response(url, response, headers)
 
+
+@pytest.mark.domain
+@pytest.mark.functional_negative
 @pytest.mark.parametrize("page, itemsPerPage", [
     (0, 1),
     (-1, 1),

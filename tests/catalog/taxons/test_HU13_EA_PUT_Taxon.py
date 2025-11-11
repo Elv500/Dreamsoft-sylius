@@ -9,6 +9,9 @@ from src.assertions.taxons.error_assertion import AssertionTaxonsError
 from src.data.taxons import generate_taxons_data
 from utils.logger_helpers import log_request_response
 
+
+@pytest.mark.functional_positive
+@pytest.mark.smoke
 def test_TC135_Actualizar_taxon_existente_con_datos_validos(update_taxon):
     headers, taxon_padre, taxon_hijo = update_taxon
     url = TaxonsEndpoint.taxon_code(taxon_hijo["code"])
@@ -25,6 +28,8 @@ def test_TC135_Actualizar_taxon_existente_con_datos_validos(update_taxon):
     AssertionTaxonUpdateContent.assert_taxon_response(payload, response_json, taxon_hijo["code"])
     log_request_response(url, response, headers, payload)
 
+
+@pytest.mark.functional_negative
 def test_TC136_Validar_error_al_actualizar_taxon_inexistente(update_taxon):
     headers, _, _ = update_taxon
     code = "inexistente"
@@ -37,6 +42,8 @@ def test_TC136_Validar_error_al_actualizar_taxon_inexistente(update_taxon):
     AssertionTaxonsError.assert_taxons_error_request(response.json(), 404, "Not Found")
     log_request_response(url, response, headers, payload)
 
+
+@pytest.mark.functional_negative
 def test_TC137_Validar_error_al_actualizar_taxon_sin_code(update_taxon):
     headers, _, _ = update_taxon
     url = TaxonsEndpoint.taxon()
@@ -48,6 +55,8 @@ def test_TC137_Validar_error_al_actualizar_taxon_sin_code(update_taxon):
     AssertionTaxonsError.assert_taxons_error(response.json(), 405, "Method Not Allowed")
     log_request_response(url, response, headers, payload)
 
+
+@pytest.mark.functional_negative
 def test_TC138_Validar_error_al_actualizar_taxon_sin_autenticacion(update_taxon):
     headers_auth, taxon_padre, taxon_hijo = update_taxon
     headers = {}
@@ -61,6 +70,8 @@ def test_TC138_Validar_error_al_actualizar_taxon_sin_autenticacion(update_taxon)
     AssertionTaxonsError.assert_taxons_error(response.json(), 401, "JWT Token not found")
     log_request_response(url, response, headers, payload)
 
+
+@pytest.mark.functional_negative
 def test_TC139_Validar_error_al_actualizar_taxon_con_token_invalido(update_taxon):
     headers_auth, taxon_padre, taxon_hijo = update_taxon
     headers = {"Authorization": "Bearer invalid_token"}
@@ -74,6 +85,8 @@ def test_TC139_Validar_error_al_actualizar_taxon_con_token_invalido(update_taxon
     AssertionTaxonsError.assert_taxons_error(response.json(), 401, "Invalid JWT Token")
     log_request_response(url, response, headers, payload)
 
+
+@pytest.mark.functional_positive
 def test_TC140_Actualizar_taxon_con_referencia_de_taxon_padre_valido(update_taxon):
     headers, taxon_padre, taxon_hijo = update_taxon
     url = TaxonsEndpoint.taxon_code(taxon_hijo["code"])
@@ -88,6 +101,8 @@ def test_TC140_Actualizar_taxon_con_referencia_de_taxon_padre_valido(update_taxo
     AssertionTaxonUpdateContent.assert_taxon_response(payload, response_json, taxon_hijo["code"])
     log_request_response(url, response, headers, payload)
 
+
+@pytest.mark.functional_positive
 def test_TC145_Actualizar_taxon_sin_referencia_de_taxon_padre(update_taxon):
     headers, taxon_padre, taxon_hijo = update_taxon
     url = TaxonsEndpoint.taxon_code(taxon_padre["code"])
@@ -102,6 +117,8 @@ def test_TC145_Actualizar_taxon_sin_referencia_de_taxon_padre(update_taxon):
     AssertionTaxonUpdateContent.assert_taxon_response(payload, response_json, taxon_padre["code"])
     log_request_response(url, response, headers, payload)
 
+
+@pytest.mark.functional_negative
 def test_TC141_Validar_error_al_actualizar_taxon_con_referencia_de_taxon_padre_invalido(update_taxon):
     headers, taxon_padre, taxon_hijo = update_taxon
     url = TaxonsEndpoint.taxon_code(taxon_hijo["code"])
@@ -114,6 +131,9 @@ def test_TC141_Validar_error_al_actualizar_taxon_con_referencia_de_taxon_padre_i
     AssertionTaxonsError.assert_taxons_error_request(response_json, 400, "Invalid IRI")
     log_request_response(url, response, headers, payload)
 
+
+@pytest.mark.functional_positive
+@pytest.mark.domain
 @pytest.mark.parametrize("position", [
     (0),
     (1)
@@ -131,6 +151,9 @@ def test_TC_Actualizar_taxon_con_posicion_valida(update_taxon, position):
     AssertionTaxons.assert_update_output_schema(response_json)
     log_request_response(url, response, headers, payload)
 
+
+@pytest.mark.functional_negative
+@pytest.mark.domain
 @pytest.mark.parametrize("position", [
     (1.5),
     pytest.param(-1, marks=pytest.mark.xfail(reason="BUG: Permite actualizar taxon con posición negativa", run=True))
@@ -146,6 +169,8 @@ def test_TC_Validar_error_al_actualizar_taxon_con_posicion_invalida(update_taxon
     AssertionTaxonsError.assert_taxons_error_request(response_json, status=400, detail="The type of the \"position\" attribute must be \"int\", \"double\" given.")
     log_request_response(url, response, headers, payload)
 
+
+@pytest.mark.functional_positive
 def test_TC148_Actualizar_taxon_con_estado_activado(update_taxon):
     headers, taxon_padre, taxon_hijo = update_taxon
     url = TaxonsEndpoint.taxon_code(taxon_hijo["code"])
@@ -160,6 +185,8 @@ def test_TC148_Actualizar_taxon_con_estado_activado(update_taxon):
     AssertionTaxonUpdateContent.assert_taxon_response(payload, response_json, taxon_hijo["code"])
     log_request_response(url, response, headers, payload)
 
+
+@pytest.mark.functional_positive
 @pytest.mark.xfail(reason="BUG: No permite actualizar una traduccion existente")
 def test_TC146_Actualizar_traduccion_existente_de_un_taxon(update_taxon):
     headers, taxon_padre, taxon_hijo = update_taxon
@@ -175,6 +202,8 @@ def test_TC146_Actualizar_traduccion_existente_de_un_taxon(update_taxon):
     AssertionTaxonUpdateContent.assert_taxon_response(payload, response_json, taxon_hijo["code"])
     log_request_response(url, response, headers, payload)
 
+
+@pytest.mark.functional_positive
 def test_TC147_Actualizar_agregando_traduccion_nueva_a_taxon(update_taxon):
     headers, taxon_padre, taxon_hijo = update_taxon
     url = TaxonsEndpoint.taxon_code(taxon_hijo["code"])
@@ -189,6 +218,9 @@ def test_TC147_Actualizar_agregando_traduccion_nueva_a_taxon(update_taxon):
     AssertionTaxonUpdateContent.assert_taxon_response(payload, response_json, taxon_hijo["code"])
     log_request_response(url, response, headers, payload)
 
+
+@pytest.mark.functional_positive
+@pytest.mark.domain
 @pytest.mark.parametrize("name, slug", [
     ("a","a"),
     ("b","b"*255),
@@ -215,6 +247,9 @@ def test_TC_Actualizar_traduccion_de_taxon_con_name_y_slug_valido(update_taxon, 
     AssertionTaxonUpdateContent.assert_taxon_response(payload, response_json, taxon_hijo["code"])
     log_request_response(url, response, headers, payload)
 
+
+@pytest.mark.functional_negative
+@pytest.mark.domain
 @pytest.mark.parametrize("name, slug", [
     ("",""),
     ("","a"*256),

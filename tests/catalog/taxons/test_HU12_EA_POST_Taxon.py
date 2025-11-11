@@ -9,6 +9,9 @@ from src.assertions.taxons.add_content_assertions import AssertionTaxonContent
 from src.assertions.taxons.error_assertion import AssertionTaxonsError
 from utils.logger_helpers import log_request_response
 
+
+@pytest.mark.functional_positive
+@pytest.mark.smoke
 def test_TC121_Crear_taxon_con_todos_los_campos_validos(add_taxon):
     headers, created_taxons = add_taxon
     payload = generate_taxons_data()
@@ -23,6 +26,8 @@ def test_TC121_Crear_taxon_con_todos_los_campos_validos(add_taxon):
     log_request_response(url, response, headers, payload)
     created_taxons.append(response_json)
 
+
+@pytest.mark.functional_positive
 def test_TC122_Crear_taxon_con_solo_campos_requeridos(add_taxon):
     headers, created_taxons = add_taxon
     payload = generate_taxons_data(required_only=True)
@@ -37,6 +42,8 @@ def test_TC122_Crear_taxon_con_solo_campos_requeridos(add_taxon):
     log_request_response(url, response, headers, payload)
     created_taxons.append(response_json)
 
+
+@pytest.mark.functional_negative
 def test_TC123_Validar_error_al_crear_taxon_sin_autenticacion():
     headers = {}
     payload = generate_taxons_data()
@@ -48,6 +55,8 @@ def test_TC123_Validar_error_al_crear_taxon_sin_autenticacion():
     AssertionTaxonsError.assert_taxons_error(response.json(), 401, "JWT Token not found")
     log_request_response(url, response, headers, payload)
 
+
+@pytest.mark.functional_negative
 def test_TC124_Validar_error_al_crear_taxon_con_token_invalido():
     headers = {"Authorization": "Bearer invalid_token"}
     payload = generate_taxons_data()
@@ -59,6 +68,9 @@ def test_TC124_Validar_error_al_crear_taxon_con_token_invalido():
     AssertionTaxonsError.assert_taxons_error(response.json(), 401, "Invalid JWT Token")
     log_request_response(url, response, headers, payload)
 
+
+@pytest.mark.functional_positive
+@pytest.mark.domain
 @pytest.mark.parametrize("code",[
     "a",
     "a"*255,
@@ -80,6 +92,9 @@ def test_TC_Crear_taxon_con_code_valido(add_taxon, code):
     log_request_response(url, response, headers, payload)
     created_taxons.append(response_json)
 
+
+@pytest.mark.functional_negative
+@pytest.mark.domain
 @pytest.mark.parametrize("code, message", [
     ("", "code: Please enter taxon code."),
     ("a"*256, "code: The code must not be longer than 255 characters."),
@@ -98,6 +113,8 @@ def test_TC_Validar_error_al_crear_taxon_con_code_invalido(add_taxon, code, mess
     log_request_response(url, response, headers, payload)
     created_taxons.append(response_json)
 
+
+@pytest.mark.functional_positive
 def test_TC128_Crear_taxon_con_referencia_de_taxon_padre_valido(add_taxon):
     headers, created_taxons = add_taxon
     payload_padre = generate_taxons_data()
@@ -118,6 +135,8 @@ def test_TC128_Crear_taxon_con_referencia_de_taxon_padre_valido(add_taxon):
     created_taxons.append(response_padre_json)
     created_taxons.append(response_hijo_json)
 
+
+@pytest.mark.functional_positive
 def test_TC142_Crear_taxon_sin_referencia_de_taxon_padre(add_taxon):
     headers, created_taxons = add_taxon
     payload = generate_taxons_data(parent={})
@@ -132,6 +151,8 @@ def test_TC142_Crear_taxon_sin_referencia_de_taxon_padre(add_taxon):
     log_request_response(url, response, headers, payload)
     created_taxons.append(response_json)
 
+
+@pytest.mark.functional_negative
 def test_TC129_Validar_error_al_crear_taxon_con_referencia_de_taxon_padre_invalido(add_taxon):
     headers, created_taxons = add_taxon
     payload = generate_taxons_data(parent={"@id": "PARENT_INVALIDO"})
@@ -144,6 +165,8 @@ def test_TC129_Validar_error_al_crear_taxon_con_referencia_de_taxon_padre_invali
     log_request_response(url, response, headers, payload)
     created_taxons.append(response_json)
 
+
+@pytest.mark.functional_positive
 def test_TC133_Crear_taxon_con_estado_activado(add_taxon):
     headers, created_taxons = add_taxon
     payload = generate_taxons_data(enabled=True)
@@ -158,6 +181,8 @@ def test_TC133_Crear_taxon_con_estado_activado(add_taxon):
     log_request_response(url, response, headers, payload)
     created_taxons.append(response_json)
 
+
+@pytest.mark.functional_positive
 def test_TC134_Crear_taxon_con_estado_desactivado(add_taxon):
     headers, created_taxons = add_taxon
     payload = generate_taxons_data(enabled=False)
@@ -172,6 +197,9 @@ def test_TC134_Crear_taxon_con_estado_desactivado(add_taxon):
     log_request_response(url, response, headers, payload)
     created_taxons.append(response_json)
 
+
+@pytest.mark.functional_positive
+@pytest.mark.domain
 @pytest.mark.parametrize("name, slug", [
     ("a","a"),
     ("a","b"*255),
@@ -198,6 +226,9 @@ def test_TC_Crear_traduccion_de_taxon_con_name_y_slug_valido(add_taxon, name, sl
     log_request_response(url, response, headers, payload)
     created_taxons.append(response_json)
 
+
+@pytest.mark.functional_negative
+@pytest.mark.domain
 @pytest.mark.parametrize("name, slug", [
     ("",""),
     ("","b"*256),
@@ -221,6 +252,8 @@ def test_TC_Validar_error_al_crear_traduccion_de_taxon_con_name_y_slug_invalido(
     log_request_response(url, response, headers, payload)
     created_taxons.append(response_json)
 
+
+@pytest.mark.functional_positive
 def test_TC385_Crear_taxon_con_mas_de_una_traduccion_valida(add_taxon):
     headers, created_taxons = add_taxon
     translations = {
@@ -242,6 +275,8 @@ def test_TC385_Crear_taxon_con_mas_de_una_traduccion_valida(add_taxon):
     log_request_response(url, response, headers, payload)
     created_taxons.append(response_json)
 
+
+@pytest.mark.functional_positive
 def test_TC386_Crear_taxon_con_descripcion_en_traduccion(add_taxon):
     headers, created_taxons = add_taxon
     payload = generate_taxons_data()
@@ -257,6 +292,8 @@ def test_TC386_Crear_taxon_con_descripcion_en_traduccion(add_taxon):
     log_request_response(url, response, headers, payload)
     created_taxons.append(response_json)
 
+
+@pytest.mark.functional_positive
 def test_TC387_Crear_taxon_sin_descripcion_en_traduccion(add_taxon):
     headers, created_taxons = add_taxon
     payload = generate_taxons_data()
