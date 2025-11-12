@@ -1,0 +1,1003 @@
+2025-11-12 21:55:31 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-12 21:55:31 - DEBUG - https://v2.demo.sylius.com:443 "POST /api/v2/admin/taxons HTTP/1.1" 201 None
+2025-11-12 21:55:31 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-12 21:55:32 - DEBUG - https://v2.demo.sylius.com:443 "POST /api/v2/admin/taxons HTTP/1.1" 201 None
+2025-11-12 21:55:32 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-12 21:55:33 - DEBUG - https://v2.demo.sylius.com:443 "GET /api/v2/admin/taxons HTTP/1.1" 200 None
+2025-11-12 21:55:33 - INFO - IP ADDRESS OR DOMAIN: v2.demo.sylius.com
+2025-11-12 21:55:33 - DEBUG - REQUEST URL: https://v2.demo.sylius.com/api/v2/admin/taxons
+2025-11-12 21:55:33 - INFO - STATUS CODE: 200
+2025-11-12 21:55:33 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NjI5ODQ0NDAsImV4cCI6MTc2Mjk4ODA0MCwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.K3pxPnVBbBv1PCxbn3uzq4uNR0P-SoH0tvD-7Xu4GEoDgJ6eJvJVAheucIQxSh7Ut8mfa0YZ1ZsvkYjSss2s3CrPwIn6ucIwuRFwYiqLE7bj3lpc_gXe4uouXOAPeE8H8ABtTlOIIHQyEE3EqLNg7RSF2AIlhrTPfyjRsQ_rDxRaJh0Ht4up2j7X8-0JXS7dwFiFVvtn_3wGPYSIEgJkHjoB08bFOucZDeEHslQb4g2Ac2DSqfjr_R40XdX81Bgq2fiZGYNXievN9YGg2WPT7E2q89TovJ0BhBMTTQA-Hmci8TTmHMMqDirq5CNvyx0Tz9fXe3uVTEdD_qh4Cw6LBdnq_wORE-tK8i9WsA6mzPv7uDBWztwcciAgubktlzw3mgvfSoU4p9bOFwxfPbgAq1ubMWqq_VTSv2jMeuiplir4rR1miorIqJsqiLxbZ3nZaSPXbRsjEvUjXaUo4wAzc6nb2oaIqj9mH5-1mPCnLIkodPwy-ATmkwWYk8KKakQDI9DskBxI9A9sTOT9J7WLv5Gy0I2kJMy_CcvnfziwWAI4lkXeamrCddogDxbjTi_5RvODroR-zqOb6O9vgCGZEjESmkcW-HLH8jo2hb0nXmj5An4YmQCnQF4Ty3PQYy4HEU0a6Gt5qJ1kXbLioNMjlychd5elIDc3ewPKNPkl_IU"
+}
+2025-11-12 21:55:33 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/Taxon",
+    "@id": "/api/v2/admin/taxons",
+    "@type": "hydra:Collection",
+    "hydra:totalItems": 14,
+    "hydra:member": [
+        {
+            "@id": "/api/v2/admin/taxons/MENU_CATEGORY",
+            "@type": "Taxon",
+            "images": [],
+            "id": 92594,
+            "code": "MENU_CATEGORY",
+            "parent": null,
+            "children": [
+                "/api/v2/admin/taxons/t_shirts",
+                "/api/v2/admin/taxons/caps",
+                "/api/v2/admin/taxons/dresses",
+                "/api/v2/admin/taxons/jeans",
+                "/api/v2/admin/taxons/glasses"
+            ],
+            "position": 0,
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/taxon/MENU_CATEGORY/translations/en_US",
+                    "@type": "TaxonTranslation",
+                    "id": 717294,
+                    "name": "Category",
+                    "slug": "category",
+                    "description": "Sint dicta commodi suscipit dolore sit. Maxime ex eos quasi totam. Magnam iure voluptate eum dolore incidunt rerum ipsam."
+                },
+                "de_DE": {
+                    "@id": "/api/v2/admin/taxon/MENU_CATEGORY/translations/de_DE",
+                    "@type": "TaxonTranslation",
+                    "id": 717295,
+                    "name": "Category",
+                    "slug": "category",
+                    "description": "Totam aut nesciunt natus modi unde quis perspiciatis sit. Aut natus porro quia veniam vel debitis. Veniam ex facilis non excepturi. Ab ullam sapiente illo et consectetur nostrum."
+                },
+                "fr_FR": {
+                    "@id": "/api/v2/admin/taxon/MENU_CATEGORY/translations/fr_FR",
+                    "@type": "TaxonTranslation",
+                    "id": 717296,
+                    "name": "Catégorie",
+                    "slug": "categorie",
+                    "description": "Odit nulla vel omnis eum perspiciatis. Ullam suscipit voluptatem fugiat enim in. Modi voluptatem inventore veniam et voluptas ea nobis."
+                },
+                "pl_PL": {
+                    "@id": "/api/v2/admin/taxon/MENU_CATEGORY/translations/pl_PL",
+                    "@type": "TaxonTranslation",
+                    "id": 717297,
+                    "name": "Category",
+                    "slug": "category",
+                    "description": "Totam aut nesciunt natus modi unde quis perspiciatis sit. Aut natus porro quia veniam vel debitis. Veniam ex facilis non excepturi. Ab ullam sapiente illo et consectetur nostrum."
+                },
+                "es_ES": {
+                    "@id": "/api/v2/admin/taxon/MENU_CATEGORY/translations/es_ES",
+                    "@type": "TaxonTranslation",
+                    "id": 717298,
+                    "name": "Category",
+                    "slug": "category",
+                    "description": "Totam aut nesciunt natus modi unde quis perspiciatis sit. Aut natus porro quia veniam vel debitis. Veniam ex facilis non excepturi. Ab ullam sapiente illo et consectetur nostrum."
+                },
+                "es_MX": {
+                    "@id": "/api/v2/admin/taxon/MENU_CATEGORY/translations/es_MX",
+                    "@type": "TaxonTranslation",
+                    "id": 717299,
+                    "name": "Category",
+                    "slug": "category",
+                    "description": "Totam aut nesciunt natus modi unde quis perspiciatis sit. Aut natus porro quia veniam vel debitis. Veniam ex facilis non excepturi. Ab ullam sapiente illo et consectetur nostrum."
+                },
+                "pt_PT": {
+                    "@id": "/api/v2/admin/taxon/MENU_CATEGORY/translations/pt_PT",
+                    "@type": "TaxonTranslation",
+                    "id": 717300,
+                    "name": "Category",
+                    "slug": "category",
+                    "description": "Totam aut nesciunt natus modi unde quis perspiciatis sit. Aut natus porro quia veniam vel debitis. Veniam ex facilis non excepturi. Ab ullam sapiente illo et consectetur nostrum."
+                },
+                "zh_CN": {
+                    "@id": "/api/v2/admin/taxon/MENU_CATEGORY/translations/zh_CN",
+                    "@type": "TaxonTranslation",
+                    "id": 717301,
+                    "name": "Category",
+                    "slug": "category",
+                    "description": "Totam aut nesciunt natus modi unde quis perspiciatis sit. Aut natus porro quia veniam vel debitis. Veniam ex facilis non excepturi. Ab ullam sapiente illo et consectetur nostrum."
+                }
+            },
+            "enabled": true
+        },
+        {
+            "@id": "/api/v2/admin/taxons/t_shirts",
+            "@type": "Taxon",
+            "images": [],
+            "id": 92595,
+            "code": "t_shirts",
+            "parent": "/api/v2/admin/taxons/MENU_CATEGORY",
+            "children": [
+                "/api/v2/admin/taxons/mens_t_shirts",
+                "/api/v2/admin/taxons/womens_t_shirts"
+            ],
+            "position": 0,
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/taxon/t_shirts/translations/en_US",
+                    "@type": "TaxonTranslation",
+                    "id": 717302,
+                    "name": "T-shirts",
+                    "slug": "category/t-shirts",
+                    "description": "Quia non cumque labore ea libero itaque earum. Aut hic molestias velit voluptatem."
+                },
+                "de_DE": {
+                    "@id": "/api/v2/admin/taxon/t_shirts/translations/de_DE",
+                    "@type": "TaxonTranslation",
+                    "id": 717303,
+                    "name": "T-shirts",
+                    "slug": "t-shirts",
+                    "description": "Delectus deleniti accusamus itaque molestiae suscipit excepturi in. Voluptatem et nihil dolorem illum et temporibus nesciunt. Aut dolorem cum molestiae dolorem voluptas aperiam. Est voluptatem omnis soluta dolore nam et."
+                },
+                "fr_FR": {
+                    "@id": "/api/v2/admin/taxon/t_shirts/translations/fr_FR",
+                    "@type": "TaxonTranslation",
+                    "id": 717304,
+                    "name": "T-shirts",
+                    "slug": "categorie/t-shirts",
+                    "description": "Nam facere aliquam totam corrupti numquam ratione nobis. Omnis ut et sed totam reprehenderit commodi. Animi ad nobis quia incidunt est. Pariatur voluptates veritatis facere aut nemo."
+                },
+                "pl_PL": {
+                    "@id": "/api/v2/admin/taxon/t_shirts/translations/pl_PL",
+                    "@type": "TaxonTranslation",
+                    "id": 717305,
+                    "name": "T-shirts",
+                    "slug": "t-shirts",
+                    "description": "Delectus deleniti accusamus itaque molestiae suscipit excepturi in. Voluptatem et nihil dolorem illum et temporibus nesciunt. Aut dolorem cum molestiae dolorem voluptas aperiam. Est voluptatem omnis soluta dolore nam et."
+                },
+                "es_ES": {
+                    "@id": "/api/v2/admin/taxon/t_shirts/translations/es_ES",
+                    "@type": "TaxonTranslation",
+                    "id": 717306,
+                    "name": "T-shirts",
+                    "slug": "t-shirts",
+                    "description": "Delectus deleniti accusamus itaque molestiae suscipit excepturi in. Voluptatem et nihil dolorem illum et temporibus nesciunt. Aut dolorem cum molestiae dolorem voluptas aperiam. Est voluptatem omnis soluta dolore nam et."
+                },
+                "es_MX": {
+                    "@id": "/api/v2/admin/taxon/t_shirts/translations/es_MX",
+                    "@type": "TaxonTranslation",
+                    "id": 717307,
+                    "name": "T-shirts",
+                    "slug": "t-shirts",
+                    "description": "Delectus deleniti accusamus itaque molestiae suscipit excepturi in. Voluptatem et nihil dolorem illum et temporibus nesciunt. Aut dolorem cum molestiae dolorem voluptas aperiam. Est voluptatem omnis soluta dolore nam et."
+                },
+                "pt_PT": {
+                    "@id": "/api/v2/admin/taxon/t_shirts/translations/pt_PT",
+                    "@type": "TaxonTranslation",
+                    "id": 717308,
+                    "name": "T-shirts",
+                    "slug": "t-shirts",
+                    "description": "Delectus deleniti accusamus itaque molestiae suscipit excepturi in. Voluptatem et nihil dolorem illum et temporibus nesciunt. Aut dolorem cum molestiae dolorem voluptas aperiam. Est voluptatem omnis soluta dolore nam et."
+                },
+                "zh_CN": {
+                    "@id": "/api/v2/admin/taxon/t_shirts/translations/zh_CN",
+                    "@type": "TaxonTranslation",
+                    "id": 717309,
+                    "name": "T-shirts",
+                    "slug": "t-shirts",
+                    "description": "Delectus deleniti accusamus itaque molestiae suscipit excepturi in. Voluptatem et nihil dolorem illum et temporibus nesciunt. Aut dolorem cum molestiae dolorem voluptas aperiam. Est voluptatem omnis soluta dolore nam et."
+                }
+            },
+            "enabled": true
+        },
+        {
+            "@id": "/api/v2/admin/taxons/mens_t_shirts",
+            "@type": "Taxon",
+            "images": [],
+            "id": 92596,
+            "code": "mens_t_shirts",
+            "parent": "/api/v2/admin/taxons/t_shirts",
+            "children": [],
+            "position": 0,
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/taxon/mens_t_shirts/translations/en_US",
+                    "@type": "TaxonTranslation",
+                    "id": 717310,
+                    "name": "Men",
+                    "slug": "t-shirts/men",
+                    "description": "Minima consequuntur voluptatem qui eveniet id. In laboriosam ut consequatur incidunt est. Dicta numquam alias aliquid est unde eaque. Explicabo quod sed officiis temporibus magnam necessitatibus doloribus voluptas."
+                },
+                "de_DE": {
+                    "@id": "/api/v2/admin/taxon/mens_t_shirts/translations/de_DE",
+                    "@type": "TaxonTranslation",
+                    "id": 717311,
+                    "name": "et ipsum totam",
+                    "slug": "t-shirts/et-ipsum-totam",
+                    "description": "Voluptatem et et omnis. Itaque dolores in in consequatur reiciendis eos cumque. Dolore ipsum omnis dolores vitae."
+                },
+                "fr_FR": {
+                    "@id": "/api/v2/admin/taxon/mens_t_shirts/translations/fr_FR",
+                    "@type": "TaxonTranslation",
+                    "id": 717312,
+                    "name": "Hommes",
+                    "slug": "t-shirts/hommes",
+                    "description": "Aut voluptatum dignissimos et. Commodi molestias veniam eos modi. Eum atque commodi quas alias voluptates."
+                },
+                "pl_PL": {
+                    "@id": "/api/v2/admin/taxon/mens_t_shirts/translations/pl_PL",
+                    "@type": "TaxonTranslation",
+                    "id": 717313,
+                    "name": "et ipsum totam",
+                    "slug": "t-shirts/et-ipsum-totam",
+                    "description": "Voluptatem et et omnis. Itaque dolores in in consequatur reiciendis eos cumque. Dolore ipsum omnis dolores vitae."
+                },
+                "es_ES": {
+                    "@id": "/api/v2/admin/taxon/mens_t_shirts/translations/es_ES",
+                    "@type": "TaxonTranslation",
+                    "id": 717314,
+                    "name": "et ipsum totam",
+                    "slug": "t-shirts/et-ipsum-totam",
+                    "description": "Voluptatem et et omnis. Itaque dolores in in consequatur reiciendis eos cumque. Dolore ipsum omnis dolores vitae."
+                },
+                "es_MX": {
+                    "@id": "/api/v2/admin/taxon/mens_t_shirts/translations/es_MX",
+                    "@type": "TaxonTranslation",
+                    "id": 717315,
+                    "name": "et ipsum totam",
+                    "slug": "t-shirts/et-ipsum-totam",
+                    "description": "Voluptatem et et omnis. Itaque dolores in in consequatur reiciendis eos cumque. Dolore ipsum omnis dolores vitae."
+                },
+                "pt_PT": {
+                    "@id": "/api/v2/admin/taxon/mens_t_shirts/translations/pt_PT",
+                    "@type": "TaxonTranslation",
+                    "id": 717316,
+                    "name": "et ipsum totam",
+                    "slug": "t-shirts/et-ipsum-totam",
+                    "description": "Voluptatem et et omnis. Itaque dolores in in consequatur reiciendis eos cumque. Dolore ipsum omnis dolores vitae."
+                },
+                "zh_CN": {
+                    "@id": "/api/v2/admin/taxon/mens_t_shirts/translations/zh_CN",
+                    "@type": "TaxonTranslation",
+                    "id": 717317,
+                    "name": "et ipsum totam",
+                    "slug": "t-shirts/et-ipsum-totam",
+                    "description": "Voluptatem et et omnis. Itaque dolores in in consequatur reiciendis eos cumque. Dolore ipsum omnis dolores vitae."
+                }
+            },
+            "enabled": true
+        },
+        {
+            "@id": "/api/v2/admin/taxons/womens_t_shirts",
+            "@type": "Taxon",
+            "images": [],
+            "id": 92597,
+            "code": "womens_t_shirts",
+            "parent": "/api/v2/admin/taxons/t_shirts",
+            "children": [],
+            "position": 1,
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/taxon/womens_t_shirts/translations/en_US",
+                    "@type": "TaxonTranslation",
+                    "id": 717318,
+                    "name": "Women",
+                    "slug": "t-shirts/women",
+                    "description": "Quis eligendi delectus veritatis accusamus aut. Laudantium repellendus at consequatur aperiam qui eum. Molestiae tempora soluta sunt quo aliquam illo. Sint officiis quod quas est tempore neque voluptate assumenda."
+                },
+                "de_DE": {
+                    "@id": "/api/v2/admin/taxon/womens_t_shirts/translations/de_DE",
+                    "@type": "TaxonTranslation",
+                    "id": 717319,
+                    "name": "nihil nihil deserunt",
+                    "slug": "t-shirts/nihil-nihil-deserunt",
+                    "description": "Non aut ut minus aut tempore libero quia repellendus. Perferendis explicabo sed ullam quia odio nesciunt. Aut numquam necessitatibus quia dolorem rem."
+                },
+                "fr_FR": {
+                    "@id": "/api/v2/admin/taxon/womens_t_shirts/translations/fr_FR",
+                    "@type": "TaxonTranslation",
+                    "id": 717320,
+                    "name": "Femmes",
+                    "slug": "t-shirts/femmes",
+                    "description": "Modi alias ab dolores et impedit. Ut voluptates voluptas at facere."
+                },
+                "pl_PL": {
+                    "@id": "/api/v2/admin/taxon/womens_t_shirts/translations/pl_PL",
+                    "@type": "TaxonTranslation",
+                    "id": 717321,
+                    "name": "nihil nihil deserunt",
+                    "slug": "t-shirts/nihil-nihil-deserunt",
+                    "description": "Non aut ut minus aut tempore libero quia repellendus. Perferendis explicabo sed ullam quia odio nesciunt. Aut numquam necessitatibus quia dolorem rem."
+                },
+                "es_ES": {
+                    "@id": "/api/v2/admin/taxon/womens_t_shirts/translations/es_ES",
+                    "@type": "TaxonTranslation",
+                    "id": 717322,
+                    "name": "nihil nihil deserunt",
+                    "slug": "t-shirts/nihil-nihil-deserunt",
+                    "description": "Non aut ut minus aut tempore libero quia repellendus. Perferendis explicabo sed ullam quia odio nesciunt. Aut numquam necessitatibus quia dolorem rem."
+                },
+                "es_MX": {
+                    "@id": "/api/v2/admin/taxon/womens_t_shirts/translations/es_MX",
+                    "@type": "TaxonTranslation",
+                    "id": 717323,
+                    "name": "nihil nihil deserunt",
+                    "slug": "t-shirts/nihil-nihil-deserunt",
+                    "description": "Non aut ut minus aut tempore libero quia repellendus. Perferendis explicabo sed ullam quia odio nesciunt. Aut numquam necessitatibus quia dolorem rem."
+                },
+                "pt_PT": {
+                    "@id": "/api/v2/admin/taxon/womens_t_shirts/translations/pt_PT",
+                    "@type": "TaxonTranslation",
+                    "id": 717324,
+                    "name": "nihil nihil deserunt",
+                    "slug": "t-shirts/nihil-nihil-deserunt",
+                    "description": "Non aut ut minus aut tempore libero quia repellendus. Perferendis explicabo sed ullam quia odio nesciunt. Aut numquam necessitatibus quia dolorem rem."
+                },
+                "zh_CN": {
+                    "@id": "/api/v2/admin/taxon/womens_t_shirts/translations/zh_CN",
+                    "@type": "TaxonTranslation",
+                    "id": 717325,
+                    "name": "nihil nihil deserunt",
+                    "slug": "t-shirts/nihil-nihil-deserunt",
+                    "description": "Non aut ut minus aut tempore libero quia repellendus. Perferendis explicabo sed ullam quia odio nesciunt. Aut numquam necessitatibus quia dolorem rem."
+                }
+            },
+            "enabled": true
+        },
+        {
+            "@id": "/api/v2/admin/taxons/caps",
+            "@type": "Taxon",
+            "images": [],
+            "id": 92598,
+            "code": "caps",
+            "parent": "/api/v2/admin/taxons/MENU_CATEGORY",
+            "children": [
+                "/api/v2/admin/taxons/simple_caps",
+                "/api/v2/admin/taxons/caps_with_pompons"
+            ],
+            "position": 1,
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/taxon/caps/translations/en_US",
+                    "@type": "TaxonTranslation",
+                    "id": 717326,
+                    "name": "Caps",
+                    "slug": "category/caps",
+                    "description": "Magni praesentium nulla molestiae qui. Praesentium voluptatem enim et voluptas incidunt atque. Voluptatum consequatur nesciunt rem et."
+                },
+                "de_DE": {
+                    "@id": "/api/v2/admin/taxon/caps/translations/de_DE",
+                    "@type": "TaxonTranslation",
+                    "id": 717327,
+                    "name": "Caps",
+                    "slug": "caps",
+                    "description": "Eos aut est dolorem optio ipsam quia. Molestiae natus totam dolores sint consequuntur. Deleniti commodi est amet quos voluptatem aliquid unde."
+                },
+                "fr_FR": {
+                    "@id": "/api/v2/admin/taxon/caps/translations/fr_FR",
+                    "@type": "TaxonTranslation",
+                    "id": 717328,
+                    "name": "Bonnets",
+                    "slug": "categorie/bonnets",
+                    "description": "Aut dolores beatae omnis reiciendis. Iste est quo ex. Molestias ut eos amet velit voluptas quos. Ex cupiditate nobis omnis totam."
+                },
+                "pl_PL": {
+                    "@id": "/api/v2/admin/taxon/caps/translations/pl_PL",
+                    "@type": "TaxonTranslation",
+                    "id": 717329,
+                    "name": "Caps",
+                    "slug": "caps",
+                    "description": "Eos aut est dolorem optio ipsam quia. Molestiae natus totam dolores sint consequuntur. Deleniti commodi est amet quos voluptatem aliquid unde."
+                },
+                "es_ES": {
+                    "@id": "/api/v2/admin/taxon/caps/translations/es_ES",
+                    "@type": "TaxonTranslation",
+                    "id": 717330,
+                    "name": "Caps",
+                    "slug": "caps",
+                    "description": "Eos aut est dolorem optio ipsam quia. Molestiae natus totam dolores sint consequuntur. Deleniti commodi est amet quos voluptatem aliquid unde."
+                },
+                "es_MX": {
+                    "@id": "/api/v2/admin/taxon/caps/translations/es_MX",
+                    "@type": "TaxonTranslation",
+                    "id": 717331,
+                    "name": "Caps",
+                    "slug": "caps",
+                    "description": "Eos aut est dolorem optio ipsam quia. Molestiae natus totam dolores sint consequuntur. Deleniti commodi est amet quos voluptatem aliquid unde."
+                },
+                "pt_PT": {
+                    "@id": "/api/v2/admin/taxon/caps/translations/pt_PT",
+                    "@type": "TaxonTranslation",
+                    "id": 717332,
+                    "name": "Caps",
+                    "slug": "caps",
+                    "description": "Eos aut est dolorem optio ipsam quia. Molestiae natus totam dolores sint consequuntur. Deleniti commodi est amet quos voluptatem aliquid unde."
+                },
+                "zh_CN": {
+                    "@id": "/api/v2/admin/taxon/caps/translations/zh_CN",
+                    "@type": "TaxonTranslation",
+                    "id": 717333,
+                    "name": "Caps",
+                    "slug": "caps",
+                    "description": "Eos aut est dolorem optio ipsam quia. Molestiae natus totam dolores sint consequuntur. Deleniti commodi est amet quos voluptatem aliquid unde."
+                }
+            },
+            "enabled": true
+        },
+        {
+            "@id": "/api/v2/admin/taxons/simple_caps",
+            "@type": "Taxon",
+            "images": [],
+            "id": 92599,
+            "code": "simple_caps",
+            "parent": "/api/v2/admin/taxons/caps",
+            "children": [],
+            "position": 0,
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/taxon/simple_caps/translations/en_US",
+                    "@type": "TaxonTranslation",
+                    "id": 717334,
+                    "name": "Simple",
+                    "slug": "caps/simple",
+                    "description": "Voluptates rerum aspernatur ut dolor vel non. Non sit dicta sapiente mollitia numquam fugit. Libero delectus et corrupti non. Non ipsa molestias cum ut et soluta."
+                },
+                "de_DE": {
+                    "@id": "/api/v2/admin/taxon/simple_caps/translations/de_DE",
+                    "@type": "TaxonTranslation",
+                    "id": 717335,
+                    "name": "totam vel tenetur",
+                    "slug": "caps/totam-vel-tenetur",
+                    "description": "Autem consequatur ipsum aut reprehenderit laborum rerum. Facilis tempore occaecati laboriosam enim eum autem et odio."
+                },
+                "fr_FR": {
+                    "@id": "/api/v2/admin/taxon/simple_caps/translations/fr_FR",
+                    "@type": "TaxonTranslation",
+                    "id": 717336,
+                    "name": "Simple",
+                    "slug": "bonnets/simple",
+                    "description": "Architecto consectetur totam quia expedita cumque ducimus necessitatibus. Consequatur hic consequatur non suscipit animi. Quos et ducimus in magni. Provident voluptas architecto recusandae."
+                },
+                "pl_PL": {
+                    "@id": "/api/v2/admin/taxon/simple_caps/translations/pl_PL",
+                    "@type": "TaxonTranslation",
+                    "id": 717337,
+                    "name": "totam vel tenetur",
+                    "slug": "caps/totam-vel-tenetur",
+                    "description": "Autem consequatur ipsum aut reprehenderit laborum rerum. Facilis tempore occaecati laboriosam enim eum autem et odio."
+                },
+                "es_ES": {
+                    "@id": "/api/v2/admin/taxon/simple_caps/translations/es_ES",
+                    "@type": "TaxonTranslation",
+                    "id": 717338,
+                    "name": "totam vel tenetur",
+                    "slug": "caps/totam-vel-tenetur",
+                    "description": "Autem consequatur ipsum aut reprehenderit laborum rerum. Facilis tempore occaecati laboriosam enim eum autem et odio."
+                },
+                "es_MX": {
+                    "@id": "/api/v2/admin/taxon/simple_caps/translations/es_MX",
+                    "@type": "TaxonTranslation",
+                    "id": 717339,
+                    "name": "totam vel tenetur",
+                    "slug": "caps/totam-vel-tenetur",
+                    "description": "Autem consequatur ipsum aut reprehenderit laborum rerum. Facilis tempore occaecati laboriosam enim eum autem et odio."
+                },
+                "pt_PT": {
+                    "@id": "/api/v2/admin/taxon/simple_caps/translations/pt_PT",
+                    "@type": "TaxonTranslation",
+                    "id": 717340,
+                    "name": "totam vel tenetur",
+                    "slug": "caps/totam-vel-tenetur",
+                    "description": "Autem consequatur ipsum aut reprehenderit laborum rerum. Facilis tempore occaecati laboriosam enim eum autem et odio."
+                },
+                "zh_CN": {
+                    "@id": "/api/v2/admin/taxon/simple_caps/translations/zh_CN",
+                    "@type": "TaxonTranslation",
+                    "id": 717341,
+                    "name": "totam vel tenetur",
+                    "slug": "caps/totam-vel-tenetur",
+                    "description": "Autem consequatur ipsum aut reprehenderit laborum rerum. Facilis tempore occaecati laboriosam enim eum autem et odio."
+                }
+            },
+            "enabled": true
+        },
+        {
+            "@id": "/api/v2/admin/taxons/caps_with_pompons",
+            "@type": "Taxon",
+            "images": [],
+            "id": 92600,
+            "code": "caps_with_pompons",
+            "parent": "/api/v2/admin/taxons/caps",
+            "children": [],
+            "position": 1,
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/taxon/caps_with_pompons/translations/en_US",
+                    "@type": "TaxonTranslation",
+                    "id": 717342,
+                    "name": "With pompons",
+                    "slug": "caps/with-pompons",
+                    "description": "Ut voluptas voluptatem ab laudantium. Et ut rem sit est est dolor cum. Tempore dolorem alias eum aliquid delectus."
+                },
+                "de_DE": {
+                    "@id": "/api/v2/admin/taxon/caps_with_pompons/translations/de_DE",
+                    "@type": "TaxonTranslation",
+                    "id": 717343,
+                    "name": "eligendi et quia",
+                    "slug": "caps/eligendi-et-quia",
+                    "description": "At commodi cum voluptates consequatur rerum eveniet vel. Adipisci reprehenderit ab enim veritatis facilis deleniti voluptatibus. Impedit exercitationem animi nostrum dolor quae."
+                },
+                "fr_FR": {
+                    "@id": "/api/v2/admin/taxon/caps_with_pompons/translations/fr_FR",
+                    "@type": "TaxonTranslation",
+                    "id": 717344,
+                    "name": "À pompon",
+                    "slug": "bonnets/a-pompon",
+                    "description": "Corporis nobis non enim doloribus libero. Velit aut error laborum aperiam. Consequuntur ut tempore et est quo soluta aliquid. Eum sed iste est est voluptatem. Distinctio dignissimos explicabo laboriosam atque sint."
+                },
+                "pl_PL": {
+                    "@id": "/api/v2/admin/taxon/caps_with_pompons/translations/pl_PL",
+                    "@type": "TaxonTranslation",
+                    "id": 717345,
+                    "name": "eligendi et quia",
+                    "slug": "caps/eligendi-et-quia",
+                    "description": "At commodi cum voluptates consequatur rerum eveniet vel. Adipisci reprehenderit ab enim veritatis facilis deleniti voluptatibus. Impedit exercitationem animi nostrum dolor quae."
+                },
+                "es_ES": {
+                    "@id": "/api/v2/admin/taxon/caps_with_pompons/translations/es_ES",
+                    "@type": "TaxonTranslation",
+                    "id": 717346,
+                    "name": "eligendi et quia",
+                    "slug": "caps/eligendi-et-quia",
+                    "description": "At commodi cum voluptates consequatur rerum eveniet vel. Adipisci reprehenderit ab enim veritatis facilis deleniti voluptatibus. Impedit exercitationem animi nostrum dolor quae."
+                },
+                "es_MX": {
+                    "@id": "/api/v2/admin/taxon/caps_with_pompons/translations/es_MX",
+                    "@type": "TaxonTranslation",
+                    "id": 717347,
+                    "name": "eligendi et quia",
+                    "slug": "caps/eligendi-et-quia",
+                    "description": "At commodi cum voluptates consequatur rerum eveniet vel. Adipisci reprehenderit ab enim veritatis facilis deleniti voluptatibus. Impedit exercitationem animi nostrum dolor quae."
+                },
+                "pt_PT": {
+                    "@id": "/api/v2/admin/taxon/caps_with_pompons/translations/pt_PT",
+                    "@type": "TaxonTranslation",
+                    "id": 717348,
+                    "name": "eligendi et quia",
+                    "slug": "caps/eligendi-et-quia",
+                    "description": "At commodi cum voluptates consequatur rerum eveniet vel. Adipisci reprehenderit ab enim veritatis facilis deleniti voluptatibus. Impedit exercitationem animi nostrum dolor quae."
+                },
+                "zh_CN": {
+                    "@id": "/api/v2/admin/taxon/caps_with_pompons/translations/zh_CN",
+                    "@type": "TaxonTranslation",
+                    "id": 717349,
+                    "name": "eligendi et quia",
+                    "slug": "caps/eligendi-et-quia",
+                    "description": "At commodi cum voluptates consequatur rerum eveniet vel. Adipisci reprehenderit ab enim veritatis facilis deleniti voluptatibus. Impedit exercitationem animi nostrum dolor quae."
+                }
+            },
+            "enabled": true
+        },
+        {
+            "@id": "/api/v2/admin/taxons/dresses",
+            "@type": "Taxon",
+            "images": [],
+            "id": 92601,
+            "code": "dresses",
+            "parent": "/api/v2/admin/taxons/MENU_CATEGORY",
+            "children": [],
+            "position": 2,
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/taxon/dresses/translations/en_US",
+                    "@type": "TaxonTranslation",
+                    "id": 717350,
+                    "name": "Dresses",
+                    "slug": "category/dresses",
+                    "description": "Ipsam corrupti ut dolorem alias. Qui voluptate eligendi quia velit ut doloremque itaque possimus. Ut omnis qui eos soluta eius similique. Consequatur aspernatur reprehenderit accusamus laudantium ipsam sit ut. Voluptatem et animi occaecati odit ab."
+                },
+                "de_DE": {
+                    "@id": "/api/v2/admin/taxon/dresses/translations/de_DE",
+                    "@type": "TaxonTranslation",
+                    "id": 717351,
+                    "name": "hic voluptatem sed",
+                    "slug": "category/hic-voluptatem-sed",
+                    "description": "Ea ducimus cumque labore est inventore at. Quia velit sit pariatur corrupti eius quis delectus provident. Perferendis aut eveniet velit culpa reprehenderit nulla."
+                },
+                "fr_FR": {
+                    "@id": "/api/v2/admin/taxon/dresses/translations/fr_FR",
+                    "@type": "TaxonTranslation",
+                    "id": 717352,
+                    "name": "Robes",
+                    "slug": "categorie/robes",
+                    "description": "Modi nulla et vitae minima necessitatibus. Officia rem iure eligendi ea. Deleniti labore numquam suscipit mollitia aliquam sit. Nihil id aut quas molestias aut eligendi."
+                },
+                "pl_PL": {
+                    "@id": "/api/v2/admin/taxon/dresses/translations/pl_PL",
+                    "@type": "TaxonTranslation",
+                    "id": 717353,
+                    "name": "hic voluptatem sed",
+                    "slug": "category/hic-voluptatem-sed",
+                    "description": "Ea ducimus cumque labore est inventore at. Quia velit sit pariatur corrupti eius quis delectus provident. Perferendis aut eveniet velit culpa reprehenderit nulla."
+                },
+                "es_ES": {
+                    "@id": "/api/v2/admin/taxon/dresses/translations/es_ES",
+                    "@type": "TaxonTranslation",
+                    "id": 717354,
+                    "name": "hic voluptatem sed",
+                    "slug": "category/hic-voluptatem-sed",
+                    "description": "Ea ducimus cumque labore est inventore at. Quia velit sit pariatur corrupti eius quis delectus provident. Perferendis aut eveniet velit culpa reprehenderit nulla."
+                },
+                "es_MX": {
+                    "@id": "/api/v2/admin/taxon/dresses/translations/es_MX",
+                    "@type": "TaxonTranslation",
+                    "id": 717355,
+                    "name": "hic voluptatem sed",
+                    "slug": "category/hic-voluptatem-sed",
+                    "description": "Ea ducimus cumque labore est inventore at. Quia velit sit pariatur corrupti eius quis delectus provident. Perferendis aut eveniet velit culpa reprehenderit nulla."
+                },
+                "pt_PT": {
+                    "@id": "/api/v2/admin/taxon/dresses/translations/pt_PT",
+                    "@type": "TaxonTranslation",
+                    "id": 717356,
+                    "name": "hic voluptatem sed",
+                    "slug": "category/hic-voluptatem-sed",
+                    "description": "Ea ducimus cumque labore est inventore at. Quia velit sit pariatur corrupti eius quis delectus provident. Perferendis aut eveniet velit culpa reprehenderit nulla."
+                },
+                "zh_CN": {
+                    "@id": "/api/v2/admin/taxon/dresses/translations/zh_CN",
+                    "@type": "TaxonTranslation",
+                    "id": 717357,
+                    "name": "hic voluptatem sed",
+                    "slug": "category/hic-voluptatem-sed",
+                    "description": "Ea ducimus cumque labore est inventore at. Quia velit sit pariatur corrupti eius quis delectus provident. Perferendis aut eveniet velit culpa reprehenderit nulla."
+                }
+            },
+            "enabled": true
+        },
+        {
+            "@id": "/api/v2/admin/taxons/jeans",
+            "@type": "Taxon",
+            "images": [],
+            "id": 92602,
+            "code": "jeans",
+            "parent": "/api/v2/admin/taxons/MENU_CATEGORY",
+            "children": [
+                "/api/v2/admin/taxons/mens_jeans",
+                "/api/v2/admin/taxons/womens_jeans"
+            ],
+            "position": 3,
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/taxon/jeans/translations/en_US",
+                    "@type": "TaxonTranslation",
+                    "id": 717358,
+                    "name": "Jeans",
+                    "slug": "category/jeans",
+                    "description": "Sit sit numquam rem in et et. Unde saepe tempora non eligendi dolore eum harum. At totam qui molestiae quas est quis sit. Sed veritatis labore est est esse earum."
+                },
+                "de_DE": {
+                    "@id": "/api/v2/admin/taxon/jeans/translations/de_DE",
+                    "@type": "TaxonTranslation",
+                    "id": 717359,
+                    "name": "Jeans",
+                    "slug": "jeans",
+                    "description": "Minima et dolorem ut et ut quaerat omnis ut. Consequatur vitae qui ex quisquam aut. Autem laudantium qui eligendi praesentium dolorem et. Optio qui in et."
+                },
+                "fr_FR": {
+                    "@id": "/api/v2/admin/taxon/jeans/translations/fr_FR",
+                    "@type": "TaxonTranslation",
+                    "id": 717360,
+                    "name": "Jeans",
+                    "slug": "categorie/jeans",
+                    "description": "Omnis ea eius magnam ut sed dolorum. Voluptas quis enim aut possimus. Sunt earum porro consequatur amet qui sed id."
+                },
+                "pl_PL": {
+                    "@id": "/api/v2/admin/taxon/jeans/translations/pl_PL",
+                    "@type": "TaxonTranslation",
+                    "id": 717361,
+                    "name": "Jeans",
+                    "slug": "jeans",
+                    "description": "Minima et dolorem ut et ut quaerat omnis ut. Consequatur vitae qui ex quisquam aut. Autem laudantium qui eligendi praesentium dolorem et. Optio qui in et."
+                },
+                "es_ES": {
+                    "@id": "/api/v2/admin/taxon/jeans/translations/es_ES",
+                    "@type": "TaxonTranslation",
+                    "id": 717362,
+                    "name": "Jeans",
+                    "slug": "jeans",
+                    "description": "Minima et dolorem ut et ut quaerat omnis ut. Consequatur vitae qui ex quisquam aut. Autem laudantium qui eligendi praesentium dolorem et. Optio qui in et."
+                },
+                "es_MX": {
+                    "@id": "/api/v2/admin/taxon/jeans/translations/es_MX",
+                    "@type": "TaxonTranslation",
+                    "id": 717363,
+                    "name": "Jeans",
+                    "slug": "jeans",
+                    "description": "Minima et dolorem ut et ut quaerat omnis ut. Consequatur vitae qui ex quisquam aut. Autem laudantium qui eligendi praesentium dolorem et. Optio qui in et."
+                },
+                "pt_PT": {
+                    "@id": "/api/v2/admin/taxon/jeans/translations/pt_PT",
+                    "@type": "TaxonTranslation",
+                    "id": 717364,
+                    "name": "Jeans",
+                    "slug": "jeans",
+                    "description": "Minima et dolorem ut et ut quaerat omnis ut. Consequatur vitae qui ex quisquam aut. Autem laudantium qui eligendi praesentium dolorem et. Optio qui in et."
+                },
+                "zh_CN": {
+                    "@id": "/api/v2/admin/taxon/jeans/translations/zh_CN",
+                    "@type": "TaxonTranslation",
+                    "id": 717365,
+                    "name": "Jeans",
+                    "slug": "jeans",
+                    "description": "Minima et dolorem ut et ut quaerat omnis ut. Consequatur vitae qui ex quisquam aut. Autem laudantium qui eligendi praesentium dolorem et. Optio qui in et."
+                }
+            },
+            "enabled": true
+        },
+        {
+            "@id": "/api/v2/admin/taxons/mens_jeans",
+            "@type": "Taxon",
+            "images": [],
+            "id": 92603,
+            "code": "mens_jeans",
+            "parent": "/api/v2/admin/taxons/jeans",
+            "children": [],
+            "position": 0,
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/taxon/mens_jeans/translations/en_US",
+                    "@type": "TaxonTranslation",
+                    "id": 717366,
+                    "name": "Men",
+                    "slug": "jeans/men",
+                    "description": "Ab doloribus mollitia quia in ut. Tempore quo nesciunt error est. Ab qui est ullam autem neque."
+                },
+                "de_DE": {
+                    "@id": "/api/v2/admin/taxon/mens_jeans/translations/de_DE",
+                    "@type": "TaxonTranslation",
+                    "id": 717367,
+                    "name": "dolorum est maiores",
+                    "slug": "jeans/dolorum-est-maiores",
+                    "description": "Quia placeat mollitia eligendi nemo. Iure et et sed possimus dolorem. Voluptate atque aut neque quidem. Aspernatur eum ipsum ea laudantium."
+                },
+                "fr_FR": {
+                    "@id": "/api/v2/admin/taxon/mens_jeans/translations/fr_FR",
+                    "@type": "TaxonTranslation",
+                    "id": 717368,
+                    "name": "Hommes",
+                    "slug": "jeans/hommes",
+                    "description": "Repellendus praesentium soluta corrupti facilis sunt consequatur. Voluptatem fuga sint vero. Omnis quibusdam libero illum nisi pariatur illo reiciendis porro."
+                },
+                "pl_PL": {
+                    "@id": "/api/v2/admin/taxon/mens_jeans/translations/pl_PL",
+                    "@type": "TaxonTranslation",
+                    "id": 717369,
+                    "name": "dolorum est maiores",
+                    "slug": "jeans/dolorum-est-maiores",
+                    "description": "Quia placeat mollitia eligendi nemo. Iure et et sed possimus dolorem. Voluptate atque aut neque quidem. Aspernatur eum ipsum ea laudantium."
+                },
+                "es_ES": {
+                    "@id": "/api/v2/admin/taxon/mens_jeans/translations/es_ES",
+                    "@type": "TaxonTranslation",
+                    "id": 717370,
+                    "name": "dolorum est maiores",
+                    "slug": "jeans/dolorum-est-maiores",
+                    "description": "Quia placeat mollitia eligendi nemo. Iure et et sed possimus dolorem. Voluptate atque aut neque quidem. Aspernatur eum ipsum ea laudantium."
+                },
+                "es_MX": {
+                    "@id": "/api/v2/admin/taxon/mens_jeans/translations/es_MX",
+                    "@type": "TaxonTranslation",
+                    "id": 717371,
+                    "name": "dolorum est maiores",
+                    "slug": "jeans/dolorum-est-maiores",
+                    "description": "Quia placeat mollitia eligendi nemo. Iure et et sed possimus dolorem. Voluptate atque aut neque quidem. Aspernatur eum ipsum ea laudantium."
+                },
+                "pt_PT": {
+                    "@id": "/api/v2/admin/taxon/mens_jeans/translations/pt_PT",
+                    "@type": "TaxonTranslation",
+                    "id": 717372,
+                    "name": "dolorum est maiores",
+                    "slug": "jeans/dolorum-est-maiores",
+                    "description": "Quia placeat mollitia eligendi nemo. Iure et et sed possimus dolorem. Voluptate atque aut neque quidem. Aspernatur eum ipsum ea laudantium."
+                },
+                "zh_CN": {
+                    "@id": "/api/v2/admin/taxon/mens_jeans/translations/zh_CN",
+                    "@type": "TaxonTranslation",
+                    "id": 717373,
+                    "name": "dolorum est maiores",
+                    "slug": "jeans/dolorum-est-maiores",
+                    "description": "Quia placeat mollitia eligendi nemo. Iure et et sed possimus dolorem. Voluptate atque aut neque quidem. Aspernatur eum ipsum ea laudantium."
+                }
+            },
+            "enabled": true
+        },
+        {
+            "@id": "/api/v2/admin/taxons/womens_jeans",
+            "@type": "Taxon",
+            "images": [],
+            "id": 92604,
+            "code": "womens_jeans",
+            "parent": "/api/v2/admin/taxons/jeans",
+            "children": [],
+            "position": 1,
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/taxon/womens_jeans/translations/en_US",
+                    "@type": "TaxonTranslation",
+                    "id": 717374,
+                    "name": "Women",
+                    "slug": "jeans/women",
+                    "description": "Atque molestiae velit ut rerum eum voluptatum. Ad nemo nemo qui ut nihil ab ab et. Earum et quos similique qui natus corrupti blanditiis pariatur. Eos iusto ipsa nam aut sapiente."
+                },
+                "de_DE": {
+                    "@id": "/api/v2/admin/taxon/womens_jeans/translations/de_DE",
+                    "@type": "TaxonTranslation",
+                    "id": 717375,
+                    "name": "quaerat dolor dolores",
+                    "slug": "jeans/quaerat-dolor-dolores",
+                    "description": "Sunt sint iste et est velit ullam. Est cum nihil dolorum voluptatem iure. Sit quia ut omnis voluptatum. Quia necessitatibus voluptatum natus laudantium mollitia quas facilis. Aut repellendus consequatur vitae rerum magnam alias eius."
+                },
+                "fr_FR": {
+                    "@id": "/api/v2/admin/taxon/womens_jeans/translations/fr_FR",
+                    "@type": "TaxonTranslation",
+                    "id": 717376,
+                    "name": "Femmes",
+                    "slug": "jeans/femmes",
+                    "description": "Soluta repellat enim sed. Repudiandae et impedit deleniti quo. Dolor dolorem qui temporibus saepe esse qui quidem. Quisquam aperiam totam odio odit voluptate tempora optio."
+                },
+                "pl_PL": {
+                    "@id": "/api/v2/admin/taxon/womens_jeans/translations/pl_PL",
+                    "@type": "TaxonTranslation",
+                    "id": 717377,
+                    "name": "quaerat dolor dolores",
+                    "slug": "jeans/quaerat-dolor-dolores",
+                    "description": "Sunt sint iste et est velit ullam. Est cum nihil dolorum voluptatem iure. Sit quia ut omnis voluptatum. Quia necessitatibus voluptatum natus laudantium mollitia quas facilis. Aut repellendus consequatur vitae rerum magnam alias eius."
+                },
+                "es_ES": {
+                    "@id": "/api/v2/admin/taxon/womens_jeans/translations/es_ES",
+                    "@type": "TaxonTranslation",
+                    "id": 717378,
+                    "name": "quaerat dolor dolores",
+                    "slug": "jeans/quaerat-dolor-dolores",
+                    "description": "Sunt sint iste et est velit ullam. Est cum nihil dolorum voluptatem iure. Sit quia ut omnis voluptatum. Quia necessitatibus voluptatum natus laudantium mollitia quas facilis. Aut repellendus consequatur vitae rerum magnam alias eius."
+                },
+                "es_MX": {
+                    "@id": "/api/v2/admin/taxon/womens_jeans/translations/es_MX",
+                    "@type": "TaxonTranslation",
+                    "id": 717379,
+                    "name": "quaerat dolor dolores",
+                    "slug": "jeans/quaerat-dolor-dolores",
+                    "description": "Sunt sint iste et est velit ullam. Est cum nihil dolorum voluptatem iure. Sit quia ut omnis voluptatum. Quia necessitatibus voluptatum natus laudantium mollitia quas facilis. Aut repellendus consequatur vitae rerum magnam alias eius."
+                },
+                "pt_PT": {
+                    "@id": "/api/v2/admin/taxon/womens_jeans/translations/pt_PT",
+                    "@type": "TaxonTranslation",
+                    "id": 717380,
+                    "name": "quaerat dolor dolores",
+                    "slug": "jeans/quaerat-dolor-dolores",
+                    "description": "Sunt sint iste et est velit ullam. Est cum nihil dolorum voluptatem iure. Sit quia ut omnis voluptatum. Quia necessitatibus voluptatum natus laudantium mollitia quas facilis. Aut repellendus consequatur vitae rerum magnam alias eius."
+                },
+                "zh_CN": {
+                    "@id": "/api/v2/admin/taxon/womens_jeans/translations/zh_CN",
+                    "@type": "TaxonTranslation",
+                    "id": 717381,
+                    "name": "quaerat dolor dolores",
+                    "slug": "jeans/quaerat-dolor-dolores",
+                    "description": "Sunt sint iste et est velit ullam. Est cum nihil dolorum voluptatem iure. Sit quia ut omnis voluptatum. Quia necessitatibus voluptatum natus laudantium mollitia quas facilis. Aut repellendus consequatur vitae rerum magnam alias eius."
+                }
+            },
+            "enabled": true
+        },
+        {
+            "@id": "/api/v2/admin/taxons/glasses",
+            "@type": "Taxon",
+            "images": [],
+            "id": 92605,
+            "code": "glasses",
+            "parent": "/api/v2/admin/taxons/MENU_CATEGORY",
+            "children": [],
+            "position": 4,
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/taxon/glasses/translations/en_US",
+                    "@type": "TaxonTranslation",
+                    "id": 717382,
+                    "name": "Glasses",
+                    "slug": "category/glasses",
+                    "description": "Aliquid est enim nulla quia quasi amet. Quaerat placeat in rerum. Dolores dolorum rerum repellat praesentium non fuga veniam."
+                },
+                "de_DE": {
+                    "@id": "/api/v2/admin/taxon/glasses/translations/de_DE",
+                    "@type": "TaxonTranslation",
+                    "id": 717383,
+                    "name": "Glasses",
+                    "slug": "glasses",
+                    "description": "Placeat sed non assumenda dolor. Incidunt mollitia et consectetur. Autem minus deleniti sed delectus rem possimus."
+                },
+                "fr_FR": {
+                    "@id": "/api/v2/admin/taxon/glasses/translations/fr_FR",
+                    "@type": "TaxonTranslation",
+                    "id": 717384,
+                    "name": "Lunettes",
+                    "slug": "categorie/lunettes",
+                    "description": "Eius molestias sed quo repellendus veniam totam. Dolorem animi molestiae eos molestias provident esse id. Facilis non nesciunt vel iusto. Aspernatur dolor temporibus nihil consequatur porro enim aut."
+                },
+                "pl_PL": {
+                    "@id": "/api/v2/admin/taxon/glasses/translations/pl_PL",
+                    "@type": "TaxonTranslation",
+                    "id": 717385,
+                    "name": "Glasses",
+                    "slug": "glasses",
+                    "description": "Placeat sed non assumenda dolor. Incidunt mollitia et consectetur. Autem minus deleniti sed delectus rem possimus."
+                },
+                "es_ES": {
+                    "@id": "/api/v2/admin/taxon/glasses/translations/es_ES",
+                    "@type": "TaxonTranslation",
+                    "id": 717386,
+                    "name": "Glasses",
+                    "slug": "glasses",
+                    "description": "Placeat sed non assumenda dolor. Incidunt mollitia et consectetur. Autem minus deleniti sed delectus rem possimus."
+                },
+                "es_MX": {
+                    "@id": "/api/v2/admin/taxon/glasses/translations/es_MX",
+                    "@type": "TaxonTranslation",
+                    "id": 717387,
+                    "name": "Glasses",
+                    "slug": "glasses",
+                    "description": "Placeat sed non assumenda dolor. Incidunt mollitia et consectetur. Autem minus deleniti sed delectus rem possimus."
+                },
+                "pt_PT": {
+                    "@id": "/api/v2/admin/taxon/glasses/translations/pt_PT",
+                    "@type": "TaxonTranslation",
+                    "id": 717388,
+                    "name": "Glasses",
+                    "slug": "glasses",
+                    "description": "Placeat sed non assumenda dolor. Incidunt mollitia et consectetur. Autem minus deleniti sed delectus rem possimus."
+                },
+                "zh_CN": {
+                    "@id": "/api/v2/admin/taxon/glasses/translations/zh_CN",
+                    "@type": "TaxonTranslation",
+                    "id": 717389,
+                    "name": "Glasses",
+                    "slug": "glasses",
+                    "description": "Placeat sed non assumenda dolor. Incidunt mollitia et consectetur. Autem minus deleniti sed delectus rem possimus."
+                }
+            },
+            "enabled": true
+        },
+        {
+            "@id": "/api/v2/admin/taxons/trial-sister",
+            "@type": "Taxon",
+            "images": [],
+            "id": 92664,
+            "code": "trial-sister",
+            "parent": null,
+            "children": [],
+            "position": 1,
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/taxon/trial-sister/translations/en_US",
+                    "@type": "TaxonTranslation",
+                    "id": 717448,
+                    "name": "Trial sister",
+                    "slug": "trial-sister",
+                    "description": "Away car according of debate theory. Machine politics phone that offer energy. By resource impact enter who hear."
+                }
+            },
+            "enabled": true
+        },
+        {
+            "@id": "/api/v2/admin/taxons/hospital-stop",
+            "@type": "Taxon",
+            "images": [],
+            "id": 92665,
+            "code": "hospital-stop",
+            "parent": null,
+            "children": [],
+            "position": 2,
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/taxon/hospital-stop/translations/en_US",
+                    "@type": "TaxonTranslation",
+                    "id": 717449,
+                    "name": "Hospital stop",
+                    "slug": "hospital-stop",
+                    "description": "Dinner poor else that tell. People under expert pick notice action network employee."
+                }
+            },
+            "enabled": true
+        }
+    ]
+}

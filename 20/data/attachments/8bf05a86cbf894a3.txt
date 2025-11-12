@@ -1,0 +1,10 @@
+2025-11-12 21:54:13 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-12 21:54:13 - DEBUG - https://v2.demo.sylius.com:443 "GET /api/v2/admin/taxons/car-project/images/703 HTTP/1.1" 401 None
+2025-11-12 21:54:13 - INFO - IP ADDRESS OR DOMAIN: v2.demo.sylius.com
+2025-11-12 21:54:13 - DEBUG - REQUEST URL: https://v2.demo.sylius.com/api/v2/admin/taxons/car-project/images/703
+2025-11-12 21:54:13 - INFO - STATUS CODE: 401
+2025-11-12 21:54:13 - DEBUG - RESPONSE:
+{
+    "code": 401,
+    "message": "JWT Token not found"
+}

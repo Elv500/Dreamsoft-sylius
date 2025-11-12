@@ -1,0 +1,22 @@
+2025-11-12 21:54:51 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-12 21:54:51 - DEBUG - https://v2.demo.sylius.com:443 "POST /api/v2/admin/taxons HTTP/1.1" 201 None
+2025-11-12 21:54:51 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-12 21:54:52 - DEBUG - https://v2.demo.sylius.com:443 "POST /api/v2/admin/taxons/guy-analysis/images HTTP/1.1" 201 None
+2025-11-12 21:54:52 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-12 21:54:52 - DEBUG - https://v2.demo.sylius.com:443 "PUT /api/v2/admin/taxons/guy-analysis/images/726 HTTP/1.1" 401 None
+2025-11-12 21:54:52 - INFO - IP ADDRESS OR DOMAIN: v2.demo.sylius.com
+2025-11-12 21:54:52 - DEBUG - REQUEST URL: https://v2.demo.sylius.com/api/v2/admin/taxons/guy-analysis/images/726
+2025-11-12 21:54:52 - INFO - STATUS CODE: 401
+2025-11-12 21:54:52 - DEBUG - PAYLOAD REQUEST:
+{
+    "type": "banner"
+}
+2025-11-12 21:54:52 - DEBUG - RESPONSE:
+{
+    "code": 401,
+    "message": "JWT Token not found"
+}
+2025-11-12 21:54:52 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-12 21:54:52 - DEBUG - https://v2.demo.sylius.com:443 "DELETE /api/v2/admin/taxons/guy-analysis/images/726 HTTP/1.1" 204 0
+2025-11-12 21:54:52 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-12 21:54:53 - DEBUG - https://v2.demo.sylius.com:443 "DELETE /api/v2/admin/taxons/guy-analysis HTTP/1.1" 204 0

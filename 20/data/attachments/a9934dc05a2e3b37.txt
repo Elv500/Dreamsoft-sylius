@@ -1,0 +1,20 @@
+2025-11-12 21:55:36 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-12 21:55:36 - DEBUG - https://v2.demo.sylius.com:443 "GET /api/v2/admin/taxons?page=%20&itemsPerPage=1 HTTP/1.1" 400 None
+2025-11-12 21:55:36 - INFO - IP ADDRESS OR DOMAIN: v2.demo.sylius.com
+2025-11-12 21:55:36 - DEBUG - REQUEST URL: https://v2.demo.sylius.com/api/v2/admin/taxons?page= &itemsPerPage=1
+2025-11-12 21:55:36 - INFO - STATUS CODE: 400
+2025-11-12 21:55:36 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NjI5ODQ0NDAsImV4cCI6MTc2Mjk4ODA0MCwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.K3pxPnVBbBv1PCxbn3uzq4uNR0P-SoH0tvD-7Xu4GEoDgJ6eJvJVAheucIQxSh7Ut8mfa0YZ1ZsvkYjSss2s3CrPwIn6ucIwuRFwYiqLE7bj3lpc_gXe4uouXOAPeE8H8ABtTlOIIHQyEE3EqLNg7RSF2AIlhrTPfyjRsQ_rDxRaJh0Ht4up2j7X8-0JXS7dwFiFVvtn_3wGPYSIEgJkHjoB08bFOucZDeEHslQb4g2Ac2DSqfjr_R40XdX81Bgq2fiZGYNXievN9YGg2WPT7E2q89TovJ0BhBMTTQA-Hmci8TTmHMMqDirq5CNvyx0Tz9fXe3uVTEdD_qh4Cw6LBdnq_wORE-tK8i9WsA6mzPv7uDBWztwcciAgubktlzw3mgvfSoU4p9bOFwxfPbgAq1ubMWqq_VTSv2jMeuiplir4rR1miorIqJsqiLxbZ3nZaSPXbRsjEvUjXaUo4wAzc6nb2oaIqj9mH5-1mPCnLIkodPwy-ATmkwWYk8KKakQDI9DskBxI9A9sTOT9J7WLv5Gy0I2kJMy_CcvnfziwWAI4lkXeamrCddogDxbjTi_5RvODroR-zqOb6O9vgCGZEjESmkcW-HLH8jo2hb0nXmj5An4YmQCnQF4Ty3PQYy4HEU0a6Gt5qJ1kXbLioNMjlychd5elIDc3ewPKNPkl_IU"
+}
+2025-11-12 21:55:36 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/Error",
+    "@id": "/api/v2/errors/400",
+    "@type": "hydra:Error",
+    "detail": "Page should not be less than 1",
+    "status": 400,
+    "type": "/errors/400",
+    "hydra:description": "Page should not be less than 1",
+    "hydra:title": "An error occurred"
+}

@@ -1,0 +1,34 @@
+2025-11-12 21:56:12 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-12 21:56:12 - DEBUG - https://v2.demo.sylius.com:443 "POST /api/v2/admin/taxons HTTP/1.1" 201 None
+2025-11-12 21:56:12 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-12 21:56:13 - DEBUG - https://v2.demo.sylius.com:443 "POST /api/v2/admin/taxons HTTP/1.1" 201 None
+2025-11-12 21:56:13 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-12 21:56:13 - DEBUG - https://v2.demo.sylius.com:443 "PUT /api/v2/admin/taxons/organization-future HTTP/1.1" 401 None
+2025-11-12 21:56:13 - INFO - IP ADDRESS OR DOMAIN: v2.demo.sylius.com
+2025-11-12 21:56:13 - DEBUG - REQUEST URL: https://v2.demo.sylius.com/api/v2/admin/taxons/organization-future
+2025-11-12 21:56:13 - INFO - STATUS CODE: 401
+2025-11-12 21:56:13 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer invalid_token"
+}
+2025-11-12 21:56:13 - DEBUG - PAYLOAD REQUEST:
+{
+    "translations": {
+        "es_ES": {
+            "name": "Add reflect",
+            "slug": "add-reflect",
+            "description": "Gas statement job interesting. History agent key local community interest. Reflect effect process north. Movie consider scene light."
+        }
+    },
+    "position": 0,
+    "enabled": true
+}
+2025-11-12 21:56:13 - DEBUG - RESPONSE:
+{
+    "code": 401,
+    "message": "Invalid JWT Token"
+}
+2025-11-12 21:56:13 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-12 21:56:14 - DEBUG - https://v2.demo.sylius.com:443 "DELETE /api/v2/admin/taxons/most-research HTTP/1.1" 204 0
+2025-11-12 21:56:14 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-12 21:56:14 - DEBUG - https://v2.demo.sylius.com:443 "DELETE /api/v2/admin/taxons/organization-future HTTP/1.1" 404 None

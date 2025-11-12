@@ -1,0 +1,95 @@
+2025-11-12 21:55:49 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-12 21:55:49 - DEBUG - https://v2.demo.sylius.com:443 "POST /api/v2/admin/taxons HTTP/1.1" 201 None
+2025-11-12 21:55:49 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-12 21:55:49 - DEBUG - https://v2.demo.sylius.com:443 "POST /api/v2/admin/taxons HTTP/1.1" 201 None
+2025-11-12 21:55:49 - INFO - IP ADDRESS OR DOMAIN: v2.demo.sylius.com
+2025-11-12 21:55:49 - DEBUG - REQUEST URL: https://v2.demo.sylius.com/api/v2/admin/taxons
+2025-11-12 21:55:49 - INFO - STATUS CODE: 201
+2025-11-12 21:55:49 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NjI5ODQ0NDAsImV4cCI6MTc2Mjk4ODA0MCwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.K3pxPnVBbBv1PCxbn3uzq4uNR0P-SoH0tvD-7Xu4GEoDgJ6eJvJVAheucIQxSh7Ut8mfa0YZ1ZsvkYjSss2s3CrPwIn6ucIwuRFwYiqLE7bj3lpc_gXe4uouXOAPeE8H8ABtTlOIIHQyEE3EqLNg7RSF2AIlhrTPfyjRsQ_rDxRaJh0Ht4up2j7X8-0JXS7dwFiFVvtn_3wGPYSIEgJkHjoB08bFOucZDeEHslQb4g2Ac2DSqfjr_R40XdX81Bgq2fiZGYNXievN9YGg2WPT7E2q89TovJ0BhBMTTQA-Hmci8TTmHMMqDirq5CNvyx0Tz9fXe3uVTEdD_qh4Cw6LBdnq_wORE-tK8i9WsA6mzPv7uDBWztwcciAgubktlzw3mgvfSoU4p9bOFwxfPbgAq1ubMWqq_VTSv2jMeuiplir4rR1miorIqJsqiLxbZ3nZaSPXbRsjEvUjXaUo4wAzc6nb2oaIqj9mH5-1mPCnLIkodPwy-ATmkwWYk8KKakQDI9DskBxI9A9sTOT9J7WLv5Gy0I2kJMy_CcvnfziwWAI4lkXeamrCddogDxbjTi_5RvODroR-zqOb6O9vgCGZEjESmkcW-HLH8jo2hb0nXmj5An4YmQCnQF4Ty3PQYy4HEU0a6Gt5qJ1kXbLioNMjlychd5elIDc3ewPKNPkl_IU"
+}
+2025-11-12 21:55:49 - DEBUG - PAYLOAD REQUEST:
+{
+    "code": "both-business",
+    "translations": {
+        "en_US": {
+            "name": "Both business",
+            "slug": "both-business",
+            "description": "Whose since many other. Blood easy edge here help happen. Various per hot speak water campaign trouble right."
+        }
+    },
+    "position": 0,
+    "enabled": true
+}
+2025-11-12 21:55:49 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/Taxon",
+    "@id": "/api/v2/admin/taxons/both-business",
+    "@type": "Taxon",
+    "images": [],
+    "id": 92680,
+    "code": "both-business",
+    "parent": null,
+    "children": [],
+    "position": 1,
+    "translations": {
+        "en_US": {
+            "@id": "/api/v2/admin/taxon/both-business/translations/en_US",
+            "@type": "TaxonTranslation",
+            "id": 717464,
+            "name": "Both business",
+            "slug": "both-business",
+            "description": "Whose since many other. Blood easy edge here help happen. Various per hot speak water campaign trouble right."
+        }
+    },
+    "enabled": true
+}
+2025-11-12 21:55:49 - INFO - IP ADDRESS OR DOMAIN: v2.demo.sylius.com
+2025-11-12 21:55:49 - DEBUG - REQUEST URL: https://v2.demo.sylius.com/api/v2/admin/taxons
+2025-11-12 21:55:49 - INFO - STATUS CODE: 201
+2025-11-12 21:55:49 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NjI5ODQ0NDAsImV4cCI6MTc2Mjk4ODA0MCwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.K3pxPnVBbBv1PCxbn3uzq4uNR0P-SoH0tvD-7Xu4GEoDgJ6eJvJVAheucIQxSh7Ut8mfa0YZ1ZsvkYjSss2s3CrPwIn6ucIwuRFwYiqLE7bj3lpc_gXe4uouXOAPeE8H8ABtTlOIIHQyEE3EqLNg7RSF2AIlhrTPfyjRsQ_rDxRaJh0Ht4up2j7X8-0JXS7dwFiFVvtn_3wGPYSIEgJkHjoB08bFOucZDeEHslQb4g2Ac2DSqfjr_R40XdX81Bgq2fiZGYNXievN9YGg2WPT7E2q89TovJ0BhBMTTQA-Hmci8TTmHMMqDirq5CNvyx0Tz9fXe3uVTEdD_qh4Cw6LBdnq_wORE-tK8i9WsA6mzPv7uDBWztwcciAgubktlzw3mgvfSoU4p9bOFwxfPbgAq1ubMWqq_VTSv2jMeuiplir4rR1miorIqJsqiLxbZ3nZaSPXbRsjEvUjXaUo4wAzc6nb2oaIqj9mH5-1mPCnLIkodPwy-ATmkwWYk8KKakQDI9DskBxI9A9sTOT9J7WLv5Gy0I2kJMy_CcvnfziwWAI4lkXeamrCddogDxbjTi_5RvODroR-zqOb6O9vgCGZEjESmkcW-HLH8jo2hb0nXmj5An4YmQCnQF4Ty3PQYy4HEU0a6Gt5qJ1kXbLioNMjlychd5elIDc3ewPKNPkl_IU"
+}
+2025-11-12 21:55:49 - DEBUG - PAYLOAD REQUEST:
+{
+    "code": "nation-generation",
+    "translations": {
+        "en_US": {
+            "name": "Nation generation",
+            "slug": "nation-generation",
+            "description": "Not before cup. Somebody nice better condition thus line. Leg individual look sea drive campaign."
+        }
+    },
+    "position": 0,
+    "enabled": true,
+    "parent": "/api/v2/admin/taxons/both-business"
+}
+2025-11-12 21:55:49 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/Taxon",
+    "@id": "/api/v2/admin/taxons/nation-generation",
+    "@type": "Taxon",
+    "images": [],
+    "id": 92681,
+    "code": "nation-generation",
+    "parent": "/api/v2/admin/taxons/both-business",
+    "children": [],
+    "position": 0,
+    "translations": {
+        "en_US": {
+            "@id": "/api/v2/admin/taxon/nation-generation/translations/en_US",
+            "@type": "TaxonTranslation",
+            "id": 717465,
+            "name": "Nation generation",
+            "slug": "nation-generation",
+            "description": "Not before cup. Somebody nice better condition thus line. Leg individual look sea drive campaign."
+        }
+    },
+    "enabled": true
+}
+2025-11-12 21:55:49 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-12 21:55:50 - DEBUG - https://v2.demo.sylius.com:443 "DELETE /api/v2/admin/taxons/both-business HTTP/1.1" 204 0
+2025-11-12 21:55:50 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-12 21:55:50 - DEBUG - https://v2.demo.sylius.com:443 "DELETE /api/v2/admin/taxons/nation-generation HTTP/1.1" 404 None

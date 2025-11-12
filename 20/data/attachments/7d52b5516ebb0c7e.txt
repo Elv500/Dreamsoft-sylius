@@ -1,0 +1,52 @@
+2025-11-12 21:56:27 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-12 21:56:28 - DEBUG - https://v2.demo.sylius.com:443 "POST /api/v2/admin/taxons HTTP/1.1" 201 None
+2025-11-12 21:56:28 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-12 21:56:28 - DEBUG - https://v2.demo.sylius.com:443 "POST /api/v2/admin/taxons HTTP/1.1" 201 None
+2025-11-12 21:56:28 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-12 21:56:28 - DEBUG - https://v2.demo.sylius.com:443 "PUT /api/v2/admin/taxons/paper-many HTTP/1.1" 200 None
+2025-11-12 21:56:28 - INFO - IP ADDRESS OR DOMAIN: v2.demo.sylius.com
+2025-11-12 21:56:28 - DEBUG - REQUEST URL: https://v2.demo.sylius.com/api/v2/admin/taxons/paper-many
+2025-11-12 21:56:28 - INFO - STATUS CODE: 200
+2025-11-12 21:56:28 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NjI5ODQ0NDAsImV4cCI6MTc2Mjk4ODA0MCwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.K3pxPnVBbBv1PCxbn3uzq4uNR0P-SoH0tvD-7Xu4GEoDgJ6eJvJVAheucIQxSh7Ut8mfa0YZ1ZsvkYjSss2s3CrPwIn6ucIwuRFwYiqLE7bj3lpc_gXe4uouXOAPeE8H8ABtTlOIIHQyEE3EqLNg7RSF2AIlhrTPfyjRsQ_rDxRaJh0Ht4up2j7X8-0JXS7dwFiFVvtn_3wGPYSIEgJkHjoB08bFOucZDeEHslQb4g2Ac2DSqfjr_R40XdX81Bgq2fiZGYNXievN9YGg2WPT7E2q89TovJ0BhBMTTQA-Hmci8TTmHMMqDirq5CNvyx0Tz9fXe3uVTEdD_qh4Cw6LBdnq_wORE-tK8i9WsA6mzPv7uDBWztwcciAgubktlzw3mgvfSoU4p9bOFwxfPbgAq1ubMWqq_VTSv2jMeuiplir4rR1miorIqJsqiLxbZ3nZaSPXbRsjEvUjXaUo4wAzc6nb2oaIqj9mH5-1mPCnLIkodPwy-ATmkwWYk8KKakQDI9DskBxI9A9sTOT9J7WLv5Gy0I2kJMy_CcvnfziwWAI4lkXeamrCddogDxbjTi_5RvODroR-zqOb6O9vgCGZEjESmkcW-HLH8jo2hb0nXmj5An4YmQCnQF4Ty3PQYy4HEU0a6Gt5qJ1kXbLioNMjlychd5elIDc3ewPKNPkl_IU"
+}
+2025-11-12 21:56:28 - DEBUG - PAYLOAD REQUEST:
+{
+    "translations": {
+        "es_ES": {
+            "name": "Benefit full",
+            "slug": "benefit-full",
+            "description": "She door himself current me someone mother. Baby social fall my. Financial wrong easy."
+        }
+    },
+    "position": 0,
+    "enabled": true
+}
+2025-11-12 21:56:28 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/Taxon",
+    "@id": "/api/v2/admin/taxons/paper-many",
+    "@type": "Taxon",
+    "images": [],
+    "id": 92732,
+    "code": "paper-many",
+    "parent": "/api/v2/admin/taxons/task-population",
+    "children": [],
+    "position": 0,
+    "translations": {
+        "es_ES": {
+            "@id": "/api/v2/admin/taxon/paper-many/translations/es_ES",
+            "@type": "TaxonTranslation",
+            "id": 717524,
+            "name": "Benefit full",
+            "slug": "benefit-full",
+            "description": "She door himself current me someone mother. Baby social fall my. Financial wrong easy."
+        }
+    },
+    "enabled": true
+}
+2025-11-12 21:56:28 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-12 21:56:29 - DEBUG - https://v2.demo.sylius.com:443 "DELETE /api/v2/admin/taxons/task-population HTTP/1.1" 204 0
+2025-11-12 21:56:29 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-12 21:56:29 - DEBUG - https://v2.demo.sylius.com:443 "DELETE /api/v2/admin/taxons/paper-many HTTP/1.1" 404 None
