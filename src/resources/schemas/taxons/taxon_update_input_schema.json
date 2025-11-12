@@ -1,0 +1,33 @@
+{
+    "type": "object",
+    "properties": {
+        "parent": {
+            "oneOf": [
+                { "type": "string", "format": "uri-reference" },
+                { "type": "null" }
+            ]
+        },
+        "position": {
+            "type": "integer",
+            "minimum": 0
+        },
+        "translations": {
+            "type": "object",
+            "minProperties": 1,
+            "patternProperties": {
+                "^[a-z]{2}_[A-Z]{2}$": {
+                    "type": "object",
+                    "required": ["name", "slug"],
+                    "properties": {
+                        "name": { "type": "string" },
+                        "slug": { "type": "string" },
+                        "description": { "type": "string" }
+                    }
+                }
+            }
+        },
+        "enabled": {
+            "type": "boolean"
+        }
+    }
+}

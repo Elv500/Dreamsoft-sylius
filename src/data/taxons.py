@@ -1,0 +1,38 @@
+from faker import Faker
+import json
+import re
+fake = Faker()
+
+def generate_taxons_data(required_only=False,
+                         parent=None,
+                         enabled=True,
+                         extra_translations=None,
+                         locale="en_US",
+                         position=0):
+    
+    name = fake.words(nb=2, unique=True)
+    name = " ".join(name).capitalize()
+    slug = re.sub(r'[^a-z0-9]+', '-', name.lower()).strip("-")
+
+    taxons_data = {
+        "code": slug,
+        "translations": {
+            locale: {
+                "name": name,
+                "slug": slug,
+                "description": fake.paragraph()
+            }
+        },
+        "position": position,
+    }
+
+    if not required_only:
+        taxons_data["enabled"] = enabled
+        if parent:
+            taxons_data["parent"] = parent["@id"]
+
+    if extra_translations:
+        for lang, data in extra_translations.items():
+            taxons_data["translations"][lang] = data
+
+    return taxons_data

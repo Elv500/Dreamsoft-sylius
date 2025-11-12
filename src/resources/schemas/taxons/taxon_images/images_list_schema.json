@@ -1,0 +1,27 @@
+{
+    "type": "object",
+    "required": [
+        "@context",
+        "@id",
+        "@type",
+        "hydra:member",
+        "hydra:totalItems"
+    ],
+    "properties": {
+        "@context": {
+            "type": "string"
+        },
+        "@id": {
+            "type": "string"
+        },
+        "@type": {
+            "type": "string"
+        },
+        "hydra:totalItems": {
+            "type": "integer"
+        },
+        "hydra:member": {
+            "type": "array"
+        }
+    }
+}
