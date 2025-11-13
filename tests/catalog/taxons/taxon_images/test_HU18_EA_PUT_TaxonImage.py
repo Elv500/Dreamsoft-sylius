@@ -58,11 +58,11 @@ def test_TC184_Validar_error_al_actualizar_imagen_de_un_taxon_con_token_invalido
 @pytest.mark.functional_positive
 @pytest.mark.domain
 @pytest.mark.parametrize("file", [
-    pytest.param("test_image_jpeg_valid.jpeg", marks=pytest.mark.xfail(reason="BUG: Permite subir archivo valido en PUT", run=True)),
-    pytest.param("test_image_valid.png", marks=pytest.mark.xfail(reason="BUG: Permite subir archivo valido en PUT", run=True)),
-    pytest.param("test_image_jpg_valid.jpg", marks=pytest.mark.xfail(reason="BUG: Permite subir archivo valido en PUT", run=True)),
-    pytest.param("test_image_gif_valid.gif", marks=pytest.mark.xfail(reason="BUG: Permite subir archivo valido en PUT", run=True)),
-    pytest.param("test_image_svg_valid.svg", marks=pytest.mark.xfail(reason="BUG: Permite subir archivo valido en PUT", run=True)),
+    pytest.param("test_image_jpeg_valid.jpeg", marks=pytest.mark.xfail(reason="BUG-187: Permite subir archivo jpeg valido al actualizar imagen de taxon", run=True)),
+    pytest.param("test_image_valid.png", marks=pytest.mark.xfail(reason="BUG-508: Permite subir archivo png valido al actualizar imagen de taxon", run=True)),
+    pytest.param("test_image_jpg_valid.jpg", marks=pytest.mark.xfail(reason="BUG-509: Permite subir archivo jpg valido al actualizar imagen de taxon", run=True)),
+    pytest.param("test_image_gif_valid.gif", marks=pytest.mark.xfail(reason="BUG-510: Permite subir archivo gif valido al actualizar imagen de taxon", run=True)),
+    pytest.param("test_image_svg_valid.svg", marks=pytest.mark.xfail(reason="BUG-511: Permite subir archivo svg valido al actualizar imagen de taxon", run=True)),
 ])
 def test_TC_187_511_Validar_error_al_intentar_actualizar_archivo(update_taxon_image, file):
     headers, taxon, image = update_taxon_image
@@ -75,10 +75,10 @@ def test_TC_187_511_Validar_error_al_intentar_actualizar_archivo(update_taxon_im
 @pytest.mark.functional_negative
 @pytest.mark.domain
 @pytest.mark.parametrize("file", [
-    pytest.param("test_image_csv_invalid.csv", marks=pytest.mark.xfail(reason="BUG: Permite subir archivo invalido en PUT", run=True)),
-    pytest.param("test_image_xlsx_invalid.xlsx", marks=pytest.mark.xfail(reason="BUG: Permite subir archivo invalido en PUT", run=True)),
-    pytest.param("test_image_docx_invalid.docx", marks=pytest.mark.xfail(reason="BUG: Permite subir archivo invalido en PUT", run=True)),
-    pytest.param("test_image_pdf_invalid.pdf", marks=pytest.mark.xfail(reason="BUG: Permite subir archivo invalido en PUT", run=True)),
+    pytest.param("test_image_csv_invalid.csv", marks=pytest.mark.xfail(reason="BUG-188: Permite subir archivo csv invalido al actualizar imagen de taxon", run=True)),
+    pytest.param("test_image_docx_invalid.docx", marks=pytest.mark.xfail(reason="BUG-512: Permite subir archivo docx invalido al actualizar imagen de taxon", run=True)),
+    pytest.param("test_image_xlsx_invalid.xlsx", marks=pytest.mark.xfail(reason="BUG-513: Permite subir archivo xlsx invalido al actualizar imagen de taxon", run=True)),
+    pytest.param("test_image_pdf_invalid.pdf", marks=pytest.mark.xfail(reason="BUG-514: Permite subir archivo pdf invalido al actualizar imagen de taxon", run=True)),
 ])
 def test_TC_188_514_Validar_error_al_actualizar_con_extension_invalida(update_taxon_image, file):
     headers, taxon, image = update_taxon_image

@@ -65,13 +65,13 @@ def test_TC_Obtener_lista_de_taxones_con_paginacion_valida(view_taxon, page, ite
 @pytest.mark.parametrize("page, itemsPerPage", [
     (0, 1),
     (-1, 1),
-    pytest.param(1.5, 1, marks=pytest.mark.xfail(reason="BUGXX: Al listar inventarios con parámetro page acepta decimales y rompe la URL", run=True)),
+    pytest.param(1.5, 1, marks=pytest.mark.xfail(reason="BUG-360: Al listar taxons con parámetro page acepta decimales y rompe la URL", run=True)),
     ("uno", 1),
     (" ", 1),
     (1, -1),
-    pytest.param(1, 1.5, marks=pytest.mark.xfail(reason="BUGXX: Al listar inventarios con parámetro itemsPerPage puede ser decimal rompiendo la URL", run=True)),
-    pytest.param(1, "uno", marks=pytest.mark.xfail(reason="BUGXX: Al listar inventarios con parámetro itemsPerPage puede ser string rompiendo la URL", run=True)),
-    pytest.param(1, None, marks=pytest.mark.xfail(reason="BUGXX: Al listar inventarios con parámetro itemsPerPage puede ser vacío rompiendo la URL", run=True))
+    pytest.param(1, 1.5, marks=pytest.mark.xfail(reason="BUG-364: Al listar taxons con parámetro itemsPerPage puede ser decimal rompiendo la URL", run=True)),
+    pytest.param(1, "uno", marks=pytest.mark.xfail(reason="BUG-365: Al listar taxons con parámetro itemsPerPage puede ser string rompiendo la URL", run=True)),
+    pytest.param(1, None, marks=pytest.mark.xfail(reason="BUG-366: Al listar taxons con parámetro itemsPerPage puede ser vacío rompiendo la URL", run=True))
 ])
 def test_TC_Obtener_lista_de_taxones_con_paginacion_invalida(view_taxon, page, itemsPerPage):
     headers, _, _ = view_taxon

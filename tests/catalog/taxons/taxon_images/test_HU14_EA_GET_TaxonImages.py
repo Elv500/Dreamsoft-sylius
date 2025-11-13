@@ -95,13 +95,13 @@ def test_TC_Listar_imagenes_con_paginacion_valida(view_taxon_images, page, items
 @pytest.mark.parametrize("page, itemsPerPage", [
     (0, 1),
     (-1, 1),
-    pytest.param(1.5, 1, marks=pytest.mark.xfail(reason="BUG: acepta decimales en page", run=True)),
+    pytest.param(1.5, 1, marks=pytest.mark.xfail(reason="BUG-411: Al listar imagnes de un taxon acepta decimales en page", run=True)),
     ("uno", 1),
     (" ", 1),       
     (1, -1),
-    pytest.param(1, 1.5, marks=pytest.mark.xfail(reason="BUG: acepta decimales en itemsPerPage", run=True)),
-    pytest.param(1, "uno", marks=pytest.mark.xfail(reason="BUG: acepta string en itemsPerPage", run=True)),
-    pytest.param(1, None, marks=pytest.mark.xfail(reason="BUG: acepta itemsPerPage vacío", run=True))
+    pytest.param(1, 1.5, marks=pytest.mark.xfail(reason="BUG-415: Al listar imagnes de un taxon acepta decimales en itemsPerPage", run=True)),
+    pytest.param(1, "uno", marks=pytest.mark.xfail(reason="BUG-416: Al listar imagnes de un taxon acepta string en itemsPerPage", run=True)),
+    pytest.param(1, None, marks=pytest.mark.xfail(reason="BUG-417: Al listar imagnes de un taxon acepta itemsPerPage vacío", run=True))
 ])
 def test_TC_Listar_imagenes_con_paginacion_invalida(view_taxon_images, page, itemsPerPage):
     headers, taxon, _ = view_taxon_images

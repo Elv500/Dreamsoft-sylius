@@ -115,10 +115,10 @@ def test_TC_Agregar_imagen_con_extension_valida_a_un_taxon(add_taxon_image, file
 @pytest.mark.functional_negative
 @pytest.mark.domain
 @pytest.mark.parametrize("file", [
-    pytest.param("test_image_csv_invalid.csv", marks=pytest.mark.xfail(reason="BUG: Permite subir imagen con extension csv invalida", run=True)),
-    pytest.param("test_image_xlsx_invalid.xlsx", marks=pytest.mark.xfail(reason="BUG: Permite subir imagen con extension xlsx invalida", run=True)),
-    pytest.param("test_image_docx_invalid.docx", marks=pytest.mark.xfail(reason="BUG: Permite subir imagen con extension docx invalida", run=True)),
-    pytest.param("test_image_pdf_invalid.pdf", marks=pytest.mark.xfail(reason="BUG: Permite subir imagen con extension pdf invalida", run=True))
+    pytest.param("test_image_csv_invalid.csv", marks=pytest.mark.xfail(reason="BUG-179: Permite subir imagen a un taxon con extension csv invalida", run=True)),
+    pytest.param("test_image_xlsx_invalid.xlsx", marks=pytest.mark.xfail(reason="BUG-501: Permite subir imagen a un taxon con extension xlsx invalida", run=True)),
+    pytest.param("test_image_docx_invalid.docx", marks=pytest.mark.xfail(reason="BUG-502: Permite subir imagen a un taxon con extension docx invalida", run=True)),
+    pytest.param("test_image_pdf_invalid.pdf", marks=pytest.mark.xfail(reason="BUG-503: Permite subir imagen a un taxon con extension pdf invalida", run=True))
 ])
 def test_TC_Agregar_imagen_con_extension_invalida_a_un_taxon(add_taxon_image, file):
     headers, created_taxon_images, taxon = add_taxon_image

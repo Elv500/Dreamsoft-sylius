@@ -43,10 +43,11 @@ pip install -r requirements.txt
 
     Duplica o cambia el nombre del archivo .env.example a **.env**
     ```bash
-    BASE_URL=ingresar_ruta_api
-    ADMIN_EMAIL=ingresar_email_admin
-    ADMIN_PASSWORD=ingresar_contrasena_admin
+    BASE_URL=https://v2.demo.sylius.com
+    ADMIN_EMAIL=api@example.com
+    ADMIN_PASSWORD=sylius-api
     ```
+`Se adjunta las credenciales sin problema, porque son publicas en este caso.`
 > Con estas configuraciones, ya se tiene listo para la ejecución de pruebas.
 
 # Ejecución de Pruebas
@@ -59,6 +60,50 @@ Para la ejecucion de pruebas, se tiene distintas maneras.
     ```bash
     pytest -v
     ```
+
+Con todo configurado, ya puedes correr las pruebas automatizadas de las siguientes maneras:
+
+   > Si nota que su IDE ejecuta lento los tests, puede agregar el siguiente parametro a cualquier comando de ejecución:
+
+   ```bash
+   --cache-clear
+   ```
+
+### Ejecutar Regression
+
+Para ejecutar los tests de regresión, que incluyen todos:
+
+   ```bash
+   pytest
+   ```
+
+### Ejecutar por tipo de testing:
+
+Para ejecutar por tipo de prueba, utilice la opción `-m` de pytest junto con la marca correspondiente:
+```bash
+Ejm: pytest -m smoke
+```
+
+| Tipo Testing | Comando |
+|--------|----------|
+| Regression | `pytest` |
+| Smoke | `pytest -m smoke` |
+| Functional | `pytest -m functional_positive` |
+| Negative | `pytest -m functional_negative` |
+| Domain | `pytest -m domain` |
+
+### Ejecutar por sub-módulo:
+
+Para ejecutar por sub-módulo se puede combinar con los demás parámetros, agregando el directorio del submodulo:
+```bash
+Ejm: pytest .\tests\ -m smoke -v
+```
+
+| Módulo| Sub-módulo | Comando |
+|-------|------------|---------|
+| Catálogo | Taxons | `pytest .\tests\catalog\taxons\` |
+| Catálogo | Taxons > Taxon Images | `pytest .\tests\catalog\taxons\taxon_images` |
+| Iniciar Sesión | Autenticacion | `pytest .\tests\login\` |
 
 # Generación y visualización de reportes
 Para la generación de reportes, se tiene las siguientes dos opciones que ya vienen integratos en `requeriments.txt`:
