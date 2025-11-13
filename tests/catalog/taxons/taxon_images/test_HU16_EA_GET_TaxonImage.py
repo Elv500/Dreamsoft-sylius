@@ -24,7 +24,7 @@ def test_TC169_Obtener_imagen_existente_por_ID(view_taxon_images):
 
 
 @pytest.mark.functional_negative
-@pytest.mark.xfail(reason="BUG: El endpoint retorna 200 en lugar de 404 al consultar imagen inexistente", run=True)
+@pytest.mark.xfail(reason="BUG-170: El endpoint retorna 200 en lugar de 404 al consultar imagen inexistente", run=True)
 def test_TC170_Validar_error_al_obtener_imagen_inexistente_en_taxon_valido(view_taxon_images):
     headers, taxon, _ = view_taxon_images
     url = TaxonImagesEndpoint.taxon_image_code(taxon["code"], 999999)

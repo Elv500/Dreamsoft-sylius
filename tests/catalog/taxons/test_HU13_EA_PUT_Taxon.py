@@ -156,7 +156,7 @@ def test_TC_Actualizar_taxon_con_posicion_valida(update_taxon, position):
 @pytest.mark.domain
 @pytest.mark.parametrize("position", [
     (1.5),
-    pytest.param(-1, marks=pytest.mark.xfail(reason="BUG: Permite actualizar taxon con posición negativa", run=True))
+    pytest.param(-1, marks=pytest.mark.xfail(reason="BUG-391: Permite actualizar taxon con posición negativa", run=True))
 ])
 def test_TC_Validar_error_al_actualizar_taxon_con_posicion_invalida(update_taxon, position):
     headers, taxon_padre, taxon_hijo = update_taxon
@@ -187,7 +187,7 @@ def test_TC148_Actualizar_taxon_con_estado_activado(update_taxon):
 
 
 @pytest.mark.functional_positive
-@pytest.mark.xfail(reason="BUG: No permite actualizar una traduccion existente")
+@pytest.mark.xfail(reason="BUG-146: No permite actualizar una traduccion existente")
 def test_TC146_Actualizar_traduccion_existente_de_un_taxon(update_taxon):
     headers, taxon_padre, taxon_hijo = update_taxon
     url = TaxonsEndpoint.taxon_code(taxon_hijo["code"])
