@@ -1,0 +1,108 @@
+2025-11-22 12:50:03 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-22 12:50:04 - DEBUG - https://v2.demo.sylius.com:443 "GET /api/v2/admin/taxons?page=1&itemsPerPage=1 HTTP/1.1" 200 None
+2025-11-22 12:50:04 - INFO - IP ADDRESS OR DOMAIN: v2.demo.sylius.com
+2025-11-22 12:50:04 - DEBUG - REQUEST URL: https://v2.demo.sylius.com/api/v2/admin/taxons?page=1&itemsPerPage=1
+2025-11-22 12:50:04 - INFO - STATUS CODE: 200
+2025-11-22 12:50:04 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NjM4MTU3MDgsImV4cCI6MTc2MzgxOTMwOCwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.ewrEgrANJU4r5piQP9WD4zvzTYV8Sid3tBWNHL8T2xcDeDuZ2K8z8Et24pbrGFt-FMvvFsp7xGr-PGhaup6_gQfnRy4pLQDLjieaNvTvEAfks8W5nuveMwATcHBYSxe3UjpS0uqnXnll9xw844PG3iYUXIXT4OS2dvvPlYY1nojptk8AI3LyGR4pFZ7aiA-9CXJ8qZpNKerAFm73FY8L87bNOtuMpZUcWzqrUHBhKBWzS7UmTO5LRc0Zw7cVen21U-VwmSc4ljRZqAzoeE9v75D6RCVGR0F4h8aXpEB3ymJsA3gpLqanjqWiI5facglmlKgr5OmtkbGgCK4XPST9HzmgOfX6LGSI_5P-byqj28wrd81dG2jW59hlocxOvp6iuWooaiV4V-pjm-t4EI3x7imW2x-9Ons8jVH-lJW1CNLjULfV-Ru7PV5yiRAsAYlDDPM_QUKHhSfyH6b4x7rLuHy8UwPoZDxZtslaS7UqvXZUnUuKip0gI_sXQoVSI-jm-QZVLZJlyik0tDVpgAUgtBiUVCF7oF-_lKYr1-wM6q6M2KIpRXEw8j1F3TZLFPCIr7poo2DlQ4JDbFihxE5HJz_EyWfw2M3NXOMD22rD4iAINw_UEXaZYDq40Xlr7e_cAX-oFyY0Ur-iX1qH6Xf381izpRlP9q7ROdxBqM0mvcw"
+}
+2025-11-22 12:50:04 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/Taxon",
+    "@id": "/api/v2/admin/taxons",
+    "@type": "hydra:Collection",
+    "hydra:totalItems": 14,
+    "hydra:member": [
+        {
+            "@id": "/api/v2/admin/taxons/MENU_CATEGORY",
+            "@type": "Taxon",
+            "images": [],
+            "id": 96093,
+            "code": "MENU_CATEGORY",
+            "parent": null,
+            "children": [
+                "/api/v2/admin/taxons/t_shirts",
+                "/api/v2/admin/taxons/caps",
+                "/api/v2/admin/taxons/dresses",
+                "/api/v2/admin/taxons/jeans",
+                "/api/v2/admin/taxons/glasses"
+            ],
+            "position": 0,
+            "translations": {
+                "en_US": {
+                    "@id": "/api/v2/admin/taxon/MENU_CATEGORY/translations/en_US",
+                    "@type": "TaxonTranslation",
+                    "id": 741104,
+                    "name": "Category",
+                    "slug": "category",
+                    "description": "Earum tempora corporis aliquam dolorem iure vel tempore ullam. Et optio possimus eveniet. Adipisci quia corporis est ut. Qui sint labore rerum."
+                },
+                "de_DE": {
+                    "@id": "/api/v2/admin/taxon/MENU_CATEGORY/translations/de_DE",
+                    "@type": "TaxonTranslation",
+                    "id": 741105,
+                    "name": "Category",
+                    "slug": "category",
+                    "description": "Accusamus cumque a qui fugiat dolores perferendis dolores. Velit aut et qui excepturi. Modi voluptatum odio eum repellendus dolores."
+                },
+                "fr_FR": {
+                    "@id": "/api/v2/admin/taxon/MENU_CATEGORY/translations/fr_FR",
+                    "@type": "TaxonTranslation",
+                    "id": 741106,
+                    "name": "Catégorie",
+                    "slug": "categorie",
+                    "description": "Rerum quibusdam dicta quam vel veniam non quidem. Labore et error eum labore nulla. Sed dicta et atque commodi laudantium in voluptates. Pariatur voluptates quasi est aut."
+                },
+                "pl_PL": {
+                    "@id": "/api/v2/admin/taxon/MENU_CATEGORY/translations/pl_PL",
+                    "@type": "TaxonTranslation",
+                    "id": 741107,
+                    "name": "Category",
+                    "slug": "category",
+                    "description": "Accusamus cumque a qui fugiat dolores perferendis dolores. Velit aut et qui excepturi. Modi voluptatum odio eum repellendus dolores."
+                },
+                "es_ES": {
+                    "@id": "/api/v2/admin/taxon/MENU_CATEGORY/translations/es_ES",
+                    "@type": "TaxonTranslation",
+                    "id": 741108,
+                    "name": "Category",
+                    "slug": "category",
+                    "description": "Accusamus cumque a qui fugiat dolores perferendis dolores. Velit aut et qui excepturi. Modi voluptatum odio eum repellendus dolores."
+                },
+                "es_MX": {
+                    "@id": "/api/v2/admin/taxon/MENU_CATEGORY/translations/es_MX",
+                    "@type": "TaxonTranslation",
+                    "id": 741109,
+                    "name": "Category",
+                    "slug": "category",
+                    "description": "Accusamus cumque a qui fugiat dolores perferendis dolores. Velit aut et qui excepturi. Modi voluptatum odio eum repellendus dolores."
+                },
+                "pt_PT": {
+                    "@id": "/api/v2/admin/taxon/MENU_CATEGORY/translations/pt_PT",
+                    "@type": "TaxonTranslation",
+                    "id": 741110,
+                    "name": "Category",
+                    "slug": "category",
+                    "description": "Accusamus cumque a qui fugiat dolores perferendis dolores. Velit aut et qui excepturi. Modi voluptatum odio eum repellendus dolores."
+                },
+                "zh_CN": {
+                    "@id": "/api/v2/admin/taxon/MENU_CATEGORY/translations/zh_CN",
+                    "@type": "TaxonTranslation",
+                    "id": 741111,
+                    "name": "Category",
+                    "slug": "category",
+                    "description": "Accusamus cumque a qui fugiat dolores perferendis dolores. Velit aut et qui excepturi. Modi voluptatum odio eum repellendus dolores."
+                }
+            },
+            "enabled": true
+        }
+    ],
+    "hydra:view": {
+        "@id": "/api/v2/admin/taxons?itemsPerPage=1&page=1",
+        "@type": "hydra:PartialCollectionView",
+        "hydra:first": "/api/v2/admin/taxons?itemsPerPage=1&page=1",
+        "hydra:last": "/api/v2/admin/taxons?itemsPerPage=1&page=14",
+        "hydra:next": "/api/v2/admin/taxons?itemsPerPage=1&page=2"
+    }
+}

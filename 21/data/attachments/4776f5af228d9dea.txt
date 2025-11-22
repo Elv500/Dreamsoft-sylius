@@ -1,0 +1,26 @@
+2025-11-22 12:49:23 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-22 12:49:23 - DEBUG - https://v2.demo.sylius.com:443 "POST /api/v2/admin/taxons HTTP/1.1" 201 None
+2025-11-22 12:49:23 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-22 12:49:23 - DEBUG - https://v2.demo.sylius.com:443 "POST /api/v2/admin/taxons/dog-bag/images HTTP/1.1" 201 None
+2025-11-22 12:49:23 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-22 12:49:24 - DEBUG - https://v2.demo.sylius.com:443 "PUT /api/v2/admin/taxons/dog-bag/images/911 HTTP/1.1" 401 None
+2025-11-22 12:49:24 - INFO - IP ADDRESS OR DOMAIN: v2.demo.sylius.com
+2025-11-22 12:49:24 - DEBUG - REQUEST URL: https://v2.demo.sylius.com/api/v2/admin/taxons/dog-bag/images/911
+2025-11-22 12:49:24 - INFO - STATUS CODE: 401
+2025-11-22 12:49:24 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer invalid_token"
+}
+2025-11-22 12:49:24 - DEBUG - PAYLOAD REQUEST:
+{
+    "type": "banner"
+}
+2025-11-22 12:49:24 - DEBUG - RESPONSE:
+{
+    "code": 401,
+    "message": "Invalid JWT Token"
+}
+2025-11-22 12:49:24 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-22 12:49:24 - DEBUG - https://v2.demo.sylius.com:443 "DELETE /api/v2/admin/taxons/dog-bag/images/911 HTTP/1.1" 204 0
+2025-11-22 12:49:24 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-22 12:49:24 - DEBUG - https://v2.demo.sylius.com:443 "DELETE /api/v2/admin/taxons/dog-bag HTTP/1.1" 204 0

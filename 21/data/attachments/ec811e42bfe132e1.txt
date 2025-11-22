@@ -1,0 +1,23 @@
+2025-11-22 12:50:13 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-22 12:50:14 - DEBUG - https://v2.demo.sylius.com:443 "POST /api/v2/admin/taxons HTTP/1.1" 401 None
+2025-11-22 12:50:14 - INFO - IP ADDRESS OR DOMAIN: v2.demo.sylius.com
+2025-11-22 12:50:14 - DEBUG - REQUEST URL: https://v2.demo.sylius.com/api/v2/admin/taxons
+2025-11-22 12:50:14 - INFO - STATUS CODE: 401
+2025-11-22 12:50:14 - DEBUG - PAYLOAD REQUEST:
+{
+    "code": "discuss-election",
+    "translations": {
+        "en_US": {
+            "name": "Discuss election",
+            "slug": "discuss-election",
+            "description": "Deep traditional just film hotel power wonder. Fill suffer sense two response. Woman ever me. Contain fast kind must."
+        }
+    },
+    "position": 0,
+    "enabled": true
+}
+2025-11-22 12:50:14 - DEBUG - RESPONSE:
+{
+    "code": 401,
+    "message": "JWT Token not found"
+}

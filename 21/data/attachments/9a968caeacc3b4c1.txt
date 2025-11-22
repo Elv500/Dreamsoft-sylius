@@ -1,0 +1,40 @@
+2025-11-22 12:50:18 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-22 12:50:18 - DEBUG - https://v2.demo.sylius.com:443 "POST /api/v2/admin/taxons HTTP/1.1" 422 None
+2025-11-22 12:50:18 - INFO - IP ADDRESS OR DOMAIN: v2.demo.sylius.com
+2025-11-22 12:50:18 - DEBUG - REQUEST URL: https://v2.demo.sylius.com/api/v2/admin/taxons
+2025-11-22 12:50:18 - INFO - STATUS CODE: 422
+2025-11-22 12:50:18 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NjM4MTU3MDgsImV4cCI6MTc2MzgxOTMwOCwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.ewrEgrANJU4r5piQP9WD4zvzTYV8Sid3tBWNHL8T2xcDeDuZ2K8z8Et24pbrGFt-FMvvFsp7xGr-PGhaup6_gQfnRy4pLQDLjieaNvTvEAfks8W5nuveMwATcHBYSxe3UjpS0uqnXnll9xw844PG3iYUXIXT4OS2dvvPlYY1nojptk8AI3LyGR4pFZ7aiA-9CXJ8qZpNKerAFm73FY8L87bNOtuMpZUcWzqrUHBhKBWzS7UmTO5LRc0Zw7cVen21U-VwmSc4ljRZqAzoeE9v75D6RCVGR0F4h8aXpEB3ymJsA3gpLqanjqWiI5facglmlKgr5OmtkbGgCK4XPST9HzmgOfX6LGSI_5P-byqj28wrd81dG2jW59hlocxOvp6iuWooaiV4V-pjm-t4EI3x7imW2x-9Ons8jVH-lJW1CNLjULfV-Ru7PV5yiRAsAYlDDPM_QUKHhSfyH6b4x7rLuHy8UwPoZDxZtslaS7UqvXZUnUuKip0gI_sXQoVSI-jm-QZVLZJlyik0tDVpgAUgtBiUVCF7oF-_lKYr1-wM6q6M2KIpRXEw8j1F3TZLFPCIr7poo2DlQ4JDbFihxE5HJz_EyWfw2M3NXOMD22rD4iAINw_UEXaZYDq40Xlr7e_cAX-oFyY0Ur-iX1qH6Xf381izpRlP9q7ROdxBqM0mvcw"
+}
+2025-11-22 12:50:18 - DEBUG - PAYLOAD REQUEST:
+{
+    "code": "Test_#12/",
+    "translations": {
+        "en_US": {
+            "name": "Bit probably",
+            "slug": "bit-probably",
+            "description": "Bill choice voice. Suggest culture quickly defense type."
+        }
+    },
+    "position": 0,
+    "enabled": true
+}
+2025-11-22 12:50:18 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/ConstraintViolation",
+    "@id": "/api/v2/validation_errors/de1e3db3-5ed4-4941-aae4-59f3667cc3a3",
+    "@type": "ConstraintViolation",
+    "status": 422,
+    "violations": [
+        {
+            "propertyPath": "code",
+            "message": "Taxon code can only be comprised of letters, numbers, dashes and underscores.",
+            "code": "de1e3db3-5ed4-4941-aae4-59f3667cc3a3"
+        }
+    ],
+    "detail": "code: Taxon code can only be comprised of letters, numbers, dashes and underscores.",
+    "type": "/validation_errors/de1e3db3-5ed4-4941-aae4-59f3667cc3a3",
+    "hydra:description": "code: Taxon code can only be comprised of letters, numbers, dashes and underscores.",
+    "hydra:title": "An error occurred"
+}

@@ -1,0 +1,10 @@
+2025-11-22 12:50:55 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-22 12:50:55 - DEBUG - https://v2.demo.sylius.com:443 "POST /api/v2/admin/taxons HTTP/1.1" 201 None
+2025-11-22 12:50:55 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-22 12:50:55 - DEBUG - https://v2.demo.sylius.com:443 "POST /api/v2/admin/taxons HTTP/1.1" 201 None
+2025-11-22 12:50:55 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-22 12:50:56 - DEBUG - https://v2.demo.sylius.com:443 "PUT /api/v2/admin/taxons/want-remember HTTP/1.1" 200 None
+2025-11-22 12:50:56 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-22 12:50:56 - DEBUG - https://v2.demo.sylius.com:443 "DELETE /api/v2/admin/taxons/policy-actually HTTP/1.1" 204 0
+2025-11-22 12:50:56 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-22 12:50:56 - DEBUG - https://v2.demo.sylius.com:443 "DELETE /api/v2/admin/taxons/want-remember HTTP/1.1" 404 None

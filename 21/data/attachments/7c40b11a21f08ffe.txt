@@ -1,0 +1,47 @@
+2025-11-22 12:51:26 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-22 12:51:26 - DEBUG - https://v2.demo.sylius.com:443 "POST /api/v2/admin/taxons HTTP/1.1" 201 None
+2025-11-22 12:51:26 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-22 12:51:27 - DEBUG - https://v2.demo.sylius.com:443 "POST /api/v2/admin/taxons HTTP/1.1" 201 None
+2025-11-22 12:51:27 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-22 12:51:27 - DEBUG - https://v2.demo.sylius.com:443 "PUT /api/v2/admin/taxons/outside-question HTTP/1.1" 422 None
+2025-11-22 12:51:27 - INFO - IP ADDRESS OR DOMAIN: v2.demo.sylius.com
+2025-11-22 12:51:27 - DEBUG - REQUEST URL: https://v2.demo.sylius.com/api/v2/admin/taxons/outside-question
+2025-11-22 12:51:27 - INFO - STATUS CODE: 422
+2025-11-22 12:51:27 - DEBUG - REQUEST HEADERS:
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NjM4MTU3MDgsImV4cCI6MTc2MzgxOTMwOCwicm9sZXMiOlsiUk9MRV9BRE1JTklTVFJBVElPTl9BQ0NFU1MiLCJST0xFX0FQSV9BQ0NFU1MiXSwidXNlcm5hbWUiOiJhcGkifQ.ewrEgrANJU4r5piQP9WD4zvzTYV8Sid3tBWNHL8T2xcDeDuZ2K8z8Et24pbrGFt-FMvvFsp7xGr-PGhaup6_gQfnRy4pLQDLjieaNvTvEAfks8W5nuveMwATcHBYSxe3UjpS0uqnXnll9xw844PG3iYUXIXT4OS2dvvPlYY1nojptk8AI3LyGR4pFZ7aiA-9CXJ8qZpNKerAFm73FY8L87bNOtuMpZUcWzqrUHBhKBWzS7UmTO5LRc0Zw7cVen21U-VwmSc4ljRZqAzoeE9v75D6RCVGR0F4h8aXpEB3ymJsA3gpLqanjqWiI5facglmlKgr5OmtkbGgCK4XPST9HzmgOfX6LGSI_5P-byqj28wrd81dG2jW59hlocxOvp6iuWooaiV4V-pjm-t4EI3x7imW2x-9Ons8jVH-lJW1CNLjULfV-Ru7PV5yiRAsAYlDDPM_QUKHhSfyH6b4x7rLuHy8UwPoZDxZtslaS7UqvXZUnUuKip0gI_sXQoVSI-jm-QZVLZJlyik0tDVpgAUgtBiUVCF7oF-_lKYr1-wM6q6M2KIpRXEw8j1F3TZLFPCIr7poo2DlQ4JDbFihxE5HJz_EyWfw2M3NXOMD22rD4iAINw_UEXaZYDq40Xlr7e_cAX-oFyY0Ur-iX1qH6Xf381izpRlP9q7ROdxBqM0mvcw"
+}
+2025-11-22 12:51:27 - DEBUG - PAYLOAD REQUEST:
+{
+    "translations": {
+        "es_ES": {
+            "name": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+            "slug": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+            "description": "Step many paper raise top. Car enough shake result."
+        }
+    },
+    "position": 0,
+    "enabled": true
+}
+2025-11-22 12:51:27 - DEBUG - RESPONSE:
+{
+    "@context": "/api/v2/contexts/ConstraintViolation",
+    "@id": "/api/v2/validation_errors/d94b19cc-114f-4f44-9cc4-4138e80a87b9",
+    "@type": "ConstraintViolation",
+    "status": 422,
+    "violations": [
+        {
+            "propertyPath": "translations[es_ES].name",
+            "message": "Taxon name must not be longer than 255 characters.",
+            "code": "d94b19cc-114f-4f44-9cc4-4138e80a87b9"
+        }
+    ],
+    "detail": "translations[es_ES].name: Taxon name must not be longer than 255 characters.",
+    "type": "/validation_errors/d94b19cc-114f-4f44-9cc4-4138e80a87b9",
+    "hydra:description": "translations[es_ES].name: Taxon name must not be longer than 255 characters.",
+    "hydra:title": "An error occurred"
+}
+2025-11-22 12:51:27 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-22 12:51:27 - DEBUG - https://v2.demo.sylius.com:443 "DELETE /api/v2/admin/taxons/within-hotel HTTP/1.1" 204 0
+2025-11-22 12:51:27 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-22 12:51:28 - DEBUG - https://v2.demo.sylius.com:443 "DELETE /api/v2/admin/taxons/outside-question HTTP/1.1" 404 None

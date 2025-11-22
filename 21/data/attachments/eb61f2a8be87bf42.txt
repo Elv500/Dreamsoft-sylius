@@ -1,0 +1,6 @@
+2025-11-22 12:49:03 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-22 12:49:03 - DEBUG - https://v2.demo.sylius.com:443 "POST /api/v2/admin/taxons HTTP/1.1" 201 None
+2025-11-22 12:49:03 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-22 12:49:04 - DEBUG - https://v2.demo.sylius.com:443 "POST /api/v2/admin/taxons/result-only/images HTTP/1.1" 201 None
+2025-11-22 12:49:04 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-22 12:49:04 - DEBUG - https://v2.demo.sylius.com:443 "DELETE /api/v2/admin/taxons/result-only HTTP/1.1" 204 0

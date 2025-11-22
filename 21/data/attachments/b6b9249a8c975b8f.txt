@@ -1,0 +1,6 @@
+2025-11-22 12:49:05 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-22 12:49:06 - DEBUG - https://v2.demo.sylius.com:443 "POST /api/v2/admin/taxons HTTP/1.1" 201 None
+2025-11-22 12:49:06 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-22 12:49:06 - DEBUG - https://v2.demo.sylius.com:443 "POST /api/v2/admin/taxons/money-skin/images HTTP/1.1" 201 None
+2025-11-22 12:49:06 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-22 12:49:06 - DEBUG - https://v2.demo.sylius.com:443 "DELETE /api/v2/admin/taxons/money-skin HTTP/1.1" 204 0

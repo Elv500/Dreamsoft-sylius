@@ -1,0 +1,30 @@
+2025-11-22 12:50:40 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-22 12:50:40 - DEBUG - https://v2.demo.sylius.com:443 "POST /api/v2/admin/taxons HTTP/1.1" 201 None
+2025-11-22 12:50:40 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-22 12:50:41 - DEBUG - https://v2.demo.sylius.com:443 "POST /api/v2/admin/taxons HTTP/1.1" 201 None
+2025-11-22 12:50:41 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-22 12:50:41 - DEBUG - https://v2.demo.sylius.com:443 "PUT /api/v2/admin/taxons/south-occur HTTP/1.1" 401 None
+2025-11-22 12:50:41 - INFO - IP ADDRESS OR DOMAIN: v2.demo.sylius.com
+2025-11-22 12:50:41 - DEBUG - REQUEST URL: https://v2.demo.sylius.com/api/v2/admin/taxons/south-occur
+2025-11-22 12:50:41 - INFO - STATUS CODE: 401
+2025-11-22 12:50:41 - DEBUG - PAYLOAD REQUEST:
+{
+    "translations": {
+        "es_ES": {
+            "name": "Or effort",
+            "slug": "or-effort",
+            "description": "When discuss down young myself sit. Act food provide war meet list. Thing raise without popular democratic thousand hospital somebody."
+        }
+    },
+    "position": 0,
+    "enabled": true
+}
+2025-11-22 12:50:41 - DEBUG - RESPONSE:
+{
+    "code": 401,
+    "message": "JWT Token not found"
+}
+2025-11-22 12:50:41 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-22 12:50:41 - DEBUG - https://v2.demo.sylius.com:443 "DELETE /api/v2/admin/taxons/during-campaign HTTP/1.1" 204 0
+2025-11-22 12:50:41 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-22 12:50:42 - DEBUG - https://v2.demo.sylius.com:443 "DELETE /api/v2/admin/taxons/south-occur HTTP/1.1" 404 None

@@ -1,0 +1,2 @@
+2025-11-22 12:50:06 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-22 12:50:06 - DEBUG - https://v2.demo.sylius.com:443 "GET /api/v2/admin/taxons?page=1&itemsPerPage=1.5 HTTP/1.1" 200 None

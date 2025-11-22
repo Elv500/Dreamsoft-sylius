@@ -1,0 +1,10 @@
+2025-11-22 12:49:40 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-22 12:49:40 - DEBUG - https://v2.demo.sylius.com:443 "POST /api/v2/admin/taxons HTTP/1.1" 201 None
+2025-11-22 12:49:40 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-22 12:49:40 - DEBUG - https://v2.demo.sylius.com:443 "POST /api/v2/admin/taxons/teach-spring/images HTTP/1.1" 201 None
+2025-11-22 12:49:40 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-22 12:49:41 - DEBUG - https://v2.demo.sylius.com:443 "PUT /api/v2/admin/taxons/teach-spring/images/920 HTTP/1.1" 200 None
+2025-11-22 12:49:41 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-22 12:49:41 - DEBUG - https://v2.demo.sylius.com:443 "DELETE /api/v2/admin/taxons/teach-spring/images/920 HTTP/1.1" 204 0
+2025-11-22 12:49:41 - DEBUG - Starting new HTTPS connection (1): v2.demo.sylius.com:443
+2025-11-22 12:49:41 - DEBUG - https://v2.demo.sylius.com:443 "DELETE /api/v2/admin/taxons/teach-spring HTTP/1.1" 204 0
